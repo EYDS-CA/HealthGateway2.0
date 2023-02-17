@@ -34,7 +34,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI3-Ea-nuF">
-                                        <rect key="frame" x="16" y="15.999999999999998" width="143" height="20.333333333333329"/>
+                                        <rect key="frame" x="16" y="15.999999999999998" width="171.66666666666666" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                     <constraint firstItem="Ogz-f5-KtN" firstAttribute="top" secondItem="WI3-Ea-nuF" secondAttribute="bottom" constant="8" id="4MK-SU-Zyl"/>
                                     <constraint firstAttribute="bottom" secondItem="ryb-7F-beY" secondAttribute="bottom" id="8gd-Xo-FOU"/>
                                     <constraint firstAttribute="bottom" secondItem="zLw-Pa-OSg" secondAttribute="bottom" constant="16" id="9wt-H6-IUo"/>
-                                    <constraint firstItem="WI3-Ea-nuF" firstAttribute="width" secondItem="ryb-7F-beY" secondAttribute="width" multiplier="0.5" id="G1q-79-zgq"/>
+                                    <constraint firstItem="WI3-Ea-nuF" firstAttribute="width" secondItem="ryb-7F-beY" secondAttribute="width" multiplier="0.6" id="G1q-79-zgq"/>
                                     <constraint firstItem="ryb-7F-beY" firstAttribute="top" secondItem="bD8-hO-wZ0" secondAttribute="top" id="Ia0-XD-sb9"/>
                                     <constraint firstAttribute="trailing" secondItem="ryb-7F-beY" secondAttribute="trailing" id="Q2K-hn-4qx"/>
                                     <constraint firstAttribute="width" secondItem="bD8-hO-wZ0" secondAttribute="height" multiplier="1:1" id="QjE-1W-QuI"/>
