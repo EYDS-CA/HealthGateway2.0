@@ -167,7 +167,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .symptomChecker:
             let cell = getSymptomCheckerCell(indexPath: indexPath)
-            // TODO..
+            cell.setup()
             return cell
         case .call811:
             let cell = getCall811Cell(indexPath: indexPath)
