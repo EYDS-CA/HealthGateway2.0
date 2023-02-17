@@ -8,7 +8,7 @@
 import UIKit
 
 enum POCTabs: Int, CaseIterable {
-    case Dashboard = 0, HealthChecks, Records, CareNavigator
+    case Dashboard = 0, HealthChecks, UnAuthenticatedRecords, AuthenticatedRecords, CareNavigator
     
     var getIndexOfTab: Int {
         return self.rawValue
@@ -34,11 +34,16 @@ enum POCTabs: Int, CaseIterable {
                               selectedTabBarImage: #imageLiteral(resourceName: "passes-tab-selected"),
                               unselectedTabBarImage: #imageLiteral(resourceName: "passes-tab-unselected"),
                               baseViewController: HealthChecksViewController.construct())
-        case .Records:
+        case .UnAuthenticatedRecords:
             return Properties(title: "Records",
                               selectedTabBarImage: #imageLiteral(resourceName: "records-tab-selected"),// TODO
                               unselectedTabBarImage: #imageLiteral(resourceName: "records-tab-unselected"),// TODO
                               baseViewController: HealthRecordsViewController.constructHealthRecordsViewController())
+        case .AuthenticatedRecords:
+            return Properties(title: "Records",
+                              selectedTabBarImage: #imageLiteral(resourceName: "records-tab-selected"),// TODO
+                              unselectedTabBarImage: #imageLiteral(resourceName: "records-tab-unselected"),// TODO
+                              baseViewController: UsersListOfRecordsViewController.constructUsersListOfRecordsViewController(patient: StorageService.shared.fetchAuthenticatedPatient(), authenticated: true, navStyle: .singleUser, hasUpdatedUnauthPendingTest: false))
         case .CareNavigator:
             return Properties(title: "CareNavigator",
                               selectedTabBarImage: #imageLiteral(resourceName: "dependent-tab-selected"), // TODO

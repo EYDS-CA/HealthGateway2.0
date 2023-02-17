@@ -16,45 +16,72 @@ class POCTabBarController: UITabBarController {
         return POCTabBarController()
     }
     
-    private var previousSelectedIndex: Int?
+    private let authManager = AuthManager()
+    private var authWorker: AuthenticatedHealthRecordsAPIWorker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        authWorker = AuthenticatedHealthRecordsAPIWorker(delegateOwner: self)
+        BaseURLWorker.setup(BaseURLWorker.Config(delegateOwner: self))
         self.setup(selectedIndex: 0)
+        
+        // When authentication status changes, we can set the records tab to the appropriate VC
+        // and fetch records
+        AppStates.shared.listenToAuth { authenticated in
+            self.setTabs()
+            self.syncRecordsIfNeeded()
+        }
+        
+        // Local auth happens on records tab only.
+        // When its done, we should fetch records if user is authenticated.
+        AppStates.shared.listenLocalAuth {
+            self.syncRecordsIfNeeded()
+        }
     }
     
     private func setup(selectedIndex: Int) {
         self.tabBar.tintColor = AppColours.appBlue
         self.tabBar.barTintColor = .white
-        self.delegate = self
-        self.viewControllers = setViewControllers(tabs: POCTabs.allCases)
+        setTabs()
+    }
+    
+    func syncRecordsIfNeeded() {
+        guard authManager.isAuthenticated else {return}
+        guard let authToken = authManager.authToken, let hdid = authManager.hdid else { return }
+        let authCreds = AuthenticationRequestObject(authToken: authToken, hdid: hdid)
+        CommentService(network: AFNetwork(), authManager: AuthManager()).submitUnsyncedComments {
+            self.authWorker?.getAuthenticatedPatientDetails(authCredentials: authCreds, showBanner: false, isManualFetch: false, protectiveWord: AuthManager().protectiveWord,sourceVC: .BackgroundFetch)
+        }
+    }
+    
+    private func setTabs() {
+        if AuthManager().isAuthenticated {
+            self.viewControllers = setViewControllers(tabs: authenticatedTabs())
+        } else {
+            self.viewControllers = setViewControllers(tabs: unAuthenticatedTabs())
+        }
+    }
+    
+    func authenticatedTabs() -> [POCTabs] {
+        return [.Dashboard, .HealthChecks, .AuthenticatedRecords, .CareNavigator]
+    }
+    
+    func unAuthenticatedTabs() -> [POCTabs] {
+        return [.Dashboard, .HealthChecks, .UnAuthenticatedRecords, .CareNavigator]
     }
     
     private func setViewControllers(tabs: [POCTabs]) -> [UIViewController] {
-        var viewControllers: [UIViewController] = []
-        tabs.forEach { vc in
-            guard let properties = vc.properties  else { return }
-            let tabBarItem = UITabBarItem(title: properties.title, image: properties.unselectedTabBarImage, selectedImage: properties.selectedTabBarImage)
-            tabBarItem.setTitleTextAttributes([.font: UIFont.bcSansBoldWithSize(size: 10)], for: .normal)
-            let viewController = properties.baseViewController
-            viewController.tabBarItem = tabBarItem
-            viewController.title = properties.title
-            let navController = CustomNavigationController.init(rootViewController: viewController)
-            viewControllers.append(navController)
-        }
-        return viewControllers
-    }
-}
-
-extension POCTabBarController: UITabBarControllerDelegate {
-    
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        // Save the previously selected index, so that we can check if the tab was selected again
-        self.previousSelectedIndex = tabBarController.selectedIndex
-        return true
+        return tabs.compactMap({setViewController(tab: $0)})
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        NotificationCenter.default.post(name: .tabChanged, object: nil, userInfo: ["viewController": viewController])
+    private func setViewController(tab vc: POCTabs) -> UIViewController? {
+        guard let properties = vc.properties  else { return nil}
+        let tabBarItem = UITabBarItem(title: properties.title, image: properties.unselectedTabBarImage, selectedImage: properties.selectedTabBarImage)
+        tabBarItem.setTitleTextAttributes([.font: UIFont.bcSansBoldWithSize(size: 10)], for: .normal)
+        let viewController = properties.baseViewController
+        viewController.tabBarItem = tabBarItem
+        viewController.title = properties.title
+        let navController = CustomNavigationController.init(rootViewController: viewController)
+        return navController
     }
 }
