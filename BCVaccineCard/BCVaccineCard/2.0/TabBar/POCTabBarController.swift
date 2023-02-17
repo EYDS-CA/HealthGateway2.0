@@ -17,13 +17,26 @@ class POCTabBarController: UITabBarController {
     }
     
     private var previousSelectedIndex: Int?
+    private let authManager = AuthManager()
+    private var authWorker: AuthenticatedHealthRecordsAPIWorker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        authWorker = AuthenticatedHealthRecordsAPIWorker(delegateOwner: self)
         BaseURLWorker.setup(BaseURLWorker.Config(delegateOwner: self))
         self.setup(selectedIndex: 0)
+        
+        // When authentication status changes, we can set the records tab to the appropriate VC
+        // and fetch records
         AppStates.shared.listenToAuth { authenticated in
             self.setTabs()
+            self.syncRecordsIfNeeded()
+        }
+        
+        // Local auth happens on records tab only.
+        // When its done, we should fetch records if user is authenticated.
+        AppStates.shared.listenLocalAuth {
+            self.syncRecordsIfNeeded()
         }
     }
     
@@ -32,7 +45,15 @@ class POCTabBarController: UITabBarController {
         self.tabBar.barTintColor = .white
         self.delegate = self
         setTabs()
-        
+    }
+    
+    func syncRecordsIfNeeded() {
+        guard authManager.isAuthenticated else {return}
+        guard let authToken = authManager.authToken, let hdid = authManager.hdid else { return }
+        let authCreds = AuthenticationRequestObject(authToken: authToken, hdid: hdid)
+        CommentService(network: AFNetwork(), authManager: AuthManager()).submitUnsyncedComments {
+            self.authWorker?.getAuthenticatedPatientDetails(authCredentials: authCreds, showBanner: false, isManualFetch: false, protectiveWord: AuthManager().protectiveWord,sourceVC: .BackgroundFetch)
+        }
     }
     
     private func setTabs() {
@@ -40,6 +61,7 @@ class POCTabBarController: UITabBarController {
             self.viewControllers = setViewControllers(tabs: authenticatedTabs())
         } else {
             self.viewControllers = setViewControllers(tabs: unAuthenticatedTabs())
+            // TODO: pop the profile VC or something
         }
     }
     
