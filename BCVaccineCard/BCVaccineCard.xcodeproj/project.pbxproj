@@ -378,6 +378,24 @@
 		3E60A409297F012600BB20BE /* PDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E60A408297F012600BB20BE /* PDFService.swift */; };
 		3E60A40A297F012600BB20BE /* PDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E60A408297F012600BB20BE /* PDFService.swift */; };
 		3E60A40B297F012600BB20BE /* PDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E60A408297F012600BB20BE /* PDFService.swift */; };
+		3E62CFDD299FF739000FBB40 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFDC299FF739000FBB40 /* Dashboard.storyboard */; };
+		3E62CFDE299FF739000FBB40 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFDC299FF739000FBB40 /* Dashboard.storyboard */; };
+		3E62CFDF299FF739000FBB40 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFDC299FF739000FBB40 /* Dashboard.storyboard */; };
+		3E62CFE1299FF74F000FBB40 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFE0299FF74F000FBB40 /* DashboardViewController.swift */; };
+		3E62CFE2299FF74F000FBB40 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFE0299FF74F000FBB40 /* DashboardViewController.swift */; };
+		3E62CFE3299FF74F000FBB40 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFE0299FF74F000FBB40 /* DashboardViewController.swift */; };
+		3E62CFE5299FF75E000FBB40 /* CareNavigator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFE4299FF75E000FBB40 /* CareNavigator.storyboard */; };
+		3E62CFE6299FF75E000FBB40 /* CareNavigator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFE4299FF75E000FBB40 /* CareNavigator.storyboard */; };
+		3E62CFE7299FF75E000FBB40 /* CareNavigator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFE4299FF75E000FBB40 /* CareNavigator.storyboard */; };
+		3E62CFE9299FF76C000FBB40 /* CareNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFE8299FF76C000FBB40 /* CareNavigatorViewController.swift */; };
+		3E62CFEA299FF76C000FBB40 /* CareNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFE8299FF76C000FBB40 /* CareNavigatorViewController.swift */; };
+		3E62CFEB299FF76C000FBB40 /* CareNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFE8299FF76C000FBB40 /* CareNavigatorViewController.swift */; };
+		3E62CFED299FF777000FBB40 /* HealthChecks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFEC299FF777000FBB40 /* HealthChecks.storyboard */; };
+		3E62CFEE299FF777000FBB40 /* HealthChecks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFEC299FF777000FBB40 /* HealthChecks.storyboard */; };
+		3E62CFEF299FF777000FBB40 /* HealthChecks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFEC299FF777000FBB40 /* HealthChecks.storyboard */; };
+		3E62CFF1299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */; };
+		3E62CFF2299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */; };
+		3E62CFF3299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */; };
 		3E66F059290B437500D90EF6 /* Dependent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */; };
 		3E66F05A290B437500D90EF6 /* Dependent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */; };
 		3E66F05B290B437500D90EF6 /* Dependent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */; };
@@ -1415,6 +1433,12 @@
 		3E60A3FF2979B70D00BB20BE /* MedicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationService.swift; sourceTree = "<group>"; };
 		3E60A4032979B80100BB20BE /* ImmunizationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmunizationsService.swift; sourceTree = "<group>"; };
 		3E60A408297F012600BB20BE /* PDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFService.swift; sourceTree = "<group>"; };
+		3E62CFDC299FF739000FBB40 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		3E62CFE0299FF74F000FBB40 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		3E62CFE4299FF75E000FBB40 /* CareNavigator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CareNavigator.storyboard; sourceTree = "<group>"; };
+		3E62CFE8299FF76C000FBB40 /* CareNavigatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareNavigatorViewController.swift; sourceTree = "<group>"; };
+		3E62CFEC299FF777000FBB40 /* HealthChecks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HealthChecks.storyboard; sourceTree = "<group>"; };
+		3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChecksViewController.swift; sourceTree = "<group>"; };
 		3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dependent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3E66F058290B437500D90EF6 /* Dependent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dependent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3E66F05F290B45D200D90EF6 /* ImmunizationRecommendation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImmunizationRecommendation+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -2334,6 +2358,51 @@
 			path = "Communication message";
 			sourceTree = "<group>";
 		};
+		3E62CFD7299FF6CE000FBB40 /* 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3E62CFD9299FF6FC000FBB40 /* Dashboard */,
+				3E62CFDB299FF712000FBB40 /* HealthChecks */,
+				3E62CFDA299FF708000FBB40 /* CareNavigator */,
+			);
+			path = 2.0;
+			sourceTree = "<group>";
+		};
+		3E62CFD9299FF6FC000FBB40 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3E62CFDC299FF739000FBB40 /* Dashboard.storyboard */,
+				3E62CFE0299FF74F000FBB40 /* DashboardViewController.swift */,
+				3E62CFF4299FF8D5000FBB40 /* Cells */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		3E62CFDA299FF708000FBB40 /* CareNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				3E62CFE4299FF75E000FBB40 /* CareNavigator.storyboard */,
+				3E62CFE8299FF76C000FBB40 /* CareNavigatorViewController.swift */,
+			);
+			path = CareNavigator;
+			sourceTree = "<group>";
+		};
+		3E62CFDB299FF712000FBB40 /* HealthChecks */ = {
+			isa = PBXGroup;
+			children = (
+				3E62CFEC299FF777000FBB40 /* HealthChecks.storyboard */,
+				3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */,
+			);
+			path = HealthChecks;
+			sourceTree = "<group>";
+		};
+		3E62CFF4299FF8D5000FBB40 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3E6830F92940D10A00100402 /* Comments */ = {
 			isa = PBXGroup;
 			children = (
@@ -2754,6 +2823,7 @@
 		7944F67726F12613006B9444 /* BCVaccineCard */ = {
 			isa = PBXGroup;
 			children = (
+				3E62CFD7299FF6CE000FBB40 /* 2.0 */,
 				7944F6AE26F12A8B006B9444 /* Models */,
 				795AA715270F65E700E59FF1 /* NetworkLayer */,
 				7967E75426F9152600EEF510 /* Resources */,
@@ -3649,6 +3719,7 @@
 				29A4DF5327DA685100D5E901 /* ChipCollectionViewCell.xib in Resources */,
 				79218ABA27519E790063004E /* HealthRecordsUserCollectionViewCell.xib in Resources */,
 				79A15B0027FC07D500F8330D /* OnboardingCollectionViewCell.xib in Resources */,
+				3E62CFE6299FF75E000FBB40 /* CareNavigator.storyboard in Resources */,
 				7967E75026F9145700EEF510 /* BCSans-Regular.otf in Resources */,
 				2922C0D5286E17DC000FF4F7 /* LabOrderBannerTableViewCell.xib in Resources */,
 				2922C0AD286C73F8000FF4F7 /* HealthRecordDetailFieldTableViewCell.xib in Resources */,
@@ -3695,11 +3766,13 @@
 				29719547288212F600CA824A /* HealthVisitRecordDetailTableViewCell.xib in Resources */,
 				79218A9E275141800063004E /* GetARecordTableViewCell.xib in Resources */,
 				3E32322728B5FEB80067040C /* Recommendations.storyboard in Resources */,
+				3E62CFEE299FF777000FBB40 /* HealthChecks.storyboard in Resources */,
 				29547E5B27A2EC7700562958 /* LocalAuthView.xib in Resources */,
 				79BDA070270CAC9E00FF30AB /* HealthPass.storyboard in Resources */,
 				7944F6D726F12C00006B9444 /* VaxQRZoomedInView.xib in Resources */,
 				79BDA072270CB71D00FF30AB /* Records.storyboard in Resources */,
 				795AA76427155F6300E59FF1 /* NewsFeed.storyboard in Resources */,
+				3E62CFDE299FF739000FBB40 /* Dashboard.storyboard in Resources */,
 				294BD3C927AACFB200BD8D46 /* LocalAuthPrivacyView.xib in Resources */,
 				3E87F4B22901B117002F0A0E /* DependentListItemTableViewCell.xib in Resources */,
 				3E048CC7291183E900774278 /* InaccessibleDependentTableViewCell.xib in Resources */,
@@ -3763,6 +3836,7 @@
 				795AA77C2715652C00E59FF1 /* ResourceTableViewCell.xib in Resources */,
 				29719548288212F600CA824A /* HealthVisitRecordDetailTableViewCell.xib in Resources */,
 				79283452272A880900EE2710 /* TableViewButtonView.xib in Resources */,
+				3E62CFEF299FF777000FBB40 /* HealthChecks.storyboard in Resources */,
 				29788533279624EA00FF912D /* SettingsRowTableViewCell.xib in Resources */,
 				792834672731016600EE2710 /* CheckboxTableViewCell.xib in Resources */,
 				794BD65C2702EEC00084ADA8 /* AppStyleButton.xib in Resources */,
@@ -3798,6 +3872,7 @@
 				29A4DF5E27DEFCCC00D5E901 /* FilterRecordsView.xib in Resources */,
 				79BDA093270E9E2800FF30AB /* VaccineCardView.xib in Resources */,
 				794BD6632702EEC00084ADA8 /* BCSans-Bold.otf in Resources */,
+				3E62CFE7299FF75E000FBB40 /* CareNavigator.storyboard in Resources */,
 				79218AAC2751946A0063004E /* UserRecordListTableViewCell.xib in Resources */,
 				29788530279624E600FF912D /* SettingsAuthenticateTableViewCell.xib in Resources */,
 				3E31EA9429141F5000E344E6 /* ForceUpdateView.xib in Resources */,
@@ -3824,6 +3899,7 @@
 				79BDA08A270CEE8000FF30AB /* Localizable.strings in Resources */,
 				799E0B0027D13F43009C68FE /* Reusable.storyboard in Resources */,
 				79BDA085270CEE5E00FF30AB /* Records.storyboard in Resources */,
+				3E62CFDF299FF739000FBB40 /* Dashboard.storyboard in Resources */,
 				792834602730E63A00EE2710 /* InteractiveLabelTableViewCell.xib in Resources */,
 				29A4DF5B27DEFCCC00D5E901 /* ChipCollectionViewCell.xib in Resources */,
 				3E5924C5297086C900936CF1 /* EmptyTableViewCell.xib in Resources */,
@@ -3862,6 +3938,7 @@
 				798006002852C66E006E390F /* ChipCollectionViewCell.xib in Resources */,
 				798006012852C66E006E390F /* HealthRecordsUserCollectionViewCell.xib in Resources */,
 				798006022852C66E006E390F /* OnboardingCollectionViewCell.xib in Resources */,
+				3E62CFE5299FF75E000FBB40 /* CareNavigator.storyboard in Resources */,
 				798006032852C66E006E390F /* BCSans-Regular.otf in Resources */,
 				2922C0D4286E17DC000FF4F7 /* LabOrderBannerTableViewCell.xib in Resources */,
 				29E19FF9286C715C00C235EF /* HealthRecordDetailFieldTableViewCell.xib in Resources */,
@@ -3908,11 +3985,13 @@
 				29719546288212F600CA824A /* HealthVisitRecordDetailTableViewCell.xib in Resources */,
 				7980062A2852C66E006E390F /* GetARecordTableViewCell.xib in Resources */,
 				3E32322628B5FEB80067040C /* Recommendations.storyboard in Resources */,
+				3E62CFED299FF777000FBB40 /* HealthChecks.storyboard in Resources */,
 				7980062B2852C66E006E390F /* LocalAuthView.xib in Resources */,
 				7980062C2852C66E006E390F /* HealthPass.storyboard in Resources */,
 				7980062D2852C66E006E390F /* VaxQRZoomedInView.xib in Resources */,
 				7980062E2852C66E006E390F /* Records.storyboard in Resources */,
 				7980062F2852C66E006E390F /* NewsFeed.storyboard in Resources */,
+				3E62CFDD299FF739000FBB40 /* Dashboard.storyboard in Resources */,
 				798006302852C66E006E390F /* LocalAuthPrivacyView.xib in Resources */,
 				3E3DA94028FE8133009C500F /* DependentListItemTableViewCell.xib in Resources */,
 				3E048CC6291183E900774278 /* InaccessibleDependentTableViewCell.xib in Resources */,
@@ -4314,6 +4393,7 @@
 				795AA77F2715FC9B00E59FF1 /* ParseXMLData.swift in Sources */,
 				3E473780291090BC00B5BBA0 /* CovidTestsService.swift in Sources */,
 				2922C0DB286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.swift in Sources */,
+				3E62CFE2299FF74F000FBB40 /* DashboardViewController.swift in Sources */,
 				29547E5727A2EC5200562958 /* LocalAuthVIew.swift in Sources */,
 				293B32CC27D814EB0064BAAA /* CommentViewTableViewCell.swift in Sources */,
 				795AA72C271089F100E59FF1 /* GatewayVaccineCardResponse.swift in Sources */,
@@ -4369,6 +4449,7 @@
 				79218AA127518A5E0063004E /* CovidTestResultModel.swift in Sources */,
 				79BDA07B270CB89900FF30AB /* Strings.swift in Sources */,
 				293B32BE27D262F70064BAAA /* CommentsViewTableViewCell.swift in Sources */,
+				3E62CFF2299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */,
 				79218AA427518CC20063004E /* GatewayTestResultResponse.swift in Sources */,
 				3E6831302940D41200100402 /* HealthVisit+CoreDataProperties.swift in Sources */,
 				795AA76127155F0900E59FF1 /* ResourceViewController.swift in Sources */,
@@ -4430,6 +4511,7 @@
 				3E5924C1297086C900936CF1 /* EmptyTableViewCell.swift in Sources */,
 				291A0CB9282AC33B00035B0F /* Device.swift in Sources */,
 				2D9B39A02907171D00AE9FA1 /* HealthRecordsService.swift in Sources */,
+				3E62CFEA299FF76C000FBB40 /* CareNavigatorViewController.swift in Sources */,
 				7944F6BA26F12BC3006B9444 /* AppColours.swift in Sources */,
 				29736A482788EBD700CCB1D2 /* TestResult+CoreDataProperties.swift in Sources */,
 				7944F6E726F12C4E006B9444 /* GatewayFormViewController.swift in Sources */,
@@ -4654,6 +4736,7 @@
 				3E473781291090BC00B5BBA0 /* CovidTestsService.swift in Sources */,
 				797BB95E2764084300CD1645 /* StorageService+Patient.swift in Sources */,
 				2922C0DC286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.swift in Sources */,
+				3E62CFE3299FF74F000FBB40 /* DashboardViewController.swift in Sources */,
 				29788535279624F000FF912D /* ProfileAndSettingsViewController.swift in Sources */,
 				791C27CA27192D7C001A6E12 /* String+Localizable.swift in Sources */,
 				2D465B0728CB0438008B66D8 /* PDFAPIWorker.swift in Sources */,
@@ -4709,6 +4792,7 @@
 				29245D442755877A00F48642 /* Encodable+EXT.swift in Sources */,
 				794BD64F2702EEC00084ADA8 /* TextTableViewCell.swift in Sources */,
 				79932CAC2790F8F0007E8D92 /* AuthenticationViewController.swift in Sources */,
+				3E62CFF3299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */,
 				3EF0DF2D2953D16E00408A1E /* MobileConfigurationResponseObject.swift in Sources */,
 				3E6831312940D41200100402 /* HealthVisit+CoreDataProperties.swift in Sources */,
 				795AA76227155F0900E59FF1 /* ResourceViewController.swift in Sources */,
@@ -4770,6 +4854,7 @@
 				3E5924C2297086C900936CF1 /* EmptyTableViewCell.swift in Sources */,
 				794BD6532702EEC00084ADA8 /* CameraViewController.swift in Sources */,
 				2D9B39A12907171D00AE9FA1 /* HealthRecordsService.swift in Sources */,
+				3E62CFEB299FF76C000FBB40 /* CareNavigatorViewController.swift in Sources */,
 				794BD6542702EEC00084ADA8 /* AppColours.swift in Sources */,
 				294BD3D427B1D60B00BD8D46 /* HiddenRecordsTableViewCell.swift in Sources */,
 				79053CFA2773B8AF00D01A29 /* BackgroundTestResultUpdateAPIWorker.swift in Sources */,
@@ -4971,6 +5056,7 @@
 				798005A42852C66E006E390F /* APIClient.swift in Sources */,
 				3E47377F291090BC00B5BBA0 /* CovidTestsService.swift in Sources */,
 				2922C0DA286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.swift in Sources */,
+				3E62CFE1299FF74F000FBB40 /* DashboardViewController.swift in Sources */,
 				798005A52852C66E006E390F /* ParseXMLData.swift in Sources */,
 				798005A62852C66E006E390F /* LocalAuthVIew.swift in Sources */,
 				798005A72852C66E006E390F /* CommentViewTableViewCell.swift in Sources */,
@@ -5026,6 +5112,7 @@
 				798005C72852C66E006E390F /* NewsFeedViewController.swift in Sources */,
 				798005C82852C66E006E390F /* SettingsSectionHeaderView.swift in Sources */,
 				798005C92852C66E006E390F /* CovidTestResultModel.swift in Sources */,
+				3E62CFF1299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */,
 				798005CA2852C66E006E390F /* Strings.swift in Sources */,
 				3E68312F2940D41200100402 /* HealthVisit+CoreDataProperties.swift in Sources */,
 				798005CB2852C66E006E390F /* CommentsViewTableViewCell.swift in Sources */,
@@ -5087,6 +5174,7 @@
 				3E5924C0297086C900936CF1 /* EmptyTableViewCell.swift in Sources */,
 				798005EC2852C66E006E390F /* BackgroundTestResultUpdateAPIWorker.swift in Sources */,
 				2D9B399F2907171D00AE9FA1 /* HealthRecordsService.swift in Sources */,
+				3E62CFE9299FF76C000FBB40 /* CareNavigatorViewController.swift in Sources */,
 				798005ED2852C66E006E390F /* Device.swift in Sources */,
 				798005EE2852C66E006E390F /* AppColours.swift in Sources */,
 				798005EF2852C66E006E390F /* TestResult+CoreDataProperties.swift in Sources */,
