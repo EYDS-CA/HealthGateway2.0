@@ -16,7 +16,6 @@ class POCTabBarController: UITabBarController {
         return POCTabBarController()
     }
     
-    private var previousSelectedIndex: Int?
     private let authManager = AuthManager()
     private var authWorker: AuthenticatedHealthRecordsAPIWorker?
     
@@ -43,7 +42,6 @@ class POCTabBarController: UITabBarController {
     private func setup(selectedIndex: Int) {
         self.tabBar.tintColor = AppColours.appBlue
         self.tabBar.barTintColor = .white
-        self.delegate = self
         setTabs()
     }
     
@@ -61,7 +59,6 @@ class POCTabBarController: UITabBarController {
             self.viewControllers = setViewControllers(tabs: authenticatedTabs())
         } else {
             self.viewControllers = setViewControllers(tabs: unAuthenticatedTabs())
-            // TODO: pop the profile VC or something
         }
     }
     
@@ -86,18 +83,5 @@ class POCTabBarController: UITabBarController {
         viewController.title = properties.title
         let navController = CustomNavigationController.init(rootViewController: viewController)
         return navController
-    }
-}
-
-extension POCTabBarController: UITabBarControllerDelegate {
-    
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        // Save the previously selected index, so that we can check if the tab was selected again
-        self.previousSelectedIndex = tabBarController.selectedIndex
-        return true
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        NotificationCenter.default.post(name: .tabChanged, object: nil, userInfo: ["viewController": viewController])
     }
 }
