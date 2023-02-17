@@ -33,7 +33,7 @@ class BaseViewController: UIViewController, NavigationSetupProtocol, Theme {
     }
     
     var getCurrentTab: TabBarVCs {
-        return TabBarVCs.init(rawValue: (self.tabBarController as? TabBarController)?.selectedIndex ?? 0) ?? .home
+        return TabBarVCs.init(rawValue: (self.tabBarController as? TabBarController)?.selectedIndex ?? 0) ?? .records
     }
     
     var getTabBarController: TabBarController? {
@@ -195,8 +195,8 @@ extension BaseViewController {
                             DispatchQueue.main.async {
 
                                 let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentStacks.recordsStack, actioningPatient: details.patient, addedRecord: nil)
-                                let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack, recentlyAddedCardId: details.id, fedPassStringToOpen: fedPass, fedPassAddedFromHealthPassVC: fedPassAddedFromHealthPassVC)
-                                let values = ActionScenarioValues(currentTab: self.getCurrentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails)
+//                                let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack, recentlyAddedCardId: details.id, fedPassStringToOpen: fedPass, fedPassAddedFromHealthPassVC: fedPassAddedFromHealthPassVC)
+                                let values = ActionScenarioValues(currentTab: self.getCurrentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: nil)
                                 self.routerWorker?.routingAction(scenario: .ManualFetch(values: values))
                             }
                         } else {

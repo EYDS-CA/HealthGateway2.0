@@ -53,16 +53,16 @@ enum AppUserActionScenarios {
 
 struct ActionScenarioValues {
     let currentTab: TabBarVCs
-    var affectedTabs: [TabBarVCs] = [.healthPass, .records]
+    var affectedTabs: [TabBarVCs] = [.records]
     var recordFlowDetails: RecordsFlowDetails?
-    var passesFlowDetails: PassesFlowDetails?
+    var passesFlowDetails: PassesFlowDetails? = nil
     var loginSourceVC: LoginVCSource?
     var authenticationStatus: AuthenticationViewController.AuthenticationStatus?
 }
 
 struct CurrentRecordsAndPassesStacks {
     let recordsStack: [RecordsFlowVCs]
-    let passesStack: [PassesFlowVCs]
+    let passesStack: [PassesFlowVCs]? 
 }
 
 enum RecordsFlowVCs {
@@ -193,7 +193,7 @@ class RouterWorker: NSObject {
     public func routingAction(scenario: AppUserActionScenarios, goToTab: TabBarVCs? = nil, delayInSeconds: Double = 0.0) {
         let stack = setupRecordsAndPassesNavStacks(scenario: scenario)
         self.delegate?.recordsActionScenario(viewControllerStack: stack.recordsStack, goToTab: goToTab == .records, delayInSeconds: delayInSeconds)
-        self.delegate?.passesActionScenario(viewControllerStack: stack.passesStack, goToTab: goToTab == .healthPass, delayInSeconds: delayInSeconds)
+//        self.delegate?.passesActionScenario(viewControllerStack: stack.passesStack, goToTab: goToTab == .healthPass, delayInSeconds: delayInSeconds)
     }
 }
 
@@ -248,7 +248,8 @@ extension RouterWorker {
     }
     
     private func initialLaunchPassesStack(values: ActionScenarioValues) -> [BaseViewController] {
-        guard values.affectedTabs.contains(.healthPass) else { return [] }
+//        guard values.affectedTabs.contains(.healthPass) else { return [] }
+        return []
         let vc = HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: nil)
         return [vc]
     }
@@ -308,7 +309,7 @@ extension RouterWorker {
     }
     
     private func authFetchPassesStack(values: ActionScenarioValues) -> [BaseViewController] {
-        if values.currentTab == .healthPass {
+        if false {
             switch currentNumberOfVaccineCards {
             case .NoCards, .OneCard:
                 let vc = HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: values.passesFlowDetails?.fedPassStringToOpen)
@@ -338,7 +339,7 @@ extension RouterWorker {
     }
     
     private func manualFetchPassesStack(values: ActionScenarioValues) -> [BaseViewController] {
-        if values.currentTab == .healthPass {
+        if false {
             switch currentNumberOfVaccineCards {
             case .NoCards, .OneCard:
                 let vc = HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: values.passesFlowDetails?.fedPassStringToOpen)
@@ -374,8 +375,9 @@ extension RouterWorker {
     }
     
     private func manualDeletePassesStack(values: ActionScenarioValues) -> [BaseViewController] {
-        if values.currentTab == .healthPass {
-            guard values.affectedTabs.contains(.healthPass) else { return [] }
+        if false {
+//            guard values.affectedTabs.contains(.healthPass) else { return [] }
+            return []
             switch currentNumberOfVaccineCards {
             case .NoCards, .OneCard:
                 let vc = HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: nil)
@@ -408,17 +410,19 @@ extension RouterWorker {
     }
     
     private func logoutPassesStack(values: ActionScenarioValues) -> [BaseViewController] {
-        if values.currentTab == .healthPass {
+        if false {
             switch currentNumberOfVaccineCards {
             case .NoCards, .OneCard:
                 let vc1 = HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: nil)
-                guard values.currentTab == .healthPass else { return [vc1] }
+//                guard values.currentTab == .healthPass else { return [vc1] }
+                return [vc1]
                 let vc2 = ProfileAndSettingsViewController.constructProfileAndSettingsViewController()
                 return [vc1, vc2]
             case .MultipleCards:
                 let vc1 = HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: nil)
                 let vc2 = CovidVaccineCardsViewController.constructCovidVaccineCardsViewController(recentlyAddedCardId: nil, fedPassStringToOpen: nil)
-                guard values.currentTab == .healthPass else { return [vc1, vc2] }
+//                guard values.currentTab == .healthPass else { return [vc1, vc2] }
+                return [vc1, vc2]
                 let vc3 = ProfileAndSettingsViewController.constructProfileAndSettingsViewController()
                 return [vc1, vc2, vc3]
             }
@@ -440,9 +444,10 @@ extension RouterWorker {
     }
     
     private func clearAllDataPassesStack(values: ActionScenarioValues) -> [BaseViewController] {
-        if values.currentTab == .healthPass {
+        if false {
             let vc1 = HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: nil)
-            guard values.currentTab == .healthPass else { return [vc1] }
+//            guard values.currentTab == .healthPass else { return [vc1] }
+            return [vc1]
             let vc2 = ProfileAndSettingsViewController.constructProfileAndSettingsViewController()
             let vc3 = SecurityAndDataViewController.constructSecurityAndDataViewController()
             return [vc1, vc2, vc3]
