@@ -39,11 +39,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.showDBLoadError()
             } else {
                 self.coreDataContext = context
-                self.configure()
+                self.configurePOC()
             }
         }
         
         return true
+    }
+    
+    private func configurePOC() {
+        AppStates.shared.listen()
+        listenToAppState()
+        authManager = AuthManager()
+        initNetworkListener()
+        initKeyboardManager()
+        
+        let vc = POCTabBarController.construct()
+        self.window?.rootViewController = vc
     }
     
     private func configure() {
@@ -197,14 +208,7 @@ extension AppDelegate {
 // MARK: Root setup
 extension AppDelegate {
     private func setupRootViewController() {
-        let unseen = Defaults.unseenOnBoardingScreens()
-        guard let first = unseen.first else {
-            let vc = TabBarController.constructTabBarController()
-            self.window?.rootViewController = vc
-            return
-        }
-        
-        let vc = InitialOnboardingViewController.constructInitialOnboardingViewController(startScreenNumber: first, screensToShow: unseen)
+        let vc = TabBarController.constructTabBarController()
         self.window?.rootViewController = vc
     }
 }

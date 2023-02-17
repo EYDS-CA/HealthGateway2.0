@@ -426,6 +426,15 @@
 		3E62CFF1299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */; };
 		3E62CFF2299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */; };
 		3E62CFF3299FF78A000FBB40 /* HealthChecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */; };
+		3E62CFF8299FFEF1000FBB40 /* POCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF7299FFEF1000FBB40 /* POCTabBarController.swift */; };
+		3E62CFFB299FFF20000FBB40 /* POCTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFFA299FFF20000FBB40 /* POCTabBar.storyboard */; };
+		3E62CFFD29A0001B000FBB40 /* POCTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFFC29A0001B000FBB40 /* POCTabs.swift */; };
+		3E62CFFE29A001A1000FBB40 /* POCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF7299FFEF1000FBB40 /* POCTabBarController.swift */; };
+		3E62CFFF29A001A1000FBB40 /* POCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFF7299FFEF1000FBB40 /* POCTabBarController.swift */; };
+		3E62D00029A001A5000FBB40 /* POCTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFFA299FFF20000FBB40 /* POCTabBar.storyboard */; };
+		3E62D00129A001A5000FBB40 /* POCTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62CFFA299FFF20000FBB40 /* POCTabBar.storyboard */; };
+		3E62D00229A001A9000FBB40 /* POCTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFFC29A0001B000FBB40 /* POCTabs.swift */; };
+		3E62D00329A001A9000FBB40 /* POCTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62CFFC29A0001B000FBB40 /* POCTabs.swift */; };
 		3E66F059290B437500D90EF6 /* Dependent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */; };
 		3E66F05A290B437500D90EF6 /* Dependent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */; };
 		3E66F05B290B437500D90EF6 /* Dependent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */; };
@@ -1474,6 +1483,9 @@
 		3E62CFE8299FF76C000FBB40 /* CareNavigatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareNavigatorViewController.swift; sourceTree = "<group>"; };
 		3E62CFEC299FF777000FBB40 /* HealthChecks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HealthChecks.storyboard; sourceTree = "<group>"; };
 		3E62CFF0299FF78A000FBB40 /* HealthChecksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChecksViewController.swift; sourceTree = "<group>"; };
+		3E62CFF7299FFEF1000FBB40 /* POCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCTabBarController.swift; sourceTree = "<group>"; };
+		3E62CFFA299FFF20000FBB40 /* POCTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = POCTabBar.storyboard; sourceTree = "<group>"; };
+		3E62CFFC29A0001B000FBB40 /* POCTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCTabs.swift; sourceTree = "<group>"; };
 		3E66F057290B437500D90EF6 /* Dependent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dependent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3E66F058290B437500D90EF6 /* Dependent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dependent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3E66F05F290B45D200D90EF6 /* ImmunizationRecommendation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImmunizationRecommendation+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -2415,6 +2427,7 @@
 		3E62CFD7299FF6CE000FBB40 /* 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3E62CFF5299FFECE000FBB40 /* TabBar */,
 				3E62CFD9299FF6FC000FBB40 /* Dashboard */,
 				3E62CFDB299FF712000FBB40 /* HealthChecks */,
 				3E62CFDA299FF708000FBB40 /* CareNavigator */,
@@ -2455,6 +2468,16 @@
 			children = (
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3E62CFF5299FFECE000FBB40 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				3E62CFF7299FFEF1000FBB40 /* POCTabBarController.swift */,
+				3E62CFFA299FFF20000FBB40 /* POCTabBar.storyboard */,
+				3E62CFFC29A0001B000FBB40 /* POCTabs.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		3E6830F92940D10A00100402 /* Comments */ = {
@@ -3868,6 +3891,7 @@
 				29A4DF4727DA674100D5E901 /* FilterRecordsView.xib in Resources */,
 				79218AE027557F7D0063004E /* StaticPositiveTestTableViewCell.xib in Resources */,
 				7944F68026F12613006B9444 /* Main.storyboard in Resources */,
+				3E62D00029A001A5000FBB40 /* POCTabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3984,6 +4008,7 @@
 				3E87F4B12901B117002F0A0E /* DependentListItemTableViewCell.xib in Resources */,
 				799050C1273C8344006CD726 /* GetRecordsView.xib in Resources */,
 				794BD66B2702EEC00084ADA8 /* Main.storyboard in Resources */,
+				3E62D00129A001A5000FBB40 /* POCTabBar.storyboard in Resources */,
 				79218AB3275196150063004E /* HealthRecordsUserView.xib in Resources */,
 				2922C0CD286DFDC0000FF4F7 /* CovidImmunizationBannerTableViewCell.xib in Resources */,
 			);
@@ -4091,6 +4116,7 @@
 				798006442852C66E006E390F /* FilterRecordsView.xib in Resources */,
 				798006452852C66E006E390F /* StaticPositiveTestTableViewCell.xib in Resources */,
 				798006462852C66E006E390F /* Main.storyboard in Resources */,
+				3E62CFFB299FFF20000FBB40 /* POCTabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4445,9 +4471,11 @@
 				7944F70E26F3A0C1006B9444 /* QRRetrievalMethodViewController.swift in Sources */,
 				3E473788291090EB00B5BBA0 /* VaccineCardService.swift in Sources */,
 				3E6831362940D41200100402 /* CovidLabTestResult+CoreDataClass.swift in Sources */,
+				3E62D00229A001A9000FBB40 /* POCTabs.swift in Sources */,
 				3E31EA7F2913951D00E344E6 /* TabBarController + UpdateManager.swift in Sources */,
 				29A5B6D827B55B65006A9BA7 /* Pharmacy+CoreDataProperties.swift in Sources */,
 				3E6831012940D14100100402 /* PostCommentResponse.swift in Sources */,
+				3E62CFFE29A001A1000FBB40 /* POCTabBarController.swift in Sources */,
 				3E7306E828B5F123007FED05 /* ReccomandationTableViewCell.swift in Sources */,
 				2979679F27C536E20019EE9B /* LaboratoryTest+CoreDataClass.swift in Sources */,
 				791C27CC2719DB3D001A6E12 /* QueueItCachedObject.swift in Sources */,
@@ -4794,9 +4822,11 @@
 				3E473789291090EB00B5BBA0 /* VaccineCardService.swift in Sources */,
 				3E31EA802913951D00E344E6 /* TabBarController + UpdateManager.swift in Sources */,
 				7928345E2730E63A00EE2710 /* InteractiveLabelTableViewCell.swift in Sources */,
+				3E62D00329A001A9000FBB40 /* POCTabs.swift in Sources */,
 				3E6831372940D41200100402 /* CovidLabTestResult+CoreDataClass.swift in Sources */,
 				3E6831022940D14100100402 /* PostCommentResponse.swift in Sources */,
 				3E7306E628B5F122007FED05 /* ReccomandationTableViewCell.swift in Sources */,
+				3E62CFFF29A001A1000FBB40 /* POCTabBarController.swift in Sources */,
 				79932CB02790FB4D007E8D92 /* AttributedString+EXT.swift in Sources */,
 				794BD6452702EEC00084ADA8 /* UIColor+EXT.swift in Sources */,
 				297967A027C536E20019EE9B /* LaboratoryTest+CoreDataClass.swift in Sources */,
@@ -5120,9 +5150,11 @@
 				7980059A2852C66E006E390F /* InteractiveLabelTableViewCell.swift in Sources */,
 				3E473787291090EB00B5BBA0 /* VaccineCardService.swift in Sources */,
 				3E6831352940D41200100402 /* CovidLabTestResult+CoreDataClass.swift in Sources */,
+				3E62CFFD29A0001B000FBB40 /* POCTabs.swift in Sources */,
 				3E31EA7E2913951D00E344E6 /* TabBarController + UpdateManager.swift in Sources */,
 				7980059B2852C66E006E390F /* QRRetrievalMethodViewController.swift in Sources */,
 				3E6831002940D14100100402 /* PostCommentResponse.swift in Sources */,
+				3E62CFF8299FFEF1000FBB40 /* POCTabBarController.swift in Sources */,
 				3E7306E428B5EF32007FED05 /* ReccomandationTableViewCell.swift in Sources */,
 				7980059C2852C66E006E390F /* Pharmacy+CoreDataProperties.swift in Sources */,
 				7980059D2852C66E006E390F /* LaboratoryTest+CoreDataClass.swift in Sources */,
