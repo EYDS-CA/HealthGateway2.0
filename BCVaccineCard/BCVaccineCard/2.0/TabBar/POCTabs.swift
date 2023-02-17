@@ -8,7 +8,7 @@
 import UIKit
 
 enum POCTabs: Int, CaseIterable {
-    case Dashboard = 0, HealthChecks, UnAuthenticatedRecords, AuthenticatedRecords, CareNavigator
+    case Dashboard = 0, SrviceFinder, UnAuthenticatedRecords, AuthenticatedRecords
     
     var getIndexOfTab: Int {
         return self.rawValue
@@ -29,11 +29,11 @@ enum POCTabs: Int, CaseIterable {
                               unselectedTabBarImage: #imageLiteral(resourceName: "home-tab-unselected"),// TODO
                               baseViewController: DashboardViewController.construct())
        
-        case .HealthChecks:
-            return Properties(title: "HealthChecks",
+        case .SrviceFinder:
+            return Properties(title: "SrviceFinder",
                               selectedTabBarImage: #imageLiteral(resourceName: "passes-tab-selected"),
                               unselectedTabBarImage: #imageLiteral(resourceName: "passes-tab-unselected"),
-                              baseViewController: HealthChecksViewController.construct())
+                              baseViewController: SrviceFinderViewController.construct())
         case .UnAuthenticatedRecords:
             return Properties(title: "Records",
                               selectedTabBarImage: #imageLiteral(resourceName: "records-tab-selected"),// TODO
@@ -44,11 +44,6 @@ enum POCTabs: Int, CaseIterable {
                               selectedTabBarImage: #imageLiteral(resourceName: "records-tab-selected"),// TODO
                               unselectedTabBarImage: #imageLiteral(resourceName: "records-tab-unselected"),// TODO
                               baseViewController: UsersListOfRecordsViewController.constructUsersListOfRecordsViewController(patient: StorageService.shared.fetchAuthenticatedPatient(), authenticated: true, navStyle: .singleUser, hasUpdatedUnauthPendingTest: false))
-        case .CareNavigator:
-            return Properties(title: "CareNavigator",
-                              selectedTabBarImage: #imageLiteral(resourceName: "dependent-tab-selected"), // TODO
-                              unselectedTabBarImage: #imageLiteral(resourceName: "dependent-tab-unselected"), // TODO
-                              baseViewController: CareNavigatorViewController.construct())
         }
     }
 }
