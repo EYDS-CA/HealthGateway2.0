@@ -395,13 +395,13 @@ extension CovidVaccineCardsViewController {
             }
             DispatchQueue.main.async {
                 let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentStacks.recordsStack)
-                let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
+//                let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
                 if cards.count == 0 || (cards.count == 1 && cards.first?.authenticated == true) {
                     // This means that the user has removed all unauthenticated
-                    let values = ActionScenarioValues(currentTab: self.getCurrentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails)
+                    let values = ActionScenarioValues(currentTab: self.getCurrentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: nil)
                     self.routerWorker?.routingAction(scenario: .ManuallyDeletedAllOfAnUnauthPatientRecords(values: values))
                 } else {
-                    let values = ActionScenarioValues(currentTab: self.getCurrentTab, affectedTabs: [.records], recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails)
+                    let values = ActionScenarioValues(currentTab: self.getCurrentTab, affectedTabs: [.records], recordFlowDetails: recordFlowDetails, passesFlowDetails: nil)
                     self.routerWorker?.routingAction(scenario: .ManuallyDeletedAllOfAnUnauthPatientRecords(values: values))
                     
                 }

@@ -85,9 +85,9 @@ class ProfileAndSettingsViewController: BaseViewController {
                 return
             }
             let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentStacks.recordsStack)
-            let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
+//            let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
             let currentTab = self.getCurrentTab
-            let scenario = AppUserActionScenarios.LoginSpecialRouting(values: ActionScenarioValues(currentTab: currentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails, loginSourceVC: .ProfileAndSettingsVC, authenticationStatus: authenticationStatus))
+            let scenario = AppUserActionScenarios.LoginSpecialRouting(values: ActionScenarioValues(currentTab: currentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: nil, loginSourceVC: .ProfileAndSettingsVC, authenticationStatus: authenticationStatus))
             self.routerWorker?.routingAction(scenario: scenario, delayInSeconds: 0.5)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.navigationController?.navigationBar.isUserInteractionEnabled = true
@@ -252,8 +252,8 @@ extension ProfileAndSettingsViewController: UITableViewDelegate, UITableViewData
 //            NotificationCenter.default.post(name: .resetHealthRecordsScreenOnLogout, object: nil, userInfo: nil)
             DispatchQueue.main.async {
                 let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentStacks.recordsStack)
-                let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
-                let values = ActionScenarioValues(currentTab: self.getCurrentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails)
+//                let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
+                let values = ActionScenarioValues(currentTab: self.getCurrentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: nil)
                 self.routerWorker?.routingAction(scenario: .Logout(values: values))
                 
             }

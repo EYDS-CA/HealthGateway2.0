@@ -8,7 +8,8 @@
 import UIKit
 
 enum TabBarVCs: Int {
-    case home = 0, records, healthPass, dependant ,resource
+//    case home = 0, records, healthPass, dependant ,resource
+    case records = 0
 //    case newsFeed
     
     var getIndexOfTab: Int {
@@ -24,16 +25,16 @@ enum TabBarVCs: Int {
     
     var properties: Properties? {
         switch self {
-        case .home:
-            return Properties(title: "Home", selectedTabBarImage: #imageLiteral(resourceName: "home-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "home-tab-unselected"), baseViewController: HomeScreenViewController.constructHomeScreenViewController())
+//        case .home:
+//            return Properties(title: "Home", selectedTabBarImage: #imageLiteral(resourceName: "home-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "home-tab-unselected"), baseViewController: HomeScreenViewController.constructHomeScreenViewController())
         case .records:
             return Properties(title: .records, selectedTabBarImage: #imageLiteral(resourceName: "records-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "records-tab-unselected"), baseViewController: HealthRecordsViewController.constructHealthRecordsViewController())
-        case .healthPass:
-            return Properties(title: .passes, selectedTabBarImage: #imageLiteral(resourceName: "passes-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "passes-tab-unselected"), baseViewController: HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: nil))
-        case .dependant:
-            return Properties(title: .dependent, selectedTabBarImage: #imageLiteral(resourceName: "dependent-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "dependent-tab-unselected"), baseViewController: DependentsHomeViewController.constructDependentsHomeViewController(patient: StorageService.shared.fetchAuthenticatedPatient()))
-        case .resource:
-            return Properties(title: .resources, selectedTabBarImage: #imageLiteral(resourceName: "resource-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "resource-tab-unselected"), baseViewController: ResourceViewController.constructResourceViewController())
+//        case .healthPass:
+//            return Properties(title: .passes, selectedTabBarImage: #imageLiteral(resourceName: "passes-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "passes-tab-unselected"), baseViewController: HealthPassViewController.constructHealthPassViewController(fedPassStringToOpen: nil))
+//        case .dependant:
+//            return Properties(title: .dependent, selectedTabBarImage: #imageLiteral(resourceName: "dependent-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "dependent-tab-unselected"), baseViewController: DependentsHomeViewController.constructDependentsHomeViewController(patient: StorageService.shared.fetchAuthenticatedPatient()))
+//        case .resource:
+//            return Properties(title: .resources, selectedTabBarImage: #imageLiteral(resourceName: "resource-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "resource-tab-unselected"), baseViewController: ResourceViewController.constructResourceViewController())
 //        case .newsFeed:
 //            return Properties(title: .newsFeed, selectedTabBarImage: #imageLiteral(resourceName: "news-feed-tab-selected"), unselectedTabBarImage: #imageLiteral(resourceName: "news-feed-tab-unselected"), baseViewController: NewsFeedViewController.constructNewsFeedViewController())
         }
@@ -113,8 +114,8 @@ class TabBarController: UITabBarController {
     
     private func customRoutingForRecordsTab(authStatus: AuthenticationViewController.AuthenticationStatus) {
         let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentRecordsFlow())
-        let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentPassesFlow())
-        let scenario = AppUserActionScenarios.LoginSpecialRouting(values: ActionScenarioValues(currentTab: .home, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails, loginSourceVC: .AfterOnboarding, authenticationStatus: authStatus))
+//        let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentPassesFlow())
+        let scenario = AppUserActionScenarios.LoginSpecialRouting(values: ActionScenarioValues(currentTab: .records, recordFlowDetails: recordFlowDetails, passesFlowDetails: nil, loginSourceVC: .AfterOnboarding, authenticationStatus: authStatus))
         self.routerWorker?.routingAction(scenario: scenario, delayInSeconds: 0.5)
     }
 
@@ -122,8 +123,8 @@ class TabBarController: UITabBarController {
         self.tabBar.tintColor = AppColours.appBlue
         self.tabBar.barTintColor = .white
         self.delegate = self
-        self.viewControllers = setViewControllers(withVCs: [.home, .records, .healthPass, .dependant])
-        self.scrapeDBForEdgeCaseRecords(authManager: AuthManager(), currentTab: TabBarVCs.init(rawValue: self.selectedIndex) ?? .home, onActualLaunchCheck: true)
+        self.viewControllers = setViewControllers(withVCs: [.records])
+        self.scrapeDBForEdgeCaseRecords(authManager: AuthManager(), currentTab: TabBarVCs.init(rawValue: self.selectedIndex) ?? .records, onActualLaunchCheck: true)
         self.selectedIndex = selectedIndex
         setupObserver()
         postBackgroundAuthFetch()
@@ -248,9 +249,9 @@ class TabBarController: UITabBarController {
 extension TabBarController {
     private func resetRecordsTab() {
         let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentRecordsFlow())
-        let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentPassesFlow())
-        let currentTab = TabBarVCs.init(rawValue: self.selectedIndex) ?? .home
-        let scenario = AppUserActionScenarios.TermsOfServiceRejected(values: ActionScenarioValues(currentTab: currentTab, affectedTabs: [.records], recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails, loginSourceVC: nil, authenticationStatus: nil))
+//        let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentPassesFlow())
+        let currentTab = TabBarVCs.init(rawValue: self.selectedIndex) ?? .records
+        let scenario = AppUserActionScenarios.TermsOfServiceRejected(values: ActionScenarioValues(currentTab: currentTab, affectedTabs: [.records], recordFlowDetails: recordFlowDetails, passesFlowDetails: nil, loginSourceVC: nil, authenticationStatus: nil))
         self.routerWorker?.routingAction(scenario: scenario, delayInSeconds: 0.0)
     }
 }
@@ -286,11 +287,11 @@ extension TabBarController: AuthenticatedHealthRecordsAPIWorkerDelegate {
         if resetHealthRecordsTab {
             guard let patient = StorageService.shared.fetchAuthenticatedPatient() else { return }
             DispatchQueue.main.async {
-                let currentTab = TabBarVCs.init(rawValue: self.selectedIndex) ?? .home
+                let currentTab = TabBarVCs.init(rawValue: self.selectedIndex) ?? .records
                 let flowStack = self.getCurrentRecordsAndPassesFlows()
                 let recordFlowDetails = RecordsFlowDetails(currentStack: flowStack.recordsStack, actioningPatient: patient, addedRecord: nil)
-                let passesFlowDetails = PassesFlowDetails(currentStack: flowStack.passesStack)
-                self.routerWorker?.routingAction(scenario: .AuthenticatedFetch(values: ActionScenarioValues(currentTab: currentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails, loginSourceVC: loginSourceVC)))
+//                let passesFlowDetails = PassesFlowDetails(currentStack: flowStack.passesStack)
+                self.routerWorker?.routingAction(scenario: .AuthenticatedFetch(values: ActionScenarioValues(currentTab: currentTab, recordFlowDetails: recordFlowDetails, passesFlowDetails: nil, loginSourceVC: loginSourceVC)))
             }
         }
         // TODO: Make this a little more reusable - hacky approach
@@ -339,7 +340,7 @@ extension TabBarController {
             self.routerWorker?.routingAction(scenario: AppUserActionScenarios.InitialAppLaunch(values: values))
         } else if onActualLaunchCheck == true {
             // In the event that there is an auth token, then user us logged in and we have to reset stack accordingly
-            self.routerWorker?.routingAction(scenario: .InitialAppLaunch(values: ActionScenarioValues(currentTab: TabBarVCs.init(rawValue: self.selectedIndex) ?? .home, affectedTabs: [.records], recordFlowDetails: nil, passesFlowDetails: nil)))
+            self.routerWorker?.routingAction(scenario: .InitialAppLaunch(values: ActionScenarioValues(currentTab: TabBarVCs.init(rawValue: self.selectedIndex) ?? .records, affectedTabs: [.records], recordFlowDetails: nil, passesFlowDetails: nil)))
         }
     }
 
@@ -355,10 +356,10 @@ extension TabBarController: RouterWorkerDelegate {
     }
     
     func passesActionScenario(viewControllerStack: [BaseViewController], goToTab: Bool, delayInSeconds: Double) {
-        DispatchQueue.main.async {
-            let goToPassesTab = goToTab ? TabBarVCs.healthPass : nil
-            self.resetTab(tabBarVC: .healthPass, viewControllerStack: viewControllerStack, goToTab: goToPassesTab, delayInSeconds: delayInSeconds)
-        }
+//        DispatchQueue.main.async {
+//            let goToPassesTab = goToTab ? TabBarVCs.healthPass : nil
+//            self.resetTab(tabBarVC: .healthPass, viewControllerStack: viewControllerStack, goToTab: goToPassesTab, delayInSeconds: delayInSeconds)
+//        }
     }
 
 }
@@ -406,8 +407,8 @@ extension TabBarController {
 extension TabBarController {
     public func getCurrentRecordsAndPassesFlows() -> CurrentRecordsAndPassesStacks {
         let recordsStack = self.getCurrentRecordsFlow()
-        let passesStack = self.getCurrentPassesFlow()
-        return CurrentRecordsAndPassesStacks(recordsStack: recordsStack, passesStack: passesStack)
+//        let passesStack = self.getCurrentPassesFlow()
+        return CurrentRecordsAndPassesStacks(recordsStack: recordsStack, passesStack: nil)
     }
     
     private func getCurrentRecordsFlow() -> [RecordsFlowVCs] {
@@ -421,14 +422,14 @@ extension TabBarController {
         return flow
     }
     
-    private func getCurrentPassesFlow() -> [PassesFlowVCs] {
-        guard let vcs = (self.viewControllers?[TabBarVCs.healthPass.rawValue] as? CustomNavigationController)?.viewControllers as? [BaseViewController] else { return [] }
-        var flow: [PassesFlowVCs] = []
-        for vc in vcs {
-            if let type = vc.getPassesFlowType {
-                flow.append(type)
-            }
-        }
-        return flow
-    }
+//    private func getCurrentPassesFlow() -> [PassesFlowVCs] {
+//        guard let vcs = (self.viewControllers?[TabBarVCs.healthPass.rawValue] as? CustomNavigationController)?.viewControllers as? [BaseViewController] else { return [] }
+//        var flow: [PassesFlowVCs] = []
+//        for vc in vcs {
+//            if let type = vc.getPassesFlowType {
+//                flow.append(type)
+//            }
+//        }
+//        return flow
+//    }
 }

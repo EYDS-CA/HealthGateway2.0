@@ -197,14 +197,17 @@ extension AppDelegate {
 // MARK: Root setup
 extension AppDelegate {
     private func setupRootViewController() {
-        let unseen = Defaults.unseenOnBoardingScreens()
-        guard let first = unseen.first else {
-            let vc = TabBarController.constructTabBarController()
-            self.window?.rootViewController = vc
-            return
-        }
+//        let unseen = Defaults.unseenOnBoardingScreens()
+//        guard let first = unseen.first else {
+//            let vc = TabBarController.constructTabBarController()
+//            self.window?.rootViewController = vc
+//            return
+//        }
+//
+//        let vc = InitialOnboardingViewController.constructInitialOnboardingViewController(startScreenNumber: first, screensToShow: unseen)
+//        self.window?.rootViewController = vc
         
-        let vc = InitialOnboardingViewController.constructInitialOnboardingViewController(startScreenNumber: first, screensToShow: unseen)
+        let vc = TabBarController.constructTabBarController()
         self.window?.rootViewController = vc
     }
 }
