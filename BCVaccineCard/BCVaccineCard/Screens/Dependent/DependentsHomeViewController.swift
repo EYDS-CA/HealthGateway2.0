@@ -22,7 +22,7 @@ class DependentsHomeViewController: BaseDependentViewController {
     private var patient: Patient? = nil
     private let emptyLogoTag = 23412
     private let authManager = AuthManager()
-    private let storageService = StorageService()
+    private let storageService = StorageService.shared
     
     private var blockDependentSelection: Bool = false
     fileprivate var lastKnowContentOfsset: CGFloat = 0
@@ -471,7 +471,15 @@ extension DependentsHomeViewController: InaccessibleDependentDelegate {
 // MARK: Auth
 extension DependentsHomeViewController {
     private func authenticate(initialView: AuthenticationViewController.InitialView, fromTab: TabBarVCs) {
-        self.showLogin(initialView: initialView, sourceVC: .Dependents, presentingViewControllerReference: self) { _ in
+        self.showLogin(initialView: initialView, sourceVC: .DependentsScreen, presentingViewControllerReference: self) { authenticationStatus in
+            guard authenticationStatus != .Cancelled else { return }
+            let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentStacks.recordsStack)
+            let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
+            let scenario = AppUserActionScenarios.LoginSpecialRouting(values: ActionScenarioValues(currentTab: .dependant, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails, loginSourceVC: .DependentsScreen, authenticationStatus: authenticationStatus))
+            self.routerWorker?.routingAction(scenario: scenario, goToTab: nil, delayInSeconds: 0.5)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
 }

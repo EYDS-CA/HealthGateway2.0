@@ -63,6 +63,13 @@ extension StorageService {
             notify(event: StorageEvent(event: .Save, entity: .Dependent, object: dependent))
             return dependent
         } catch let error as NSError {
+            // TODO: Amir - noticed a bug here
+            // Steps:
+            // 1: Login from dependent tab with user 11
+            // 2: You'll notice that is appears user 11 doesn't have any dependents (they do)
+            // 3: Killing the app and relaunching it, after the background synch, dependents will appear
+            // 4: If you re-do these steps from 1, except log in from another screen (say home screen), there is no issue. However, when logging in from dependents tab, we get this error here (put breakpoint on line 72 and you'll see)
+            // Note: This is also the cause of bug 1357
             Logger.log(string: "Could not save. \(error), \(error.userInfo)", type: .storage)
             return nil
         }
@@ -88,7 +95,9 @@ extension StorageService {
     func deleteDependents(for patient: Patient) {
         guard let context = managedContext else {return}
         guard let dependents = patient.dependents else {return}
+        let dependentsArray = patient.dependentsArray
         patient.removeFromDependents(dependents)
+        dependentsArray.forEach({delete(object: $0)})
         do {
             try context.save()
         } catch let error as NSError {
@@ -100,6 +109,7 @@ extension StorageService {
     func delete(dependents: [Dependent], for patient: Patient) {
         guard let context = managedContext else {return}
         dependents.forEach({patient.removeFromDependents($0)})
+        dependents.forEach({delete(object: $0)})
         do {
             try context.save()
         } catch let error as NSError {

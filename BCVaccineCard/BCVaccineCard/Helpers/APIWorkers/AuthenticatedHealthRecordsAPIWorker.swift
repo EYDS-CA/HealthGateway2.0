@@ -224,14 +224,18 @@ class AuthenticatedHealthRecordsAPIWorker: NSObject {
     }
     
     private func storePatient(patientDetails: AuthenticatedPatientDetailsResponseObject, sourceVC: LoginVCSource) {
+        let phyiscalAddress = StorageService.shared.createAndReturnAddress(addressDetails: patientDetails.resourcePayload?.physicalAddress)
+        let mailingAddress = StorageService.shared.createAndReturnAddress(addressDetails: patientDetails.resourcePayload?.postalAddress)
         let patient = StorageService.shared.storePatient(name: patientDetails.getFullName,
-                                                   firstName: "",
-                                                   lastName: "",
-                                                   gender: "",
-                                                   birthday: patientDetails.getBdayDate,
-                                                   phn: patientDetails.resourcePayload?.personalhealthnumber,
-                                                   hdid: AuthManager().hdid,
-                                                   authenticated: true)
+                                                         firstName: patientDetails.resourcePayload?.firstname,
+                                                         lastName: patientDetails.resourcePayload?.lastname,
+                                                         gender: patientDetails.resourcePayload?.gender,
+                                                         birthday: patientDetails.getBdayDate,
+                                                         phn: patientDetails.resourcePayload?.personalhealthnumber,
+                                                         physicalAddress: phyiscalAddress,
+                                                         mailingAddress: mailingAddress,
+                                                         hdid: AuthManager().hdid,
+                                                         authenticated: true)
         
         guard let patient = patient else { return }
 //        let userInfo: [String: Patient] = ["patient": patient]
@@ -240,9 +244,6 @@ class AuthenticatedHealthRecordsAPIWorker: NSObject {
         let network = AFNetwork()
         let authManager = AuthManager()
         DependentService(network: network, authManager: authManager).fetchDependents(for: patient) { _ in
-            VaccineCardService(network: network, authManager: authManager).fetchAndStoreForDependents(of: patient, completion: { _ in
-                
-            })
         }
     }
     
@@ -455,12 +456,13 @@ class AuthenticatedHealthRecordsAPIWorker: NSObject {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             authenticated: true
         ) else {
             return
         }
         LabOrderService(network: AFNetwork(), authManager: AuthManager()).fetchAndStore(for: patient, completion: {_ in})
-        
     }
     
     private func getAuthenticatedHospitalVisits(authCredentials: AuthenticationRequestObject) {
@@ -472,6 +474,8 @@ class AuthenticatedHealthRecordsAPIWorker: NSObject {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             authenticated: true
         ) else {
             return
@@ -489,6 +493,8 @@ class AuthenticatedHealthRecordsAPIWorker: NSObject {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             authenticated: true
         ) else {
             return
@@ -663,7 +669,7 @@ extension AuthenticatedHealthRecordsAPIWorker {
             if let resultMessage = testResult.resultError?.resultMessage, testResult.resourcePayload?.orders?.count == 0 {
                 Logger.log(string: resultMessage, type: .Network)
                 completion()
-            } else if testResult.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.publicRetryMaxForTestResults, let retryinMS = testResult.resourcePayload?.retryin {
+            } else if testResult.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.maxRetry - 1, let retryinMS = testResult.resourcePayload?.retryin {
                 self.retryCount += 1
                 let retryInSeconds = Double(retryinMS/1000)
                 DispatchQueue.main.asyncAfter(deadline: .now() + retryInSeconds, execute: {
@@ -686,7 +692,7 @@ extension AuthenticatedHealthRecordsAPIWorker {
             if let resultMessage = testResult.resultError?.resultMessage, testResult.resourcePayload?.orders?.count == 0 {
                 self.fetchStatusList.fetchStatus[.TestResults] = FetchStatus(requestCompleted: true, attemptedCount: testResult.totalResultCount ?? 0, successfullCount: 0, error: resultMessage)
             }
-            else if testResult.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.publicRetryMaxForTestResults, let retryinMS = testResult.resourcePayload?.retryin {
+            else if testResult.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.maxRetry - 1, let retryinMS = testResult.resourcePayload?.retryin {
                 // Note: If we don't get QR data back when retrying (for BC Vaccine Card purposes), we
                 self.retryCount += 1
                 let retryInSeconds = Double(retryinMS/1000)
@@ -709,7 +715,7 @@ extension AuthenticatedHealthRecordsAPIWorker {
             if let resultMessage = vaccineCard.resultError?.resultMessage, (vaccineCard.resourcePayload?.qrCode?.data == nil && vaccineCard.resourcePayload?.federalVaccineProof?.data == nil) {
                 // TODO: Error mapping here
                 self.fetchStatusList.fetchStatus[.VaccineCard] = FetchStatus(requestCompleted: true, attemptedCount: 1, successfullCount: 0, error: resultMessage)
-            } else if vaccineCard.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.publicVaccineStatusRetryMaxForFedPass, let retryinMS = vaccineCard.resourcePayload?.retryin {
+            } else if vaccineCard.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.maxRetry - 1, let retryinMS = vaccineCard.resourcePayload?.retryin {
                 // Note: If we don't get QR data back when retrying (for BC Vaccine Card purposes), we
                 self.retryCount += 1
                 let retryInSeconds = Double(retryinMS/1000)
@@ -789,7 +795,7 @@ extension AuthenticatedHealthRecordsAPIWorker {
             if let resultMessage = labOrders.resultError?.resultMessage, labOrders.resourcePayload?.orders?.count == 0 {
                 self.fetchStatusList.fetchStatus[.LaboratoryOrders] = FetchStatus(requestCompleted: true, attemptedCount: labOrders.totalResultCount ?? 0, successfullCount: 0, error: resultMessage)
             }
-            else if labOrders.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.publicRetryMaxForLaboratoryOrders, let retryinMS = labOrders.resourcePayload?.retryin {
+            else if labOrders.resourcePayload?.loaded == false && self.retryCount < Constants.NetworkRetryAttempts.maxRetry - 1, let retryinMS = labOrders.resourcePayload?.retryin {
                 // Note: If we don't get QR data back when retrying (for BC Vaccine Card purposes), we
                 self.retryCount += 1
                 let retryInSeconds = Double(retryinMS/1000)
@@ -810,7 +816,7 @@ extension AuthenticatedHealthRecordsAPIWorker {
             // Note: Have to check for error here because error is being sent back on a 200 response
             if let resultMessage = immunizations.resultError?.resultMessage, immunizations.resourcePayload?.immunizations?.count == 0 {
                 self.fetchStatusList.fetchStatus[.Immunizations] = FetchStatus(requestCompleted: true, attemptedCount: immunizations.totalResultCount ?? 0, successfullCount: 0, error: resultMessage)
-            } else if immunizations.resourcePayload?.loadState?.refreshInProgress == true && self.immzRetryCount < Constants.NetworkRetryAttempts.publicRetryMaxForLaboratoryOrders {
+            } else if immunizations.resourcePayload?.loadState?.refreshInProgress == true && self.immzRetryCount < Constants.NetworkRetryAttempts.maxRetry - 1 {
                 self.immzRetryCount += 1
                 let retryInSeconds = 5.0
                 self.perform(#selector(self.retryGetImmunizationsRequest), with: nil, afterDelay: retryInSeconds)
@@ -1005,6 +1011,8 @@ extension AuthenticatedHealthRecordsAPIWorker {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             hdid: nil,
             authenticated: authenticated) else {
             self.decrementLoadCounter()
@@ -1061,6 +1069,8 @@ extension AuthenticatedHealthRecordsAPIWorker {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             hdid: nil,
             authenticated: authenticated) else {
             self.decrementLoadCounter()
@@ -1114,6 +1124,8 @@ extension AuthenticatedHealthRecordsAPIWorker {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             authenticated: authenticated
         ) else {
             self.decrementLoadCounter()
@@ -1177,6 +1189,8 @@ extension AuthenticatedHealthRecordsAPIWorker {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             authenticated: authenticated
         ) else {
             self.decrementLoadCounter()
@@ -1231,6 +1245,8 @@ extension AuthenticatedHealthRecordsAPIWorker {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             authenticated: authenticated
         ) else {
             self.decrementLoadCounter()
@@ -1278,6 +1294,8 @@ extension AuthenticatedHealthRecordsAPIWorker {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             authenticated: authenticated
         ) else {
             self.decrementLoadCounter()
@@ -1332,6 +1350,8 @@ extension AuthenticatedHealthRecordsAPIWorker {
             lastName: "",
             gender: "",
             birthday: patientObject.getBdayDate,
+            physicalAddress: nil,
+            mailingAddress: nil,
             hdid: nil,
             authenticated: authenticated
         ) else {
