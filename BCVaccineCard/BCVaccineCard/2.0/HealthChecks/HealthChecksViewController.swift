@@ -7,13 +7,13 @@
 
 import UIKit
 
-class HealthChecksViewController: UIViewController {
+class SrviceFinderViewController: UIViewController {
     
-    class func construct() -> HealthChecksViewController {
-        if let vc = UIStoryboard(name: "HealthChecks", bundle: nil).instantiateViewController(withIdentifier: String(describing: HealthChecksViewController.self)) as? HealthChecksViewController {
+    class func construct() -> SrviceFinderViewController {
+        if let vc = UIStoryboard(name: "SrviceFinder", bundle: nil).instantiateViewController(withIdentifier: String(describing: SrviceFinderViewController.self)) as? SrviceFinderViewController {
             return vc
         }
-        return HealthChecksViewController()
+        return SrviceFinderViewController()
     }
 
     override func viewDidLoad() {

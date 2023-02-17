@@ -41,7 +41,7 @@ class POCTabBarController: UITabBarController {
     
     private func setup(selectedIndex: Int) {
         self.tabBar.tintColor = AppColours.appBlue
-        self.tabBar.barTintColor = .white
+        self.tabBar.barTintColor = .white 
         setTabs()
     }
     
@@ -63,11 +63,11 @@ class POCTabBarController: UITabBarController {
     }
     
     func authenticatedTabs() -> [POCTabs] {
-        return [.Dashboard, .HealthChecks, .AuthenticatedRecords, .CareNavigator]
+        return [.Dashboard, .AuthenticatedRecords, .SrviceFinder]
     }
     
     func unAuthenticatedTabs() -> [POCTabs] {
-        return [.Dashboard, .HealthChecks, .UnAuthenticatedRecords, .CareNavigator]
+        return [.Dashboard, .UnAuthenticatedRecords, .SrviceFinder]
     }
     
     private func setViewControllers(tabs: [POCTabs]) -> [UIViewController] {
