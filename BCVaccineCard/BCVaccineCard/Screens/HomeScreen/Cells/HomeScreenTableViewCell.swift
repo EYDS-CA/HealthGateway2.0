@@ -3,7 +3,7 @@
 //  BCVaccineCard
 //
 //  Created by Connor Ogilvie on 2022-03-16.
-//
+//    
 // Constraints: 30 from sides, 8 on top and bottom
 
 import UIKit
