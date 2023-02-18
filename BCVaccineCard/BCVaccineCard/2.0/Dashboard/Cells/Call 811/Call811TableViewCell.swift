@@ -33,8 +33,13 @@ class Call811TableViewCell: BaseDashboardTableViewCell {
         self.contentView.layer.cornerRadius = 10.0
         self.contentView.clipsToBounds = true
         self.contentView.backgroundColor = AppColours.lightGray
-        discoverMoreButton.setTitle("Discover more", for: .normal)
+        discoverMoreButton.setTitle("Discover more ", for: .normal)
         discoverMoreButton.setTitleColor(AppColours.appBlue, for: .normal)
+        if #available(iOS 13.0, *) {
+            discoverMoreButton.setImage(UIImage(systemName: "arrow.up.forward"), for: .normal)
+            discoverMoreButton.semanticContentAttribute = .forceRightToLeft
+            discoverMoreButton.tintColor = AppColours.appBlue
+        }
         call811TitleLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
         call811TitleLabel.textColor = AppColours.appBlue
         call811TitleLabel.text = "Call 8-1-1"

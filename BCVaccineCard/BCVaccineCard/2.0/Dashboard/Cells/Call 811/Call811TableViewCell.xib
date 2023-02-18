@@ -25,9 +25,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nch-kI-52Y">
-                        <rect key="frame" x="303" y="5" width="75" height="34.333333333333336"/>
+                        <rect key="frame" x="222.66666666666663" y="5" width="155.33333333333337" height="34.333333333333336"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="arrow.up.forward" catalog="system" title="Discover more"/>
                         <connections>
                             <action selector="discoverMoreButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ut0-DH-c27"/>
                         </connections>
@@ -45,10 +45,10 @@
                             <constraint firstAttribute="height" constant="3" id="TC4-FJ-RQM"/>
                         </constraints>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-iF-bgI">
-                        <rect key="frame" x="40" y="131" width="358" height="227"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-iF-bgI">
+                        <rect key="frame" x="20" y="131" width="358" height="227"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-k6-r0S">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-k6-r0S">
                                 <rect key="frame" x="0.0" y="0.0" width="358" height="106"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25f-vW-7l0" customClass="ButtonView" customModule="HealthGateway" customModuleProvider="target">
@@ -69,7 +69,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-ui-cDL">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-ui-cDL">
                                 <rect key="frame" x="0.0" y="121" width="358" height="106"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AS6-5t-fDn" customClass="ButtonView" customModule="HealthGateway" customModuleProvider="target">
@@ -94,6 +94,7 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="cvP-iF-bgI" firstAttribute="leading" secondItem="qB4-fg-t14" secondAttribute="leading" id="1bH-q2-cRJ"/>
                     <constraint firstItem="qB4-fg-t14" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="4dZ-sb-Uid"/>
                     <constraint firstItem="zt5-c8-j6Z" firstAttribute="leading" secondItem="qB4-fg-t14" secondAttribute="leading" id="6Zt-qK-nur"/>
                     <constraint firstItem="cvP-iF-bgI" firstAttribute="top" secondItem="Bxh-HX-hso" secondAttribute="bottom" constant="20" id="9vH-KP-t7b"/>
@@ -102,11 +103,10 @@
                     <constraint firstItem="Bxh-HX-hso" firstAttribute="trailing" secondItem="zt5-c8-j6Z" secondAttribute="trailing" id="EW7-Xv-ykb"/>
                     <constraint firstItem="qB4-fg-t14" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="HUx-i2-oYb"/>
                     <constraint firstItem="zt5-c8-j6Z" firstAttribute="trailing" secondItem="nch-kI-52Y" secondAttribute="trailing" id="O5F-Yy-Hsu"/>
-                    <constraint firstItem="cvP-iF-bgI" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="20" id="Sj6-4s-JeN"/>
                     <constraint firstItem="Bxh-HX-hso" firstAttribute="leading" secondItem="zt5-c8-j6Z" secondAttribute="leading" id="Z8V-TB-ouS"/>
                     <constraint firstItem="zt5-c8-j6Z" firstAttribute="top" secondItem="qB4-fg-t14" secondAttribute="bottom" constant="10" id="Ztw-YF-1m9"/>
-                    <constraint firstItem="cvP-iF-bgI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="fug-4l-k6R"/>
                     <constraint firstAttribute="bottomMargin" secondItem="cvP-iF-bgI" secondAttribute="bottom" constant="20" id="pl1-vx-k5B"/>
+                    <constraint firstItem="cvP-iF-bgI" firstAttribute="trailing" secondItem="nch-kI-52Y" secondAttribute="trailing" id="qz6-HW-R6s"/>
                     <constraint firstItem="nch-kI-52Y" firstAttribute="centerY" secondItem="qB4-fg-t14" secondAttribute="centerY" id="xXv-V1-1EK"/>
                 </constraints>
             </tableViewCellContentView>
@@ -125,6 +125,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="arrow.up.forward" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
