@@ -18,10 +18,11 @@ enum DashboardButton: CaseIterable {
     case chat
     case illnessesAndCOnditions
     case symptomChecker
-    case call811
+    case healthNavigator
     case registeredNurse
     case pharmasistAdvice
     case exerciseProfessional
+    case discoverMore
     case immunizeBC
     case servicesNearYou
     case suppotFoundy
@@ -69,13 +70,15 @@ extension DashboardViewController: DashboardTileDelegate {
             break
         case .symptomChecker:
             break
-        case .call811:
+        case .healthNavigator:
             break
         case .registeredNurse:
             break
         case .pharmasistAdvice:
             break
         case .exerciseProfessional:
+            break
+        case .discoverMore:
             break
         case .immunizeBC:
             break
@@ -162,7 +165,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         switch row {
             
         case .findPhysitian:
-            let cell = getFindServicesCell(indexPath: indexPath)
+            let cell = getFindPhysitianCell(indexPath: indexPath)
             // TODO..
             return cell
         case .symptomChecker:
