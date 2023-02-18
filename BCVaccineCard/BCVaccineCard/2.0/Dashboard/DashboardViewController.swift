@@ -182,7 +182,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .mentalHealth:
             let cell = getMentalHealthCell(indexPath: indexPath)
-            // TODO..
+            cell.setup()
             return cell
         }
     }
