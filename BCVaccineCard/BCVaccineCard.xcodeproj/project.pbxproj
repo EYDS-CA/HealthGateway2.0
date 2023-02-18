@@ -304,6 +304,12 @@
 		2D9B399F2907171D00AE9FA1 /* HealthRecordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */; };
 		2D9B39A02907171D00AE9FA1 /* HealthRecordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */; };
 		2D9B39A12907171D00AE9FA1 /* HealthRecordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */; };
+		2DBC6AB129A04F4D0062F401 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC6AB029A04F4D0062F401 /* ButtonView.swift */; };
+		2DBC6AB229A04F4D0062F401 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC6AB029A04F4D0062F401 /* ButtonView.swift */; };
+		2DBC6AB329A04F4D0062F401 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC6AB029A04F4D0062F401 /* ButtonView.swift */; };
+		2DBC6AB529A04F5A0062F401 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC6AB429A04F5A0062F401 /* ButtonView.xib */; };
+		2DBC6AB629A04F5A0062F401 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC6AB429A04F5A0062F401 /* ButtonView.xib */; };
+		2DBC6AB729A04F5A0062F401 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC6AB429A04F5A0062F401 /* ButtonView.xib */; };
 		2DF2102528DD2B2700F5E01C /* ViewPDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2102328DD2B2700F5E01C /* ViewPDFTableViewCell.swift */; };
 		2DF2102628DD2B2700F5E01C /* ViewPDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2102328DD2B2700F5E01C /* ViewPDFTableViewCell.swift */; };
 		2DF2102728DD2B2700F5E01C /* ViewPDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2102328DD2B2700F5E01C /* ViewPDFTableViewCell.swift */; };
@@ -1468,6 +1474,8 @@
 		2D5218D82988881B00E07382 /* UpdateAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressViewController.swift; sourceTree = "<group>"; };
 		2D60219828CBEB2D0096614F /* BCVaccineCard 1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BCVaccineCard 1.2.xcdatamodel"; sourceTree = "<group>"; };
 		2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecordsService.swift; sourceTree = "<group>"; };
+		2DBC6AB029A04F4D0062F401 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		2DBC6AB429A04F5A0062F401 /* ButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
 		2DF2102328DD2B2700F5E01C /* ViewPDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPDFTableViewCell.swift; sourceTree = "<group>"; };
 		2DF2102428DD2B2700F5E01C /* ViewPDFTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewPDFTableViewCell.xib; sourceTree = "<group>"; };
 		2DF2102B28E4DEE900F5E01C /* BCVaccineCard 1.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BCVaccineCard 1.3.xcdatamodel"; sourceTree = "<group>"; };
@@ -2359,6 +2367,15 @@
 			path = HealthRecords;
 			sourceTree = "<group>";
 		};
+		2DBC6AAF29A04F180062F401 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				2DBC6AB029A04F4D0062F401 /* ButtonView.swift */,
+				2DBC6AB429A04F5A0062F401 /* ButtonView.xib */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
 		2DF2102128DD2AF500F5E01C /* SectionDescriptionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2475,6 +2492,7 @@
 			children = (
 				3E62CFDC299FF739000FBB40 /* Dashboard.storyboard */,
 				3E62CFE0299FF74F000FBB40 /* DashboardViewController.swift */,
+				2DBC6AAF29A04F180062F401 /* ReusableViews */,
 				3E62CFF4299FF8D5000FBB40 /* Cells */,
 			);
 			path = Dashboard;
@@ -3876,6 +3894,7 @@
 				29A4DF5327DA685100D5E901 /* ChipCollectionViewCell.xib in Resources */,
 				79218ABA27519E790063004E /* HealthRecordsUserCollectionViewCell.xib in Resources */,
 				79A15B0027FC07D500F8330D /* OnboardingCollectionViewCell.xib in Resources */,
+				2DBC6AB629A04F5A0062F401 /* ButtonView.xib in Resources */,
 				7967E75026F9145700EEF510 /* BCSans-Regular.otf in Resources */,
 				2922C0D5286E17DC000FF4F7 /* LabOrderBannerTableViewCell.xib in Resources */,
 				2922C0AD286C73F8000FF4F7 /* HealthRecordDetailFieldTableViewCell.xib in Resources */,
@@ -4086,6 +4105,7 @@
 				79218A9F275141800063004E /* GetARecordTableViewCell.xib in Resources */,
 				79B9D01527E2869D00987D9F /* HomeScreenTableViewCell.xib in Resources */,
 				2D5218C62984A38000E07382 /* ProfileDetailsTableViewCell.xib in Resources */,
+				2DBC6AB729A04F5A0062F401 /* ButtonView.xib in Resources */,
 				2978852F279624E100FF912D /* SettingsProfileTableViewCell.xib in Resources */,
 				795AA76527155F6300E59FF1 /* NewsFeed.storyboard in Resources */,
 				794BD66A2702EEC00084ADA8 /* BCSans-BoldItalic.otf in Resources */,
@@ -4109,6 +4129,7 @@
 				798006002852C66E006E390F /* ChipCollectionViewCell.xib in Resources */,
 				798006012852C66E006E390F /* HealthRecordsUserCollectionViewCell.xib in Resources */,
 				798006022852C66E006E390F /* OnboardingCollectionViewCell.xib in Resources */,
+				2DBC6AB529A04F5A0062F401 /* ButtonView.xib in Resources */,
 				798006032852C66E006E390F /* BCSans-Regular.otf in Resources */,
 				2922C0D4286E17DC000FF4F7 /* LabOrderBannerTableViewCell.xib in Resources */,
 				29E19FF9286C715C00C235EF /* HealthRecordDetailFieldTableViewCell.xib in Resources */,
@@ -4402,6 +4423,7 @@
 				3E62D02D29A03990000FBB40 /* FindServicesTableViewCell.swift in Sources */,
 				795AA7792715652C00E59FF1 /* ResourceTableViewCell.swift in Sources */,
 				7944F6BE26F12BD5006B9444 /* VaccinePassportModel.swift in Sources */,
+				2DBC6AB229A04F4D0062F401 /* ButtonView.swift in Sources */,
 				3E9D52672909E0F9007E7F44 /* ManageDependentsViewController.swift in Sources */,
 				2979679927C536E20019EE9B /* LaboratoryTest+CoreDataProperties.swift in Sources */,
 				3E473784291090DB00B5BBA0 /* LabOrderService.swift in Sources */,
@@ -4758,6 +4780,7 @@
 				3E62D02B29A0398F000FBB40 /* FindServicesTableViewCell.swift in Sources */,
 				791C27BA27183149001A6E12 /* ButtonTableViewCell.swift in Sources */,
 				79932CAA2790F8DA007E8D92 /* QRMaker.swift in Sources */,
+				2DBC6AB329A04F4D0062F401 /* ButtonView.swift in Sources */,
 				3E9D52682909E0F9007E7F44 /* ManageDependentsViewController.swift in Sources */,
 				2979679A27C536E20019EE9B /* LaboratoryTest+CoreDataProperties.swift in Sources */,
 				2940A3512728399B00132D7D /* StorageService.swift in Sources */,
@@ -5091,6 +5114,7 @@
 				2922C12E287E0FBD000FF4F7 /* StorageService+SpecialAuthorityMedication.swift in Sources */,
 				29E19FD3286C024200C235EF /* CovidTestResultRecordDetailView.swift in Sources */,
 				3E9D52662909E0F9007E7F44 /* ManageDependentsViewController.swift in Sources */,
+				2DBC6AB129A04F4D0062F401 /* ButtonView.swift in Sources */,
 				798005312852C66E006E390F /* ResourceTableViewCell.swift in Sources */,
 				798005322852C66E006E390F /* VaccinePassportModel.swift in Sources */,
 				3E473783291090DB00B5BBA0 /* LabOrderService.swift in Sources */,
