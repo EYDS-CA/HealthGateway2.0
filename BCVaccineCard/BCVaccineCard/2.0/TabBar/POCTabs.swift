@@ -22,28 +22,33 @@ enum POCTabs: Int, CaseIterable {
     }
     
     var properties: Properties? {
-        switch self {
-        case .Dashboard:
-            return Properties(title: "Dashboard",
-                              selectedTabBarImage: #imageLiteral(resourceName: "home-tab-selected"),// TODO
-                              unselectedTabBarImage: #imageLiteral(resourceName: "home-tab-unselected"),// TODO
-                              baseViewController: DashboardViewController.construct())
-       
-        case .SrviceFinder:
-            return Properties(title: "SrviceFinder",
-                              selectedTabBarImage: #imageLiteral(resourceName: "passes-tab-selected"),
-                              unselectedTabBarImage: #imageLiteral(resourceName: "passes-tab-unselected"),
-                              baseViewController: SrviceFinderViewController.construct())
-        case .UnAuthenticatedRecords:
-            return Properties(title: "Records",
-                              selectedTabBarImage: #imageLiteral(resourceName: "records-tab-selected"),// TODO
-                              unselectedTabBarImage: #imageLiteral(resourceName: "records-tab-unselected"),// TODO
-                              baseViewController: HealthRecordsViewController.constructHealthRecordsViewController())
-        case .AuthenticatedRecords:
-            return Properties(title: "Records",
-                              selectedTabBarImage: #imageLiteral(resourceName: "records-tab-selected"),// TODO
-                              unselectedTabBarImage: #imageLiteral(resourceName: "records-tab-unselected"),// TODO
-                              baseViewController: UsersListOfRecordsViewController.constructUsersListOfRecordsViewController(patient: StorageService.shared.fetchAuthenticatedPatient(), authenticated: true, navStyle: .singleUser, hasUpdatedUnauthPendingTest: false))
+        if #available(iOS 13.0, *) {
+            switch self {
+            case .Dashboard:
+                return Properties(title: "Dashboard",
+                                  selectedTabBarImage: UIImage(systemName: "house.fill")!,
+                                  unselectedTabBarImage: UIImage(systemName: "house")!,
+                                  baseViewController: DashboardViewController.construct())
+                
+            case .SrviceFinder:
+                return Properties(title: "Srvice Finder",
+                                  selectedTabBarImage: UIImage(systemName: "map.fill")!,
+                                  unselectedTabBarImage: UIImage(systemName: "map")!,
+                                  baseViewController: SrviceFinderViewController.construct())
+            case .UnAuthenticatedRecords:
+                
+                return Properties(title: "Records",
+                                  selectedTabBarImage: UIImage(systemName: "list.clipboard.fill")!,
+                                  unselectedTabBarImage: UIImage(systemName: "list.clipboard")!,
+                                  baseViewController: HealthRecordsViewController.constructHealthRecordsViewController())
+                
+            case .AuthenticatedRecords:
+                return Properties(title: "Records",
+                                  selectedTabBarImage: UIImage(systemName: "list.clipboard.fill")!,
+                                  unselectedTabBarImage: UIImage(systemName: "list.clipboard")!,
+                                  baseViewController: UsersListOfRecordsViewController.constructUsersListOfRecordsViewController(patient: StorageService.shared.fetchAuthenticatedPatient(), authenticated: true, navStyle: .singleUser, hasUpdatedUnauthPendingTest: false))
+            }
         }
+        return nil
     }
 }
