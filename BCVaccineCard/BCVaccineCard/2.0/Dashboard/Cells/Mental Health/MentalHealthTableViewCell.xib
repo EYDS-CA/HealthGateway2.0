@@ -50,6 +50,9 @@
                                                 <rect key="frame" x="161.66666666666666" y="11.333333333333329" width="19.666666666666657" height="22"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="arrow.right.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="foundryBtnTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="d7y-Tb-yGW"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jt-eU-IAb">
                                                 <rect key="frame" x="12.000000000000004" y="11.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
@@ -84,6 +87,9 @@
                                                 <rect key="frame" x="167.99999999999997" y="11.333333333333329" width="19.666666666666657" height="22"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="arrow.right.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="allAgesBtnTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1co-dT-gE4"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-ry-BP2">
                                                 <rect key="frame" x="12.000000000000004" y="11.999999999999998" width="41.333333333333343" height="20.333333333333329"/>

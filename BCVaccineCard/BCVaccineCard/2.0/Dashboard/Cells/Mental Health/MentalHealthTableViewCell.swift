@@ -8,7 +8,7 @@
 import UIKit
 
 class MentalHealthTableViewCell: BaseDashboardTableViewCell {
-
+    
     @IBOutlet weak var bgView: UIView!
     
     @IBOutlet weak var divider: UIView!
@@ -45,63 +45,78 @@ class MentalHealthTableViewCell: BaseDashboardTableViewCell {
         }
         delegate.tapped(button: .supportAllAges)
     }
-    
-    @objc func foundryTap(_ sender: UITapGestureRecognizer? = nil) {
-        guard let delegate = delegate  else {
-            return
+    @IBAction func allAgesBtnTap(_ sender: Any) {
+        {
+            guard let delegate = delegate else {
+                return
+            }
+            delegate.tapped(button: .supportAllAges)
         }
-        delegate.tapped(button: .suppotFoundy)
-    }
-    
-    func style() {
-        divider.backgroundColor = AppColours.barYellow
-        titleLabel.font = UIFont.bcSansBoldWithSize(size: 18)
-        titleLabel.textColor = AppColours.appBlue
-        descLabel.textColor = .black
-        descLabel.font = UIFont.bcSansRegularWithSize(size: 13)
-        descLabel.text = "Health services and resources and near you."
-        titleLabel.text = "Mental Health & substance use support"
         
-        bgView.backgroundColor = UIColor(red: 0.898, green: 0.941, blue: 1, alpha: 1)
-        bgView.layer.cornerRadius = 12
-        
-        styleContainer(bgView: allAgesContainer,
-                       titleLabel: allAgesTitle,
-                       titleText: "All Ages",
-                       button: allAgesbtn,
-                       descLabel: allAgesDesc,
-                       descText: "All mental health and substance use support.")
-        
-        styleContainer(bgView: foundryContainer,
-                       titleLabel: foundryTitle,
-                       titleText: "Foundry",
-                       button: foundrybtn,
-                       descLabel: foundryDesc,
-                       descText: "Support for young people aged 12-24 years old.")
-    }
-    
-    func styleContainer(bgView: UIView,
-                        titleLabel: UILabel,
-                        titleText: String,
-                        button: UIButton,
-                        descLabel: UILabel,
-                        descText: String
-    ) {
-        bgView.backgroundColor = .white
-        bgView.layer.cornerRadius = 10
-        titleLabel.font = UIFont.bcSansBoldWithSize(size: 12)
-        titleLabel.textColor = AppColours.appBlue
-        descLabel.font = UIFont.bcSansRegularWithSize(size: 10)
-        descLabel.textColor = UIColor.black
-        
-        button.setTitle("", for: .normal)
-        if #available(iOS 13.0, *) {
-            let btnIcon = UIImage.init(systemName: "arrow.right.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 12))?.withTintColor(AppColours.appBlue)
-            button.setImage(btnIcon, for: .normal)
+        @IBAction func foundryBtnTap(_ sender: Any) {
+            {
+                guard let delegate = delegate  else {
+                    return
+                }
+                delegate.tapped(button: .suppotFoundy)
+            }
+            @objc func foundryTap(_ sender: UITapGestureRecognizer? = nil) {
+                guard let delegate = delegate  else {
+                    return
+                }
+                delegate.tapped(button: .suppotFoundy)
+            }
+            
+            func style() {
+                divider.backgroundColor = AppColours.barYellow
+                titleLabel.font = UIFont.bcSansBoldWithSize(size: 18)
+                titleLabel.textColor = AppColours.appBlue
+                descLabel.textColor = .black
+                descLabel.font = UIFont.bcSansRegularWithSize(size: 13)
+                descLabel.text = "Health services and resources and near you."
+                titleLabel.text = "Mental Health & substance use support"
+                
+                bgView.backgroundColor = UIColor(red: 0.898, green: 0.941, blue: 1, alpha: 1)
+                bgView.layer.cornerRadius = 12
+                
+                styleContainer(bgView: allAgesContainer,
+                               titleLabel: allAgesTitle,
+                               titleText: "All Ages",
+                               button: allAgesbtn,
+                               descLabel: allAgesDesc,
+                               descText: "All mental health and substance use support.")
+                
+                styleContainer(bgView: foundryContainer,
+                               titleLabel: foundryTitle,
+                               titleText: "Foundry",
+                               button: foundrybtn,
+                               descLabel: foundryDesc,
+                               descText: "Support for young people aged 12-24 years old.")
+            }
+            
+            func styleContainer(bgView: UIView,
+                                titleLabel: UILabel,
+                                titleText: String,
+                                button: UIButton,
+                                descLabel: UILabel,
+                                descText: String
+            ) {
+                bgView.backgroundColor = .white
+                bgView.layer.cornerRadius = 10
+                titleLabel.font = UIFont.bcSansBoldWithSize(size: 12)
+                titleLabel.textColor = AppColours.appBlue
+                descLabel.font = UIFont.bcSansRegularWithSize(size: 10)
+                descLabel.textColor = UIColor.black
+                
+                button.setTitle("", for: .normal)
+                if #available(iOS 13.0, *) {
+                    let btnIcon = UIImage.init(systemName: "arrow.right.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 12))?.withTintColor(AppColours.appBlue)
+                    button.setImage(btnIcon, for: .normal)
+                    button.tintColor = AppColours.appBlue
+                }
+                
+                titleLabel.text = titleText
+                descLabel.text = descText
+            }
+            
         }
-       
-        titleLabel.text = titleText
-        descLabel.text = descText
-    }
-    
-}
