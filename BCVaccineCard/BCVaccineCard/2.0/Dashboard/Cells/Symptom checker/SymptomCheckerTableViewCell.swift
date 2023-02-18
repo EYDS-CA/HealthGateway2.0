@@ -67,8 +67,8 @@ class SymptomCheckerTableViewCell: BaseDashboardTableViewCell {
               descLabel: symptomCheckerDesc,
               descString: "Understand your medical symptoms")
         
-        symptomCheckerView.layer.cornerRadius = 8
-        conditionsView.layer.cornerRadius = 8
+        symptomCheckerView.layer.cornerRadius = 12
+        conditionsView.layer.cornerRadius = 12
         
     }
     
@@ -83,7 +83,7 @@ class SymptomCheckerTableViewCell: BaseDashboardTableViewCell {
         
         bgView.image = image
         bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = 8
+        bgView.layer.cornerRadius = 16
         titleLabel.font = UIFont.bcSansBoldWithSize(size: 16)
         titleLabel.text = titleString
         titleLabel.textColor = AppColours.appBlue

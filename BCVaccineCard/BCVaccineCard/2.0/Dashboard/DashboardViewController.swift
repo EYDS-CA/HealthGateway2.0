@@ -18,10 +18,11 @@ enum DashboardButton: CaseIterable {
     case chat
     case illnessesAndCOnditions
     case symptomChecker
-    case call811
+    case healthNavigator
     case registeredNurse
     case pharmasistAdvice
     case exerciseProfessional
+    case discoverMore
     case immunizeBC
     case servicesNearYou
     case suppotFoundy
@@ -46,12 +47,12 @@ class DashboardViewController: UIViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
-
+    
 }
 extension DashboardViewController: DashboardTileDelegate {
     func tapped(button: DashboardButton) {
@@ -69,13 +70,15 @@ extension DashboardViewController: DashboardTileDelegate {
             break
         case .symptomChecker:
             break
-        case .call811:
+        case .healthNavigator:
             break
         case .registeredNurse:
             break
         case .pharmasistAdvice:
             break
         case .exerciseProfessional:
+            break
+        case .discoverMore:
             break
         case .immunizeBC:
             break
@@ -108,7 +111,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib.init(nibName: MentalHealthTableViewCell.getName, bundle: .main), forCellReuseIdentifier: MentalHealthTableViewCell.getName)
     }
     
-   
+    
     func getFindPhysitianCell(indexPath: IndexPath) -> FindPhysitianTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FindPhysitianTableViewCell.getName, for: indexPath) as? FindPhysitianTableViewCell else {
             return FindPhysitianTableViewCell()
@@ -162,7 +165,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         switch row {
             
         case .findPhysitian:
-            let cell = getFindServicesCell(indexPath: indexPath)
+            let cell = getFindPhysitianCell(indexPath: indexPath)
             // TODO..
             return cell
         case .symptomChecker:
@@ -175,7 +178,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .findServices:
             let cell = getFindServicesCell(indexPath: indexPath)
-            // TODO..
+            cell.setup()
             return cell
         case .mentalHealth:
             let cell = getMentalHealthCell(indexPath: indexPath)
