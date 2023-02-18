@@ -45,9 +45,9 @@ class ButtonView: UIView {
     
     private func setup() {
         iconImageView.tintColor = AppColours.appBlue
-        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         titleLabel.textColor = AppColours.appBlue
-        descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         descriptionLabel.textColor = AppColours.textBlack
         contentView.clipsToBounds = true
     }
@@ -62,6 +62,7 @@ class ButtonView: UIView {
     
     func configure(type: DashboardButton, owner: UITableViewCell, rounding: CGFloat) {
         self.contentView.layer.cornerRadius = rounding
+        self.backgroundColor = .clear
         self.type = type
         self.iconImageView.image = type.getIcon
         self.titleLabel.text = type.getTitle

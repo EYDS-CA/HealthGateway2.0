@@ -14,7 +14,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindPhysitianTableViewCell" rowHeight="340" id="KGk-i7-Jjw" customClass="FindPhysitianTableViewCell" customModule="HealthGateway" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="398" height="374"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="398" height="374"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -82,27 +82,28 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-df-6Gz">
-                        <rect key="frame" x="15" y="215" width="368" height="139"/>
+                        <rect key="frame" x="15" y="215" width="368" height="138"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbw-zz-ZRJ" customClass="ButtonView" customModule="HealthGateway" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="115" height="139"/>
+                                <rect key="frame" x="0.0" y="0.0" width="115" height="138"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="5rY-S9-B90"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vo6-NA-Kfu" customClass="ButtonView" customModule="HealthGateway" customModuleProvider="target">
-                                <rect key="frame" x="126.66666666666666" y="0.0" width="115" height="139"/>
+                                <rect key="frame" x="126.66666666666666" y="0.0" width="115" height="138"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C52-ce-gqB" customClass="ButtonView" customModule="HealthGateway" customModuleProvider="target">
-                                <rect key="frame" x="253" y="0.0" width="115" height="139"/>
+                                <rect key="frame" x="253" y="0.0" width="115" height="138"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="C52-ce-gqB" firstAttribute="width" secondItem="pbw-zz-ZRJ" secondAttribute="width" id="GF9-KG-YNW"/>
                             <constraint firstItem="vo6-NA-Kfu" firstAttribute="width" secondItem="pbw-zz-ZRJ" secondAttribute="width" id="P0r-a2-wce"/>
+                            <constraint firstAttribute="height" constant="138" id="nUk-Vr-Fbc"/>
                         </constraints>
                     </stackView>
                 </subviews>
