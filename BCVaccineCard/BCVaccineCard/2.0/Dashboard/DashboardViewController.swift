@@ -11,22 +11,22 @@ protocol DashboardTileDelegate {
     func tapped(button: DashboardButton)
 }
 
-enum DashboardButton: CaseIterable {
-    case findPhysitian
-    case call911
-    case virtualWalkIn
-    case chat
-    case illnessesAndCOnditions
-    case symptomChecker
-    case healthNavigator
-    case registeredNurse
-    case pharmasistAdvice
-    case exerciseProfessional
-    case discoverMore
-    case immunizeBC
-    case servicesNearYou
-    case suppotFoundy
-    case supportAllAges
+enum DashboardButton: String, CaseIterable {
+    case findPhysitian = "https://hcr.healthlinkbc.ca/"
+    case call911 = "911"
+    case virtualWalkIn = "virtualWalkIn" // Static image
+    case chat = "chat" // Static image
+    case illnessesAndCOnditions = "https://www.healthlinkbc.ca/illnesses-conditions"
+    case symptomChecker = "https://www.buoyhealth.com/symptom-checker/"
+    case healthNavigator = "811"
+    case registeredNurse = "0811"// TODO: remove one of the 2 811 buttons
+    case pharmasistAdvice = "pharmasist@bc.ca"
+    case exerciseProfessional = "exercise@bc.ca"
+    case discoverMore = "discoverMore" // TOOO:
+    case immunizeBC = "https://immunizebc.ca/"
+    case servicesNearYou = "https://www.islandhealth.ca/"
+    case suppotFoundy = "https://foundrybc.ca/"
+    case supportAllAges = "https://www2.gov.bc.ca/gov/content/mental-health-support-in-bc"
 }
 
 enum DashboardCells: Int, CaseIterable {
@@ -58,36 +58,20 @@ extension DashboardViewController: DashboardTileDelegate {
     func tapped(button: DashboardButton) {
         print(button)
         switch button {
-        case .findPhysitian:
-            break
-        case .call911:
-            break
         case .virtualWalkIn:
+            // SHOW IMAGE
             break
         case .chat:
+            // SHOW IMAGE
             break
-        case .illnessesAndCOnditions:
-            break
-        case .symptomChecker:
-            break
+        case .call911:
+            callNumber(phoneNumber: button.rawValue)
         case .healthNavigator:
-            break
+            callNumber(phoneNumber: button.rawValue)
         case .registeredNurse:
-            break
-        case .pharmasistAdvice:
-            break
-        case .exerciseProfessional:
-            break
-        case .discoverMore:
-            break
-        case .immunizeBC:
-            break
-        case .servicesNearYou:
-            break
-        case .suppotFoundy:
-            break
-        case .supportAllAges:
-            break
+            callNumber(phoneNumber: button.rawValue)
+        default:
+            showWeb(url: button.rawValue, withNavigation: true)
         }
     }
     

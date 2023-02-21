@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="Y6W-OH-hqX" customClass="WebViewController" customModule="HealthGateway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhW-pf-fUA">
+                                <rect key="frame" x="0.0" y="63" width="393" height="713"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWJ-jQ-sG2">
+                                <rect key="frame" x="0.0" y="59" width="393" height="4"/>
+                            </progressView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmK-qC-doY">
+                                <rect key="frame" x="0.0" y="776" width="393" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CR-EV-Sdg">
+                                        <rect key="frame" x="16" y="2" width="42" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="k5Y-G7-gLv"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="goBackward:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Wp-dq-yRZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f05-3F-Ter">
+                                        <rect key="frame" x="100" y="3.6666666666666288" width="42" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="K5x-xI-4VE"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="chevron.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="goForward:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KVP-Og-8kB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE5-1c-qOF">
+                                        <rect key="frame" x="335" y="2" width="42" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="W7E-Zf-Nyd"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                        <connections>
+                                            <action selector="share:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XqK-3D-Vsb"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RVg-BX-tjo">
+                                        <rect key="frame" x="158" y="2" width="161" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="RVg-BX-tjo" firstAttribute="top" secondItem="mmK-qC-doY" secondAttribute="top" constant="2" id="GfA-jI-0Gi"/>
+                                    <constraint firstItem="f05-3F-Ter" firstAttribute="centerY" secondItem="2CR-EV-Sdg" secondAttribute="centerY" id="HPI-s7-HRU"/>
+                                    <constraint firstAttribute="trailing" secondItem="zE5-1c-qOF" secondAttribute="trailing" constant="16" id="Jq4-YH-5eW"/>
+                                    <constraint firstItem="f05-3F-Ter" firstAttribute="height" secondItem="2CR-EV-Sdg" secondAttribute="height" multiplier="0.921053" id="KF5-4L-I0q"/>
+                                    <constraint firstItem="RVg-BX-tjo" firstAttribute="centerY" secondItem="mmK-qC-doY" secondAttribute="centerY" id="Kak-Ap-4gq"/>
+                                    <constraint firstItem="2CR-EV-Sdg" firstAttribute="leading" secondItem="mmK-qC-doY" secondAttribute="leading" constant="16" id="SWa-En-8N9"/>
+                                    <constraint firstItem="2CR-EV-Sdg" firstAttribute="top" secondItem="mmK-qC-doY" secondAttribute="top" constant="2" id="UBj-jM-Dgv"/>
+                                    <constraint firstItem="RVg-BX-tjo" firstAttribute="leading" secondItem="f05-3F-Ter" secondAttribute="trailing" constant="16" id="Vuh-AY-0WD"/>
+                                    <constraint firstItem="zE5-1c-qOF" firstAttribute="top" secondItem="mmK-qC-doY" secondAttribute="top" constant="2" id="Xbm-Qs-cZW"/>
+                                    <constraint firstAttribute="bottom" secondItem="RVg-BX-tjo" secondAttribute="bottom" constant="2" id="beM-6a-wHJ"/>
+                                    <constraint firstAttribute="height" constant="42" id="dAx-VY-iaz"/>
+                                    <constraint firstAttribute="bottom" secondItem="zE5-1c-qOF" secondAttribute="bottom" constant="2" id="dmO-tP-Yw8"/>
+                                    <constraint firstAttribute="bottom" secondItem="2CR-EV-Sdg" secondAttribute="bottom" constant="2" id="jO1-kk-t2U"/>
+                                    <constraint firstItem="f05-3F-Ter" firstAttribute="leading" secondItem="2CR-EV-Sdg" secondAttribute="trailing" constant="42" id="pUv-5o-sFr"/>
+                                    <constraint firstItem="zE5-1c-qOF" firstAttribute="leading" secondItem="RVg-BX-tjo" secondAttribute="trailing" constant="16" id="qLA-Af-zhE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OhW-pf-fUA" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="2O8-pe-wid"/>
+                            <constraint firstItem="OhW-pf-fUA" firstAttribute="top" secondItem="FWJ-jQ-sG2" secondAttribute="bottom" id="B8c-S5-IOd"/>
+                            <constraint firstItem="mmK-qC-doY" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Bku-yF-B4a"/>
+                            <constraint firstItem="mmK-qC-doY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MpQ-16-fa4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mmK-qC-doY" secondAttribute="trailing" id="RXQ-JB-k0I"/>
+                            <constraint firstItem="FWJ-jQ-sG2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fqQ-GJ-bh4"/>
+                            <constraint firstItem="mmK-qC-doY" firstAttribute="top" secondItem="OhW-pf-fUA" secondAttribute="bottom" id="g2R-PV-uC3"/>
+                            <constraint firstItem="OhW-pf-fUA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uS1-wo-eHX"/>
+                            <constraint firstItem="FWJ-jQ-sG2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wKa-7Z-9gI"/>
+                            <constraint firstItem="FWJ-jQ-sG2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xxM-od-9vA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backward" destination="2CR-EV-Sdg" id="r5u-Ah-1m9"/>
+                        <outlet property="forward" destination="f05-3F-Ter" id="5ED-4w-IQU"/>
+                        <outlet property="progressView" destination="FWJ-jQ-sG2" id="mEf-lr-Qq2"/>
+                        <outlet property="shareButton" destination="zE5-1c-qOF" id="9vv-6X-K3U"/>
+                        <outlet property="siteLabel" destination="RVg-BX-tjo" id="0qa-Az-cbh"/>
+                        <outlet property="webView" destination="OhW-pf-fUA" id="cDr-Jd-GjB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.343511450381679" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
