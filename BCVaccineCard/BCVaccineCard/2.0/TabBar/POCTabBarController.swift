@@ -63,11 +63,11 @@ class POCTabBarController: UITabBarController {
     }
     
     func authenticatedTabs() -> [POCTabs] {
-        return [.Dashboard, .AuthenticatedRecords, .SrviceFinder]
+        return [.Dashboard, .AuthenticatedRecords, .ServiceFinder]
     }
     
     func unAuthenticatedTabs() -> [POCTabs] {
-        return [.Dashboard, .UnAuthenticatedRecords, .SrviceFinder]
+        return [.Dashboard, .UnAuthenticatedRecords, .ServiceFinder]
     }
     
     private func setViewControllers(tabs: [POCTabs]) -> [UIViewController] {

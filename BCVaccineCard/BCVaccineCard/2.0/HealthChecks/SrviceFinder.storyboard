@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Srvice Finder View Controller-->
+        <!--Service Finder View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SrviceFinderViewController" id="Y6W-OH-hqX" customClass="SrviceFinderViewController" customModule="HealthGateway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServiceFinderViewController" id="Y6W-OH-hqX" customClass="ServiceFinderViewController" customModule="HealthGateway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

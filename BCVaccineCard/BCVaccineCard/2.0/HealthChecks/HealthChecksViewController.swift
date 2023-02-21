@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class SrviceFinderViewController: UIViewController {
+class ServiceFinderViewController: UIViewController {
     
     @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var mapToolsContainer: UIView!
@@ -25,11 +25,11 @@ class SrviceFinderViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    class func construct() -> SrviceFinderViewController {
-        if let vc = UIStoryboard(name: "SrviceFinder", bundle: nil).instantiateViewController(withIdentifier: String(describing: SrviceFinderViewController.self)) as? SrviceFinderViewController {
+    class func construct() -> ServiceFinderViewController {
+        if let vc = UIStoryboard(name: "SrviceFinder", bundle: nil).instantiateViewController(withIdentifier: String(describing: ServiceFinderViewController.self)) as? ServiceFinderViewController {
             return vc
         }
-        return SrviceFinderViewController()
+        return ServiceFinderViewController()
     }
 
     override func viewDidLoad() {
