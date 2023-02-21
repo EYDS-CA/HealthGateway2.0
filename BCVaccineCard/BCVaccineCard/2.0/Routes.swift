@@ -9,11 +9,13 @@ import UIKit
 
 fileprivate enum Storyboards {
     static var web: UIStoryboard { return UIStoryboard(name: "Web", bundle: nil) }
+    static var pinDetail: UIStoryboard { return UIStoryboard(name: "PinDetail", bundle: nil) }
 }
 
 extension UIViewController {
     enum Route {
         case Web
+        case PinDetail
     }
 }
 
@@ -25,6 +27,9 @@ extension UIViewController {
         case .Web:
             let storyboard = Storyboards.web
             controller = storyboard.instantiateViewController(withIdentifier: String(describing: WebViewController.self)) as? WebViewController
+        case .PinDetail:
+            let storyboard = Storyboards.pinDetail
+            controller = storyboard.instantiateViewController(withIdentifier: String(describing: PinDetailViewController.self)) as? PinDetailViewController
         }
         return controller
     }
@@ -46,6 +51,22 @@ extension UIViewController {
     }
 }
 
+extension UIViewController {
+    func showPinDetail(pin: MapViewController.MapPin) {
+        if #available(iOS 15.0, *) {
+            guard let detailViewController = createController(route: .PinDetail) as? PinDetailViewController else {
+                return
+            }
+            
+            detailViewController.modalPresentationStyle = .pageSheet
+            
+            if let sheet = detailViewController.sheetPresentationController {
+                sheet.detents = [.medium(), .large()]
+            }
+            present(detailViewController, animated: true, completion: nil)
+        }
+    }
+}
 
 extension UIViewController {
     func showWeb(url: String, withNavigation: Bool) {
