@@ -125,11 +125,11 @@ extension DashboardButton {
         case .findPhysitian:
             return "Access A Family Physician, Nurse, Practitioner, And Other Health-Care Professionals"
         case .call911:
-            return "Call 911"
+            return "Call 911 for emergencies"
         case .virtualWalkIn:
-            return "Virtual Walk-In"
+            return "Virtual visit with a registered nurse"
         case .chat:
-            return "Chat"
+            return "Chat with a registered nurse"
 //        case .illnessesAndCOnditions:
 //            <#code#>
 //        case .symptomChecker:
@@ -161,11 +161,11 @@ extension DashboardButton {
         case .findPhysitian:
             return "It's quick and easy!"
         case .call911:
-            return "Emergencies"
+            return nil
         case .virtualWalkIn:
-            return "Virtual visit with a registered nurse"
+            return nil
         case .chat:
-            return "Message a registered nurse"
+            return nil
 //        case .illnessesAndCOnditions:
 //            <#code#>
 //        case .symptomChecker:

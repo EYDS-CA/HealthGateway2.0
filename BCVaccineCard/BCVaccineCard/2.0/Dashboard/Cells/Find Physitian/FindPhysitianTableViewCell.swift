@@ -14,9 +14,9 @@ class FindPhysitianTableViewCell: BaseDashboardTableViewCell {
     @IBOutlet private weak var roundedseparatorView: UIView!
     @IBOutlet private weak var roundeddescriptionLabel: UILabel!
     @IBOutlet private weak var roundedAccessViewButtonImageView: UIImageView!
-    @IBOutlet private weak var call911Button: ButtonView!
-    @IBOutlet private weak var virtualWalkInButton: ButtonView!
-    @IBOutlet private weak var chatButton: ButtonView!
+    @IBOutlet private weak var call911Button: RowView!
+    @IBOutlet private weak var virtualWalkInButton: RowView!
+    @IBOutlet private weak var chatButton: RowView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,9 +43,9 @@ class FindPhysitianTableViewCell: BaseDashboardTableViewCell {
         roundeddescriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         roundeddescriptionLabel.textColor = AppColours.textGray
         roundeddescriptionLabel.text = DashboardButton.findPhysitian.getDescription
-        self.call911Button.configure(type: .call911, owner: self, rounding: 10)
-        self.virtualWalkInButton.configure(type: .virtualWalkIn, owner: self, rounding: 10)
-        self.chatButton.configure(type: .chat, owner: self, rounding: 10)
+        self.call911Button.configure(type: .call911, owner: self)
+        self.virtualWalkInButton.configure(type: .virtualWalkIn, owner: self)
+        self.chatButton.configure(type: .chat, owner: self)
     }
     
     @IBAction private func roundedAccessViewButtonAction(_ sender: UIButton) {
