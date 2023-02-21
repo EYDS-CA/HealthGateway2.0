@@ -39,7 +39,7 @@ class Call811TableViewCell: BaseDashboardTableViewCell {
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .underlineColor: UIColor(hexString: "#1A5A96")
         ]
-        let attrString = NSMutableAttributedString(string: "Discover more", attributes: underlineAttr)
+        let attrString = NSMutableAttributedString(string: "Discover more ", attributes: underlineAttr)
         discoverMoreButton.setAttributedTitle(attrString, for: .normal)
         discoverMoreButton.setImage(DashboardButton.discoverMore.getIcon, for: .normal)
         discoverMoreButton.semanticContentAttribute = .forceRightToLeft

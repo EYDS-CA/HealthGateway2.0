@@ -19,7 +19,7 @@ enum DashboardButton: String, CaseIterable {
     case illnessesAndCOnditions = "https://www.healthlinkbc.ca/illnesses-conditions"
     case symptomChecker = "https://www.buoyhealth.com/symptom-checker/"
     case healthNavigator = "811"
-    case registeredNurse = "0811"// TODO: remove one of the 2 811 buttons
+    case registeredNurse = "0811"
     case pharmasistAdvice = "mailto:pharmasist@bc.ca"
     case exerciseProfessional = "mailto:exercise@bc.ca"
     case discoverMore = "discoverMore" // TOOO:
@@ -27,6 +27,15 @@ enum DashboardButton: String, CaseIterable {
     case servicesNearYou = "https://www.islandhealth.ca/"
     case suppotFoundy = "https://foundrybc.ca/"
     case supportAllAges = "https://www2.gov.bc.ca/gov/content/mental-health-support-in-bc"
+    
+    var phoneNumber: String {
+        switch self {
+        case .call911: return "911"
+        case .healthNavigator: return "811"
+        case .registeredNurse: return "811"
+        default: return ""
+        }
+    }
 }
 
 enum DashboardCells: Int, CaseIterable {
@@ -75,11 +84,11 @@ extension DashboardViewController: DashboardTileDelegate {
         case .pharmasistAdvice:
             sendMail(to: button.rawValue)
         case .call911:
-            callNumber(phoneNumber: button.rawValue)
+            callNumber(phoneNumber: button.phoneNumber)
         case .healthNavigator:
-            callNumber(phoneNumber: button.rawValue)
+            callNumber(phoneNumber: button.phoneNumber)
         case .registeredNurse:
-            callNumber(phoneNumber: button.rawValue)
+            callNumber(phoneNumber: button.phoneNumber)
         default:
             showWeb(url: button.rawValue, withNavigation: true)
         }
