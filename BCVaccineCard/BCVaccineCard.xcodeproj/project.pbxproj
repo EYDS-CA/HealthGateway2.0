@@ -599,6 +599,9 @@
 		3EA4B38629A554AC00D821A7 /* PinDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA4B38529A554AC00D821A7 /* PinDetail.storyboard */; };
 		3EA4B38729A554AC00D821A7 /* PinDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA4B38529A554AC00D821A7 /* PinDetail.storyboard */; };
 		3EA4B38829A554AC00D821A7 /* PinDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA4B38529A554AC00D821A7 /* PinDetail.storyboard */; };
+		3EA4B38B29A5608800D821A7 /* StaticImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B38A29A5608800D821A7 /* StaticImageViewController.swift */; };
+		3EA4B38C29A5608800D821A7 /* StaticImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B38A29A5608800D821A7 /* StaticImageViewController.swift */; };
+		3EA4B38D29A5608800D821A7 /* StaticImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B38A29A5608800D821A7 /* StaticImageViewController.swift */; };
 		3EAF8185296DF0CE00738553 /* ConstantsAndTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */; };
 		3EAF8186296DF0CE00738553 /* ConstantsAndTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */; };
 		3EAF8187296DF0CE00738553 /* ConstantsAndTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */; };
@@ -1600,6 +1603,7 @@
 		3EA4B37C29A5463200D821A7 /* SettingsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHelper.swift; sourceTree = "<group>"; };
 		3EA4B38129A554A400D821A7 /* PinDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailViewController.swift; sourceTree = "<group>"; };
 		3EA4B38529A554AC00D821A7 /* PinDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PinDetail.storyboard; sourceTree = "<group>"; };
+		3EA4B38A29A5608800D821A7 /* StaticImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticImageViewController.swift; sourceTree = "<group>"; };
 		3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAndTypes.swift; sourceTree = "<group>"; };
 		3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDependentViewController.swift; sourceTree = "<group>"; };
 		3ECD398828B522970033B866 /* StorageService+Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Recommendations.swift"; sourceTree = "<group>"; };
@@ -2513,6 +2517,7 @@
 			isa = PBXGroup;
 			children = (
 				3EA4B36529A5352C00D821A7 /* Routes.swift */,
+				3EA4B38929A5607500D821A7 /* StaticImage */,
 				3EA4B36729A535F600D821A7 /* WebView */,
 				3E62CFF5299FFECE000FBB40 /* TabBar */,
 				3E62CFD9299FF6FC000FBB40 /* Dashboard */,
@@ -2695,6 +2700,14 @@
 				3EA4B38529A554AC00D821A7 /* PinDetail.storyboard */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		3EA4B38929A5607500D821A7 /* StaticImage */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B38A29A5608800D821A7 /* StaticImageViewController.swift */,
+			);
+			path = StaticImage;
 			sourceTree = "<group>";
 		};
 		3EAF8188296DF0D400738553 /* utils */ = {
@@ -4704,6 +4717,7 @@
 				79218AEF275672120063004E /* StorageService+HealthRecords.swift in Sources */,
 				3E78AECE28F9909500C66E28 /* AddDependentViewController.swift in Sources */,
 				3EDC0D0A2968928000603FED /* KVCAccessor.swift in Sources */,
+				3EA4B38C29A5608800D821A7 /* StaticImageViewController.swift in Sources */,
 				3EDC0D1A2968932100603FED /* KVCReflectionMirror.swift in Sources */,
 				29F41297274CDEDA004927FF /* VisitedOnBoardingScreen.swift in Sources */,
 				79218AE42755E14E0063004E /* FetchHealthRecordsViewController.swift in Sources */,
@@ -5067,6 +5081,7 @@
 				797BB96A2767E85D00CD1645 /* SettingsTextTableViewCell.swift in Sources */,
 				794BD64D2702EEC00084ADA8 /* NoCardsTableViewCell.swift in Sources */,
 				3EDC0D0B2968928000603FED /* KVCAccessor.swift in Sources */,
+				3EA4B38D29A5608800D821A7 /* StaticImageViewController.swift in Sources */,
 				3EDC0D1B2968932100603FED /* KVCReflectionMirror.swift in Sources */,
 				79218AF0275672120063004E /* StorageService+HealthRecords.swift in Sources */,
 				79CF236F283D8DDF00510489 /* BaseURLWorker.swift in Sources */,
@@ -5407,6 +5422,7 @@
 				798005BC2852C66E006E390F /* QRSelectionTableViewCell.swift in Sources */,
 				3E78AECD28F9909500C66E28 /* AddDependentViewController.swift in Sources */,
 				3EDC0D092968928000603FED /* KVCAccessor.swift in Sources */,
+				3EA4B38B29A5608800D821A7 /* StaticImageViewController.swift in Sources */,
 				3EDC0D192968932100603FED /* KVCReflectionMirror.swift in Sources */,
 				798005BD2852C66E006E390F /* StorageService+HealthRecords.swift in Sources */,
 				29E19FE2286C044F00C235EF /* BaseHealthRecordDetailView.swift in Sources */,

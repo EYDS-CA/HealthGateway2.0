@@ -59,11 +59,15 @@ extension DashboardViewController: DashboardTileDelegate {
         print(button)
         switch button {
         case .virtualWalkIn:
-            // SHOW IMAGE
-            break
+            guard let image = UIImage(named: "static-call") else {
+                return
+            }
+            showStatic(image: image)
         case .chat:
-            // SHOW IMAGE
-            break
+            guard let image = UIImage(named: "static-chat") else {
+                return
+            }
+            showStatic(image: image)
         case .exerciseProfessional:
             sendMail(to: button.rawValue)
         case .pharmasistAdvice:

@@ -52,7 +52,7 @@ class ServiceFinderViewController: MapViewController {
                 let pinLocation = generator.generateRandomVancouverLocation()
                 print(pinLocation)
                 let marker = generator.generateMaker(image: UIImage.init(named: "pin-head"), bgColour: UIColor(hexString: "#ebe6e6"))
-                let pin = MapPin(id: "van-\(i)", groupID: "1", location: pinLocation, view: marker)
+                let pin = MapPin(id: "van-\(i)", groupID: "1", location: pinLocation, view: marker, selectionColour: AppColours.appBlue)
                 drop(pin: pin)
             }
             
@@ -60,7 +60,7 @@ class ServiceFinderViewController: MapViewController {
                 let pinLocation = generator.generateRandomVictoriaLocation()
                 print(pinLocation)
                 let marker = generator.generateMaker(image: UIImage.init(named: "pin-head"), bgColour: UIColor(hexString: "#ebe6e6"))
-                let pin = MapPin(id: "vic-\(i)", groupID: "1", location: pinLocation, view: marker)
+                let pin = MapPin(id: "vic-\(i)", groupID: "1", location: pinLocation, view: marker, selectionColour: AppColours.appBlue)
                 drop(pin: pin)
             }
         }
@@ -115,6 +115,6 @@ class ServiceFinderViewController: MapViewController {
     
     func showDetail(pin: MapViewController.MapPin) {
         show(route: .PinDetail, withNavigation: true)
-//        showPinDetail(pin: pin)
+        deselectPins()
     }
 }

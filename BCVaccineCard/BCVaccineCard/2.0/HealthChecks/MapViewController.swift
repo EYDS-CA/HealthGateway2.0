@@ -30,10 +30,13 @@ extension MapViewController {
         // View used for pin
         let view: UIView
         
-        init(id: String, groupID: String, location: CLLocation, view: UIView) {
+        let selectionColour: UIColor
+        
+        init(id: String, groupID: String, location: CLLocation, view: UIView, selectionColour: UIColor) {
             self.id = id
             self.groupID = groupID
             self.view = view
+            self.selectionColour = selectionColour
             super.init()
             self.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         }
@@ -76,6 +79,10 @@ class MapViewController: UIViewController {
             setupLocation()
             mapView.showsUserLocation = true
         }
+    }
+    
+    func deselectPins() {
+        mapView?.selectedAnnotations.forEach({ mapView?.deselectAnnotation($0, animated: false) })
     }
     
     // MARK: Overridable events
@@ -141,7 +148,14 @@ extension MapViewController: MKMapViewDelegate{
     }
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let pin = view.annotation as? MapPin else {return}
+        pin.view.layer.cornerRadius = pin.view.frame.width / 2
+        pin.view.backgroundColor = pin.selectionColour
         tapped(pin: pin)
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let pin = view.annotation as? MapPin else {return}
+        pin.view.backgroundColor = .clear
     }
 }
 
@@ -256,7 +270,5 @@ class MapPinAnnotationView: MKAnnotationView {
         pin.view.widthAnchor.constraint(equalTo: widthAnchor, constant: 0).isActive = true
         pin.view.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
         pin.view.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
-        
-        
     }
 }

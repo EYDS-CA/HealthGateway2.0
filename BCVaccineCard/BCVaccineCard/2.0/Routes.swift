@@ -16,6 +16,7 @@ extension UIViewController {
     enum Route {
         case Web
         case PinDetail
+        case staticImage
     }
 }
 
@@ -30,6 +31,8 @@ extension UIViewController {
         case .PinDetail:
             let storyboard = Storyboards.pinDetail
             controller = storyboard.instantiateViewController(withIdentifier: String(describing: PinDetailViewController.self)) as? PinDetailViewController
+        case .staticImage:
+            return StaticImageViewController()
         }
         return controller
     }
@@ -52,6 +55,13 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    func showStatic(image: UIImage) {
+        guard let controller = createController(route: .staticImage) as? StaticImageViewController else {
+            return
+        }
+        controller.image = image
+        show(controller: controller, withNavigation: true)
+    }
     func showPinDetail(pin: MapViewController.MapPin) {
         if #available(iOS 15.0, *) {
             guard let detailViewController = createController(route: .PinDetail) as? PinDetailViewController else {
