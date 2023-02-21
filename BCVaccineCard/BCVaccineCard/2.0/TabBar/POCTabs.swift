@@ -8,7 +8,7 @@
 import UIKit
 
 enum POCTabs: Int, CaseIterable {
-    case Dashboard = 0, SrviceFinder, UnAuthenticatedRecords, AuthenticatedRecords
+    case Dashboard = 0, ServiceFinder, UnAuthenticatedRecords, AuthenticatedRecords
     
     var getIndexOfTab: Int {
         return self.rawValue
@@ -30,11 +30,11 @@ enum POCTabs: Int, CaseIterable {
                                   unselectedTabBarImage: UIImage(systemName: "house")!,
                                   baseViewController: DashboardViewController.construct())
                 
-            case .SrviceFinder:
-                return Properties(title: "Srvice Finder",
+            case .ServiceFinder:
+                return Properties(title: "Service Finder",
                                   selectedTabBarImage: UIImage(systemName: "map.fill")!,
                                   unselectedTabBarImage: UIImage(systemName: "map")!,
-                                  baseViewController: SrviceFinderViewController.construct())
+                                  baseViewController: ServiceFinderViewController.construct())
             case .UnAuthenticatedRecords:
                 
                 return Properties(title: "Records",
