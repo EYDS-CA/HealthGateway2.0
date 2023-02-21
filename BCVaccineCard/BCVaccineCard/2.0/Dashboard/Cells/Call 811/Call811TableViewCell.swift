@@ -32,18 +32,24 @@ class Call811TableViewCell: BaseDashboardTableViewCell {
     private func setup() {
         self.contentView.layer.cornerRadius = 10.0
         self.contentView.clipsToBounds = true
-        self.contentView.backgroundColor = AppColours.lightGray
-        discoverMoreButton.setTitle("Discover more ", for: .normal)
-        discoverMoreButton.setTitleColor(AppColours.appBlue, for: .normal)
+        self.contentView.backgroundColor = UIColor(hexString: "#F2F2F2")
+        let underlineAttr: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 16, weight: .bold),
+            .foregroundColor: UIColor(hexString: "#1A5A96"),
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+            .underlineColor: UIColor(hexString: "#1A5A96")
+        ]
+        let attrString = NSMutableAttributedString(string: "Discover more", attributes: underlineAttr)
+        discoverMoreButton.setAttributedTitle(attrString, for: .normal)
         discoverMoreButton.setImage(DashboardButton.discoverMore.getIcon, for: .normal)
         discoverMoreButton.semanticContentAttribute = .forceRightToLeft
-        discoverMoreButton.tintColor = AppColours.appBlue
+        discoverMoreButton.tintColor = UIColor(hexString: "#1A5A96")
         call811TitleLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
-        call811TitleLabel.textColor = AppColours.appBlue
+        call811TitleLabel.textColor = UIColor(hexString: "#003366")
         call811TitleLabel.text = "Call 8-1-1"
-        separatorView.backgroundColor = .systemYellow
+        separatorView.backgroundColor = UIColor(hexString: "#E2A014")
         descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        descriptionLabel.textColor = AppColours.textGray
+        descriptionLabel.textColor = UIColor(hexString: "#313132")
         descriptionLabel.text = "Speak to a health services navigator who can help you to find health information and services."
         self.healthNavButton.configure(type: .healthNavigator, owner: self, rounding: 4)
         self.registeredNurseButton.configure(type: .registeredNurse, owner: self, rounding: 4)

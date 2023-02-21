@@ -44,11 +44,11 @@ class ButtonView: UIView {
     }
     
     private func setup() {
-        iconImageView.tintColor = AppColours.appBlue
-        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        titleLabel.textColor = AppColours.appBlue
-        descriptionLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        descriptionLabel.textColor = AppColours.textBlack
+        iconImageView.tintColor = UIColor(hexString: "#003366")
+        titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        titleLabel.textColor = UIColor(hexString: "#313132")
+        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        descriptionLabel.textColor = UIColor(hexString: "#313132")
         contentView.clipsToBounds = true
     }
     
@@ -68,12 +68,6 @@ class ButtonView: UIView {
         self.titleLabel.text = type.getTitle
         self.descriptionLabel.text = type.getDescription
         self.delegate = owner as? ButtonViewAction
-        if type == .call911 {
-            self.contentView.backgroundColor = UIColor(hexString: "#E56578")
-            self.iconImageView.tintColor = .white
-            self.titleLabel.textColor = .white
-            self.descriptionLabel.textColor = .white
-        }
     }
 
     
@@ -125,11 +119,11 @@ extension DashboardButton {
         case .findPhysitian:
             return "Access A Family Physician, Nurse, Practitioner, And Other Health-Care Professionals"
         case .call911:
-            return "Call 911"
+            return "Call 911 for emergencies"
         case .virtualWalkIn:
-            return "Virtual Walk-In"
+            return "Virtual visit with a registered nurse"
         case .chat:
-            return "Chat"
+            return "Chat with a registered nurse"
 //        case .illnessesAndCOnditions:
 //            <#code#>
 //        case .symptomChecker:
@@ -161,11 +155,11 @@ extension DashboardButton {
         case .findPhysitian:
             return "It's quick and easy!"
         case .call911:
-            return "Emergencies"
+            return nil
         case .virtualWalkIn:
-            return "Virtual visit with a registered nurse"
+            return nil
         case .chat:
-            return "Message a registered nurse"
+            return nil
 //        case .illnessesAndCOnditions:
 //            <#code#>
 //        case .symptomChecker:

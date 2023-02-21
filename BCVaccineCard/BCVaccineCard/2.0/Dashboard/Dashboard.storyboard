@@ -27,7 +27,7 @@
                         <constraints>
                             <constraint firstItem="7Gf-NF-yeA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="9rz-Sd-a9i"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7Gf-NF-yeA" secondAttribute="bottom" id="DgW-oI-wrT"/>
-                            <constraint firstItem="7Gf-NF-yeA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iQd-ff-vMN"/>
+                            <constraint firstItem="7Gf-NF-yeA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dow-Cz-bYG"/>
                             <constraint firstItem="7Gf-NF-yeA" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-16" id="zB0-cA-1Jf"/>
                         </constraints>
                     </view>
