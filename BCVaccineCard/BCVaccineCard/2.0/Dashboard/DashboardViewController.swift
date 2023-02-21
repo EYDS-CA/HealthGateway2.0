@@ -46,11 +46,13 @@ class DashboardViewController: UIViewController {
         return DashboardViewController()
     }
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var subtitleLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        self.title = "Health Gateway"
     }
     
 }

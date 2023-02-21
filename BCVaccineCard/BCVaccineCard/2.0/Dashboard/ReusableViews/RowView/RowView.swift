@@ -40,9 +40,9 @@ class RowView: UIView {
     
     private func setup() {
         self.backgroundColor = .clear
-        iconImageView.tintColor = AppColours.appBlue
+        iconImageView.tintColor = UIColor(hexString: "#003366")
         titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
-        titleLabel.textColor = AppColours.appBlue
+        titleLabel.textColor = UIColor(hexString: "#003366")
         self.contentView.layer.cornerRadius = 10.0
         contentView.clipsToBounds = true
     }

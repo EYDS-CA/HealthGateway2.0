@@ -44,11 +44,11 @@ class ButtonView: UIView {
     }
     
     private func setup() {
-        iconImageView.tintColor = AppColours.appBlue
-        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        titleLabel.textColor = AppColours.appBlue
-        descriptionLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        descriptionLabel.textColor = AppColours.textBlack
+        iconImageView.tintColor = UIColor(hexString: "#003366")
+        titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        titleLabel.textColor = UIColor(hexString: "#313132")
+        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        descriptionLabel.textColor = UIColor(hexString: "#313132")
         contentView.clipsToBounds = true
     }
     
@@ -68,12 +68,6 @@ class ButtonView: UIView {
         self.titleLabel.text = type.getTitle
         self.descriptionLabel.text = type.getDescription
         self.delegate = owner as? ButtonViewAction
-        if type == .call911 {
-            self.contentView.backgroundColor = UIColor(hexString: "#E56578")
-            self.iconImageView.tintColor = .white
-            self.titleLabel.textColor = .white
-            self.descriptionLabel.textColor = .white
-        }
     }
 
     
