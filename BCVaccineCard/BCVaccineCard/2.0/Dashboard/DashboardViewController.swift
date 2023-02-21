@@ -82,8 +82,6 @@ extension DashboardViewController: DashboardTileDelegate {
             showWeb(url: button.rawValue, withNavigation: true)
         }
     }
-    
-    
 }
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
