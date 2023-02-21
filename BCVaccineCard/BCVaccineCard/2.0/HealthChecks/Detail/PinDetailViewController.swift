@@ -10,5 +10,7 @@ import UIKit
 
 class PinDetailViewController: BaseStaticImageViewController {
 
-
+    @IBAction private func backButtonHackTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
