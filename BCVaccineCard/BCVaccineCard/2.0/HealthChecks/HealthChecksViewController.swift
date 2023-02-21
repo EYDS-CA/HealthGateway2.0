@@ -70,7 +70,7 @@ class ServiceFinderViewController: MapViewController {
         print(pin)
         moveMapTo(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.showDetail(pin: pin)
         })
         
