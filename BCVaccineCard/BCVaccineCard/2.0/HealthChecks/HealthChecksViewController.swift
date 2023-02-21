@@ -92,6 +92,10 @@ class ServiceFinderViewController: MapViewController {
     }
     
     func style() {
+        if let tabBarController = tabBarController {
+            tabBarController.tabBar.isHidden = false
+            tabBarController.loadViewIfNeeded()
+        }
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.isHidden = true
         mapToolsContainer.backgroundColor = AppColours.appBlue
@@ -110,6 +114,7 @@ class ServiceFinderViewController: MapViewController {
         filterIcon.tintColor = .white
         listIcon.tintColor = .white
         userIcon.layer.cornerRadius = userIcon.frame.height / 2
+        layoutIfNeeded()
     }
     
     
