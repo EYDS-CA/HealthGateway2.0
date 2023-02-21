@@ -20,10 +20,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-detail" translatesAutoresizingMaskIntoConstraints="NO" id="5nr-Z4-GqX">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMg-zX-9OH">
+                                <rect key="frame" x="0.0" y="20" width="100" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="ans-dm-FCG"/>
+                                    <constraint firstAttribute="width" constant="100" id="v85-GE-ZIC"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="backButtonHackTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HNd-iJ-h07"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vMg-zX-9OH" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="0Dg-8n-2cV"/>
+                            <constraint firstItem="vMg-zX-9OH" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="20" id="YeV-Vt-7Ud"/>
                             <constraint firstItem="5nr-Z4-GqX" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="cc6-4l-Iso"/>
                             <constraint firstAttribute="bottom" secondItem="5nr-Z4-GqX" secondAttribute="bottom" id="jqq-yo-be4"/>
                             <constraint firstAttribute="trailing" secondItem="5nr-Z4-GqX" secondAttribute="trailing" id="oDN-ul-Knq"/>
