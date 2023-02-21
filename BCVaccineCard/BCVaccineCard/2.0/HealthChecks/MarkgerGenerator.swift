@@ -31,7 +31,7 @@ class MarkgerGenerator {
     
     func generateRandomVictoriaLocation() -> CLLocation {
         let ramdonLat = Double.random(in: minVictoriaLat...maxVictoriaLat)
-        let randomLon = Double.random(in: minVictoriaLon...maxVictoriaLon)
+        let randomLon = Double.random(in: maxVictoriaLon...minVictoriaLon)
         return CLLocation(latitude: ramdonLat, longitude: randomLon)
     }
     

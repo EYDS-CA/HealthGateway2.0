@@ -16,16 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-detail" translatesAutoresizingMaskIntoConstraints="NO" id="5nr-Z4-GqX">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5nr-Z4-GqX" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="cc6-4l-Iso"/>
+                            <constraint firstAttribute="bottom" secondItem="5nr-Z4-GqX" secondAttribute="bottom" id="jqq-yo-be4"/>
+                            <constraint firstAttribute="trailing" secondItem="5nr-Z4-GqX" secondAttribute="trailing" id="oDN-ul-Knq"/>
+                            <constraint firstItem="5nr-Z4-GqX" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="pKs-Oj-5FG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33" y="4"/>
+            <point key="canvasLocation" x="-34.351145038167935" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="pin-detail" width="860" height="1864"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

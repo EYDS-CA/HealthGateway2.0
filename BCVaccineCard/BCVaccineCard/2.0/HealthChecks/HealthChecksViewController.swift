@@ -24,6 +24,7 @@ class ServiceFinderViewController: MapViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    
     class func construct() -> ServiceFinderViewController {
         if let vc = UIStoryboard(name: "SrviceFinder", bundle: nil).instantiateViewController(withIdentifier: String(describing: ServiceFinderViewController.self)) as? ServiceFinderViewController {
             return vc
@@ -33,11 +34,10 @@ class ServiceFinderViewController: MapViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userZoomRadius = 5000
         setupMap(in: mapContainer, enableLocation: true)
+        dropDummyPins()
         style()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.dropDummyPins()
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,8 +51,16 @@ class ServiceFinderViewController: MapViewController {
             for i in 0...20 {
                 let pinLocation = generator.generateRandomVancouverLocation()
                 print(pinLocation)
-                let marker = generator.generateMaker(image: UIImage.init(systemName: "heart.circle"), bgColour: UIColor(hexString: "#ebe6e6"))
-                let pin = MapPin(id: "\(i)", groupID: "1", location: pinLocation, view: marker)
+                let marker = generator.generateMaker(image: UIImage.init(named: "pin-head"), bgColour: UIColor(hexString: "#ebe6e6"))
+                let pin = MapPin(id: "van-\(i)", groupID: "1", location: pinLocation, view: marker)
+                drop(pin: pin)
+            }
+            
+            for i in 0...20 {
+                let pinLocation = generator.generateRandomVictoriaLocation()
+                print(pinLocation)
+                let marker = generator.generateMaker(image: UIImage.init(named: "pin-head"), bgColour: UIColor(hexString: "#ebe6e6"))
+                let pin = MapPin(id: "vic-\(i)", groupID: "1", location: pinLocation, view: marker)
                 drop(pin: pin)
             }
         }
@@ -61,7 +69,26 @@ class ServiceFinderViewController: MapViewController {
     override func tapped(pin: MapViewController.MapPin) {
         print(pin)
         moveMapTo(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude)
-        showDetail(pin: pin)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.showDetail(pin: pin)
+        })
+        
+    }
+    
+    override func receivedDeviceLocation(location: CLLocation) {
+        var distances: [Double] = []
+        for pin in pins {
+            let pinlocation = CLLocation(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude)
+            let distance = pinlocation.distance(from: location)
+            distances.append(distance)
+        }
+        let sortedDistances = distances.sorted()
+        if let shortest = sortedDistances.first, shortest > userZoomRadius {
+            userZoomRadius = shortest
+            userZoomRadius = shortest
+            focusOnCurrent()
+        }
     }
     
     func style() {
@@ -87,5 +114,7 @@ class ServiceFinderViewController: MapViewController {
     
     
     func showDetail(pin: MapViewController.MapPin) {
-        showPinDetail(pin: pin)    }
+        show(route: .PinDetail, withNavigation: true)
+//        showPinDetail(pin: pin)
+    }
 }

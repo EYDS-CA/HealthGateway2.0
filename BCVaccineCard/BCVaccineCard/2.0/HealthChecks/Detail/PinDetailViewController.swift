@@ -11,8 +11,17 @@ class PinDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let parent = parent?.parent as? POCTabBarController {
+            parent.tabBar.isHidden = true
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let parent = parent?.parent as? POCTabBarController {
+            parent.tabBar.isHidden = false
+        }
     }
     
 

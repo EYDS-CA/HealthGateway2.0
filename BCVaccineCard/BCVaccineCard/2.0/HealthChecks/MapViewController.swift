@@ -45,7 +45,7 @@ class MapViewController: UIViewController {
     private weak var mapView: MKMapView?
     private var enableLocation: Bool = false
     private var zoomedIntoUserLocation: Bool = false
-    private var pins: [MapPin] = [MapPin]()
+    var pins: [MapPin] = [MapPin]()
     
     // MARK: Public Variables
     public var locationManager: CLLocationManager?
@@ -53,6 +53,7 @@ class MapViewController: UIViewController {
     public var mapCenter: CLLocationCoordinate2D?
     // Default region radius used when zooming into a location
     public var regionRadius: CLLocationDistance = 1000
+    public var userZoomRadius: CLLocationDistance = 1000
     // Latest device location received from GPS
     public var currentLocation: CLLocation?
     // Set message displayed when location permission has been denied
@@ -101,7 +102,7 @@ extension MapViewController {
     /// Move map center to device's current position. uses regionRadius variable for radius
     public func focusOnCurrent() {
         guard let location = locationManager?.location?.coordinate else { return }
-        moveMapTo(latitude: location.latitude, longitude: location.longitude)
+        moveMapTo(latitude: location.latitude, longitude: location.longitude, radiusMeters: userZoomRadius)
     }
 }
 
