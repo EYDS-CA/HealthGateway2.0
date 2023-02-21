@@ -30,7 +30,6 @@ extension UIViewController {
     }
     
     func callNumber(phoneNumber:String) {
-
       if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
 
         let application:UIApplication = UIApplication.shared
@@ -38,6 +37,12 @@ extension UIViewController {
             application.open(phoneCallURL, options: [:], completionHandler: nil)
         }
       }
+    }
+    
+    func sendMail(to string: String) {
+        if let url = URL(string: string) {
+            UIApplication.shared.open(url)
+        }
     }
 }
 

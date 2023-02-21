@@ -20,8 +20,8 @@ enum DashboardButton: String, CaseIterable {
     case symptomChecker = "https://www.buoyhealth.com/symptom-checker/"
     case healthNavigator = "811"
     case registeredNurse = "0811"// TODO: remove one of the 2 811 buttons
-    case pharmasistAdvice = "pharmasist@bc.ca"
-    case exerciseProfessional = "exercise@bc.ca"
+    case pharmasistAdvice = "mailto:pharmasist@bc.ca"
+    case exerciseProfessional = "mailto:exercise@bc.ca"
     case discoverMore = "discoverMore" // TOOO:
     case immunizeBC = "https://immunizebc.ca/"
     case servicesNearYou = "https://www.islandhealth.ca/"
@@ -64,6 +64,10 @@ extension DashboardViewController: DashboardTileDelegate {
         case .chat:
             // SHOW IMAGE
             break
+        case .exerciseProfessional:
+            sendMail(to: button.rawValue)
+        case .pharmasistAdvice:
+            sendMail(to: button.rawValue)
         case .call911:
             callNumber(phoneNumber: button.rawValue)
         case .healthNavigator:
