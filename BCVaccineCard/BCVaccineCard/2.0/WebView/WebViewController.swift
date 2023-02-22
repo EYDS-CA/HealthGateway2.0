@@ -29,9 +29,11 @@ class WebViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         style()
+        webView.navigationDelegate = self
         if let url = self.url {
             webView.load(url)
         }
+        
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -47,6 +49,7 @@ class WebViewController: UIViewController {
     }
     
     func style() {
+        progressView.tintColor = AppColours.appBlue
         let themeColour = AppColours.appBlue
         backward.tintColor = themeColour
         forward.tintColor = themeColour
@@ -79,6 +82,13 @@ class WebViewController: UIViewController {
         present(activity, animated: true)
     }
     
+}
+
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.getElementsByClassName('ftFpPp')[0].remove()") { (result, error) in
+        }
+    }
 }
 
 extension WKWebView {

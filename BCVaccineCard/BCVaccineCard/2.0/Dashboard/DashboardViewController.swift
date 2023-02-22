@@ -24,6 +24,7 @@ enum DashboardButton: String, CaseIterable {
     case exerciseProfessional = "mailto:exercise@bc.ca"
     case discoverMore = "discoverMore" // TOOO:
     case immunizeBC = "https://immunizebc.ca/"
+    case appointmentReminders = "https://immunizebc.ca/reminders"
     case servicesNearYou = "https://www.islandhealth.ca/"
     case suppotFoundy = "https://foundrybc.ca/"
     case supportAllAges = "https://www2.gov.bc.ca/gov/content/mental-health-support-in-bc"

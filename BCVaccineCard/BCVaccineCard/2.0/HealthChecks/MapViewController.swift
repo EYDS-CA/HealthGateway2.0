@@ -71,6 +71,7 @@ class MapViewController: UIViewController {
         let mapView = MKMapView(frame: container.bounds)
         container.addSubview(mapView)
         // TODO: set contraints
+        mapView.addEqualSizeContraints(to: container, safe: true)
         
         self.mapView = mapView
         mapView.delegate = self
