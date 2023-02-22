@@ -259,6 +259,7 @@ class MapPinAnnotationView: MKAnnotationView {
         self.pin = model
         setupUI()
     }
+    
     private func setupUI() {
         guard let pin = pin else {return}
         backgroundColor = .clear
