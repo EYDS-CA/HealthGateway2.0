@@ -25,13 +25,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nch-kI-52Y">
-                        <rect key="frame" x="222.66666666666663" y="5" width="155.33333333333337" height="34.333333333333336"/>
+                        <rect key="frame" x="239.66666666666663" y="5" width="134" height="34.333333333333336"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="arrow.up.forward" catalog="system" title="Discover more"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Discover more"/>
                         <connections>
                             <action selector="discoverMoreButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ut0-DH-c27"/>
                         </connections>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Otj-uJ-YJs">
+                        <rect key="frame" x="361.66666666666669" y="15.333333333333337" width="16.333333333333314" height="14.333333333333334"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt5-c8-j6Z">
                         <rect key="frame" x="20" y="42.333333333333343" width="358" height="45.666666666666657"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -98,15 +101,17 @@
                     <constraint firstItem="qB4-fg-t14" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="4dZ-sb-Uid"/>
                     <constraint firstItem="zt5-c8-j6Z" firstAttribute="leading" secondItem="qB4-fg-t14" secondAttribute="leading" id="6Zt-qK-nur"/>
                     <constraint firstItem="cvP-iF-bgI" firstAttribute="top" secondItem="Bxh-HX-hso" secondAttribute="bottom" constant="20" id="9vH-KP-t7b"/>
-                    <constraint firstAttribute="trailing" secondItem="nch-kI-52Y" secondAttribute="trailing" constant="20" id="A1W-o4-hpi"/>
                     <constraint firstItem="Bxh-HX-hso" firstAttribute="top" secondItem="zt5-c8-j6Z" secondAttribute="bottom" constant="20" id="DvQ-i2-vFa"/>
                     <constraint firstItem="Bxh-HX-hso" firstAttribute="trailing" secondItem="zt5-c8-j6Z" secondAttribute="trailing" id="EW7-Xv-ykb"/>
                     <constraint firstItem="qB4-fg-t14" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="HUx-i2-oYb"/>
-                    <constraint firstItem="zt5-c8-j6Z" firstAttribute="trailing" secondItem="nch-kI-52Y" secondAttribute="trailing" id="O5F-Yy-Hsu"/>
+                    <constraint firstItem="zt5-c8-j6Z" firstAttribute="trailing" secondItem="Otj-uJ-YJs" secondAttribute="trailing" id="O5F-Yy-Hsu"/>
+                    <constraint firstItem="Otj-uJ-YJs" firstAttribute="centerY" secondItem="nch-kI-52Y" secondAttribute="centerY" id="Qy9-I9-lQ7"/>
                     <constraint firstItem="Bxh-HX-hso" firstAttribute="leading" secondItem="zt5-c8-j6Z" secondAttribute="leading" id="Z8V-TB-ouS"/>
                     <constraint firstItem="zt5-c8-j6Z" firstAttribute="top" secondItem="qB4-fg-t14" secondAttribute="bottom" constant="10" id="Ztw-YF-1m9"/>
+                    <constraint firstAttribute="trailing" secondItem="Otj-uJ-YJs" secondAttribute="trailing" constant="20" id="pLT-2p-RzE"/>
                     <constraint firstAttribute="bottomMargin" secondItem="cvP-iF-bgI" secondAttribute="bottom" constant="20" id="pl1-vx-k5B"/>
-                    <constraint firstItem="cvP-iF-bgI" firstAttribute="trailing" secondItem="nch-kI-52Y" secondAttribute="trailing" id="qz6-HW-R6s"/>
+                    <constraint firstItem="Otj-uJ-YJs" firstAttribute="leading" secondItem="nch-kI-52Y" secondAttribute="trailing" constant="-12" id="qCt-Wr-9cC"/>
+                    <constraint firstItem="cvP-iF-bgI" firstAttribute="trailing" secondItem="Otj-uJ-YJs" secondAttribute="trailing" id="qz6-HW-R6s"/>
                     <constraint firstItem="nch-kI-52Y" firstAttribute="centerY" secondItem="qB4-fg-t14" secondAttribute="centerY" id="xXv-V1-1EK"/>
                 </constraints>
             </tableViewCellContentView>
@@ -114,6 +119,7 @@
             <connections>
                 <outlet property="call811TitleLabel" destination="qB4-fg-t14" id="EiT-tk-7sj"/>
                 <outlet property="descriptionLabel" destination="zt5-c8-j6Z" id="DeU-fi-4yv"/>
+                <outlet property="discoverMoreArrowImage" destination="Otj-uJ-YJs" id="VJy-VI-yvd"/>
                 <outlet property="discoverMoreButton" destination="nch-kI-52Y" id="oDj-EV-6Tn"/>
                 <outlet property="exerciseProfessionalButton" destination="kpH-bL-aS0" id="kI4-m5-dix"/>
                 <outlet property="healthNavButton" destination="25f-vW-7l0" id="Jq6-mo-sKB"/>

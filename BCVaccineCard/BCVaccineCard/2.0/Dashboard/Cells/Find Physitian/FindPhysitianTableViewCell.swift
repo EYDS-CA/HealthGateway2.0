@@ -36,9 +36,18 @@ class FindPhysitianTableViewCell: BaseDashboardTableViewCell {
         self.roundedAccessView.layer.cornerRadius = 10.0
         self.roundedAccessView.clipsToBounds = true
         self.roundedAccessView.backgroundColor = UIColor(hexString: "#003366")
+        let attr: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 16, weight: .regular),
+            .foregroundColor: UIColor.white
+        ]
         roundedAccessViewTitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         roundedAccessViewTitleLabel.textColor = .white
-        roundedAccessViewTitleLabel.text = DashboardButton.findPhysitian.getTitle
+        let attrString = NSMutableAttributedString(string: DashboardButton.findPhysitian.getTitle ?? "", attributes: attr)
+        let parStyle = NSMutableParagraphStyle()
+        parStyle.lineSpacing = 1.5
+        parStyle.lineHeightMultiple = 1.5
+        attrString.addAttributes([NSAttributedString.Key.paragraphStyle: parStyle], range: NSMakeRange(0, attrString.length))
+        roundedAccessViewTitleLabel.attributedText = attrString
         roundedseparatorView.backgroundColor = UIColor(hexString: "#E2A014")
         roundeddescriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         roundeddescriptionLabel.textColor = UIColor(hexString: "#CFCFCF")

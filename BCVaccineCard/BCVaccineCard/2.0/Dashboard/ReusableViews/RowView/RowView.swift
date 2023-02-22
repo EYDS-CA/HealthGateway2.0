@@ -12,6 +12,7 @@ class RowView: UIView {
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var arrowImageView: UIImageView!
     
     private var type: DashboardButton?
     private weak var delegate: ButtonViewAction?
@@ -45,6 +46,7 @@ class RowView: UIView {
         titleLabel.textColor = UIColor(hexString: "#003366")
         self.contentView.layer.cornerRadius = 10.0
         contentView.clipsToBounds = true
+        arrowImageView.tintColor = UIColor(hexString: "#003366")
     }
     
     func configure(type: DashboardButton, owner: UITableViewCell) {
