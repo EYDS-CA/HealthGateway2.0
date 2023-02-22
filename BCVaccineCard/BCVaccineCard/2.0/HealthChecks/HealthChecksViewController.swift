@@ -121,7 +121,12 @@ class ServiceFinderViewController: MapViewController {
         let bgView = UIView(frame: view.frame)
         view.insertSubview(bgView, at: 0)
         bgView.tag = bgViewTag
-        bgView.addEqualSizeContraints(to: view, safe: false)
+//        bgView.addEqualSizeContraints(to: view, safe: false)
+        bgView.translatesAutoresizingMaskIntoConstraints = false
+        bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        bgView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
+        bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         bgView.backgroundColor = AppColours.appBlue
     }
     
