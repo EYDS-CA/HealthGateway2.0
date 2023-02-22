@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseDashboardTableViewCell: UITableViewCell {
+class BaseDashboardTableViewCell: UITableViewCell, Theme {
 
     var delegate: DashboardTileDelegate?
 

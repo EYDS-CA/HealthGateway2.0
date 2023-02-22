@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FindServicesTableViewCell: BaseDashboardTableViewCell , Theme {
+class FindServicesTableViewCell: BaseDashboardTableViewCell {
    
    
     @IBOutlet weak var immunizeBCView: UIView!
@@ -60,18 +60,16 @@ class FindServicesTableViewCell: BaseDashboardTableViewCell , Theme {
     func style() {
         islandHealthLogo.image = UIImage(named: "islandHealthLogo")
         islandHealthDescLabel.text = "Health services and resources near you"
-        islandHealthDescLabel.font = UIFont.bcSansRegularWithSize(size: 12)
-        islandHealthDescLabel.textColor = .black
+        styleCell(text: islandHealthDescLabel)
+        
         islandHealthVIew.backgroundColor = UIColor.init(hexString: "#EBEBEB")
         islandHealthVIew.layer.cornerRadius = 12
         
         immunizeBCDivider.backgroundColor = AppColours.barYellow
-        immunizeBCTitleLabel.font = UIFont.bcSansBoldWithSize(size: 16)
+        styleCell(title: immunizeBCTitleLabel)
         immunizeBCTitleLabel.text = "Immunize BC"
-        immunizeBCTitleLabel.textColor = AppColours.appBlue
-        ImmunizeBCDescLabel.font = UIFont.bcSansRegularWithSize(size: 12)
+        styleCell(text: ImmunizeBCDescLabel)
         ImmunizeBCDescLabel.text = "Immunization tools, indormation, and reources."
-        ImmunizeBCDescLabel.textColor = .black
         immunizeBCView.backgroundColor = UIColor.init(hexString: "#E5F0FF")
         immunizeBCView.layer.cornerRadius = 12
         
