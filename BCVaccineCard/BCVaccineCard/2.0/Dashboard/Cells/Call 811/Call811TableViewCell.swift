@@ -11,6 +11,7 @@ class Call811TableViewCell: BaseDashboardTableViewCell {
     
     @IBOutlet private weak var call811TitleLabel: UILabel!
     @IBOutlet private weak var discoverMoreButton: UIButton!
+    @IBOutlet private weak var discoverMoreArrowImage: UIImageView!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var separatorView: UIView!
     @IBOutlet private weak var healthNavButton: ButtonView!
@@ -41,9 +42,10 @@ class Call811TableViewCell: BaseDashboardTableViewCell {
         ]
         let attrString = NSMutableAttributedString(string: "Discover more ", attributes: underlineAttr)
         discoverMoreButton.setAttributedTitle(attrString, for: .normal)
-        discoverMoreButton.setImage(DashboardButton.discoverMore.getIcon, for: .normal)
-        discoverMoreButton.semanticContentAttribute = .forceRightToLeft
+//        discoverMoreButton.setImage(DashboardButton.discoverMore.getIcon, for: .normal)
+//        discoverMoreButton.semanticContentAttribute = .forceRightToLeft
         discoverMoreButton.tintColor = UIColor(hexString: "#1A5A96")
+        discoverMoreArrowImage.tintColor = UIColor(hexString: "#1A5A96")
         call811TitleLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
         call811TitleLabel.textColor = UIColor(hexString: "#003366")
         call811TitleLabel.text = "Call 8-1-1"
