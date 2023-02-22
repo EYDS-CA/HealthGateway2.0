@@ -84,12 +84,10 @@ class SymptomCheckerTableViewCell: BaseDashboardTableViewCell {
         bgView.image = image
         bgView.clipsToBounds = true
         bgView.layer.cornerRadius = 16
-        titleLabel.font = UIFont.bcSansBoldWithSize(size: 16)
+        styleCell(text: descLabel)
+        styleCell(title: titleLabel)
         titleLabel.text = titleString
-        titleLabel.textColor = AppColours.appBlue
-        descLabel.font = UIFont.bcSansRegularWithSize(size: 12)
         descLabel.text = descString
-        descLabel.textColor = .black
         divider.backgroundColor = AppColours.barYellow
         
         

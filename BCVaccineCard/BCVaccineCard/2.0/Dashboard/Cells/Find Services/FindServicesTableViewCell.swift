@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FindServicesTableViewCell: BaseDashboardTableViewCell , Theme {
+class FindServicesTableViewCell: BaseDashboardTableViewCell {
    
    
     @IBOutlet weak var immunizeBCView: UIView!
@@ -30,6 +30,10 @@ class FindServicesTableViewCell: BaseDashboardTableViewCell , Theme {
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(self.islandHealthTap(_:)))
         islandHealthVIew.isUserInteractionEnabled = true
         islandHealthVIew.addGestureRecognizer(tap1)
+        
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.immunizeBCTap(_:)))
+        immunizeBCView.isUserInteractionEnabled = true
+        immunizeBCView.addGestureRecognizer(tap2)
     }
     
     @objc func islandHealthTap(_ sender: UITapGestureRecognizer? = nil) {
@@ -39,28 +43,33 @@ class FindServicesTableViewCell: BaseDashboardTableViewCell , Theme {
         delegate.tapped(button: .servicesNearYou)
     }
     
-    @IBAction func getRemindersAction(_ sender: Any) {
+    @objc func immunizeBCTap(_ sender: UITapGestureRecognizer? = nil) {
         guard let delegate = delegate else {
             return
         }
         delegate.tapped(button: .immunizeBC)
     }
     
+    @IBAction func getRemindersAction(_ sender: Any) {
+        guard let delegate = delegate else {
+            return
+        }
+        delegate.tapped(button: .appointmentReminders)
+    }
+    
     func style() {
         islandHealthLogo.image = UIImage(named: "islandHealthLogo")
         islandHealthDescLabel.text = "Health services and resources near you"
-        islandHealthDescLabel.font = UIFont.bcSansRegularWithSize(size: 12)
-        islandHealthDescLabel.textColor = .black
+        styleCell(text: islandHealthDescLabel)
+        
         islandHealthVIew.backgroundColor = UIColor.init(hexString: "#EBEBEB")
         islandHealthVIew.layer.cornerRadius = 12
         
         immunizeBCDivider.backgroundColor = AppColours.barYellow
-        immunizeBCTitleLabel.font = UIFont.bcSansBoldWithSize(size: 16)
+        styleCell(title: immunizeBCTitleLabel)
         immunizeBCTitleLabel.text = "Immunize BC"
-        immunizeBCTitleLabel.textColor = AppColours.appBlue
-        ImmunizeBCDescLabel.font = UIFont.bcSansRegularWithSize(size: 12)
+        styleCell(text: ImmunizeBCDescLabel)
         ImmunizeBCDescLabel.text = "Immunization tools, indormation, and reources."
-        ImmunizeBCDescLabel.textColor = .black
         immunizeBCView.backgroundColor = UIColor.init(hexString: "#E5F0FF")
         immunizeBCView.layer.cornerRadius = 12
         

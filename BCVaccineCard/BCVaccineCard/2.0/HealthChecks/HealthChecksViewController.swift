@@ -17,13 +17,12 @@ class ServiceFinderViewController: MapViewController {
     @IBOutlet weak var filterIcon: UIButton!
     @IBOutlet weak var listIcon: UIButton!
     @IBOutlet weak var walkInClinicSettingIcon: UIButton!
-    
     @IBOutlet weak var walkInClinicLabel: UILabel!
-    
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    private var calibratedInitialZoom: Bool = false
     
     class func construct() -> ServiceFinderViewController {
         if let vc = UIStoryboard(name: "SrviceFinder", bundle: nil).instantiateViewController(withIdentifier: String(describing: ServiceFinderViewController.self)) as? ServiceFinderViewController {
@@ -67,16 +66,17 @@ class ServiceFinderViewController: MapViewController {
     }
     
     override func tapped(pin: MapViewController.MapPin) {
-        print(pin)
-        moveMapTo(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-            self.showDetail(pin: pin)
-        })
-        
+        moveMapTo(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude, radiusMeters: 2000)
+        self.showDetail(pin: pin)
     }
     
     override func receivedDeviceLocation(location: CLLocation) {
+        if !calibratedInitialZoom {
+            calibrateInitialZoom(location: location)
+        }
+    }
+    
+    func calibrateInitialZoom(location: CLLocation) {
         var distances: [Double] = []
         for pin in pins {
             let pinlocation = CLLocation(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude)
@@ -88,10 +88,15 @@ class ServiceFinderViewController: MapViewController {
             userZoomRadius = shortest
             userZoomRadius = shortest
             focusOnCurrent()
+            calibratedInitialZoom = true
         }
     }
     
     func style() {
+        if let tabBarController = tabBarController {
+            tabBarController.tabBar.isHidden = false
+            tabBarController.loadViewIfNeeded()
+        }
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.isHidden = true
         mapToolsContainer.backgroundColor = AppColours.appBlue
@@ -110,6 +115,19 @@ class ServiceFinderViewController: MapViewController {
         filterIcon.tintColor = .white
         listIcon.tintColor = .white
         userIcon.layer.cornerRadius = userIcon.frame.height / 2
+        view.layoutIfNeeded()
+        let bgViewTag = 12933
+        view.viewWithTag(bgViewTag)?.removeFromSuperview()
+        let bgView = UIView(frame: view.frame)
+        view.insertSubview(bgView, at: 0)
+        bgView.tag = bgViewTag
+//        bgView.addEqualSizeContraints(to: view, safe: false)
+        bgView.translatesAutoresizingMaskIntoConstraints = false
+        bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        bgView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
+        bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        bgView.backgroundColor = AppColours.appBlue
     }
     
     

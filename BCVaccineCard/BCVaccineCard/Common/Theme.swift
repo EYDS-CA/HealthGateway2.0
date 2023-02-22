@@ -107,4 +107,14 @@ extension Theme {
             label.minimumScaleFactor = 0.6
         }
     }
+    
+    func styleCell(text label: UILabel) {
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    }
+    
+    func styleCell(title label: UILabel) {
+        label.textColor = AppColours.appBlue
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+    }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class MentalHealthTableViewCell: BaseDashboardTableViewCell {
     
+    @IBOutlet weak var btnHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bgView: UIView!
     
     @IBOutlet weak var divider: UIView!
@@ -68,11 +69,10 @@ class MentalHealthTableViewCell: BaseDashboardTableViewCell {
     }
     
     func style() {
+        btnHeightConstraint.constant = 32
         divider.backgroundColor = AppColours.barYellow
-        titleLabel.font = UIFont.bcSansBoldWithSize(size: 18)
-        titleLabel.textColor = AppColours.appBlue
-        descLabel.textColor = .black
-        descLabel.font = UIFont.bcSansRegularWithSize(size: 13)
+        styleCell(title: titleLabel)
+        styleCell(text: descLabel)
         descLabel.text = "Health services and resources and near you."
         titleLabel.text = "Mental Health & substance use support"
         
@@ -103,14 +103,14 @@ class MentalHealthTableViewCell: BaseDashboardTableViewCell {
     ) {
         bgView.backgroundColor = .white
         bgView.layer.cornerRadius = 10
-        titleLabel.font = UIFont.bcSansBoldWithSize(size: 12)
+        titleLabel.font = UIFont.bcSansBoldWithSize(size: 13)
         titleLabel.textColor = AppColours.appBlue
-        descLabel.font = UIFont.bcSansRegularWithSize(size: 10)
+        descLabel.font = UIFont.bcSansRegularWithSize(size: 13)
         descLabel.textColor = UIColor.black
         
         button.setTitle("", for: .normal)
         if #available(iOS 13.0, *) {
-            let btnIcon = UIImage.init(systemName: "arrow.right.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 12))?.withTintColor(AppColours.appBlue)
+            let btnIcon = UIImage.init(systemName: "arrow.right.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 16))?.withTintColor(AppColours.appBlue)
             button.setImage(btnIcon, for: .normal)
             button.tintColor = AppColours.appBlue
         }
