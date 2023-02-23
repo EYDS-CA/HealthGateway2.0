@@ -94,8 +94,6 @@ enum DashboardSections: Int, CaseIterable {
 
 }
 
-
-
 class DashboardViewController: UIViewController {
     
     class func construct() -> DashboardViewController {
@@ -112,6 +110,25 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         self.title = "Health Gateway"
+        setupTitleIcon()
+    }
+    
+    func setupTitleIcon() {
+        let navControllerViewsWithLabels = navigationController?.navigationBar.subviews.compactMap({ $0.subviews.contains(where: { sub in
+            return sub is UILabel
+        }) ? $0 : nil })
+        let iconSize: CGFloat = 17
+        guard let labelView = navControllerViewsWithLabels?.first?.subviews.filter({$0 is UILabel}).first else {
+            return
+        }
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: iconSize, height: iconSize))
+        imageView.image = UIImage(named: "hg+")
+        labelView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.leadingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: 0).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: labelView.centerYAnchor, constant: 0).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
     }
     
 }
