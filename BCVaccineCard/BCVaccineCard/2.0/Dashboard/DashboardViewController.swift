@@ -58,6 +58,19 @@ enum DashboardSections: Int, CaseIterable {
         }
     }
     
+    func title() -> String {
+        switch self {
+        case .ConnectWithHealthCareProviders:
+            return "Connect With Health Care Providers"
+        case .LearnAboutYourHealth:
+            return "Learn about your health & wellness"
+        case .FindHealthServices:
+            return "Find health services"
+        case .AccessHelthRecords:
+            return "Access your health records"
+        }
+    }
+    
     enum ConnectWithHealthCareProvidersSection: Int, CaseIterable {
         case AccessHealthCareProfessionals
         case Contact
@@ -214,20 +227,6 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         return section.numberOfCells()
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let section = DashboardSections(rawValue: section) else {return ""}
-        switch section {
-        case .ConnectWithHealthCareProviders:
-            return "Connect With Health Care Providers"
-        case .LearnAboutYourHealth:
-            return "Learn about your health & wellness"
-        case .FindHealthServices:
-            return "Find health services"
-        case .AccessHelthRecords:
-            return "Access your health records"
-        }
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let section = DashboardSections(rawValue: indexPath.section) else {return UITableViewCell()}
         
@@ -300,5 +299,18 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             cell.setup()
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let section = DashboardSections(rawValue: section) else {return nil}
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 42))
+        let label = UILabel(frame: container.bounds)
+        container.addSubview(label)
+        label.addEqualSizeContraints(to: container)
+        label.text = section.title()
+        label.font = UIFont.bcSansBoldWithSize(size: 15)
+        label.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        container.backgroundColor = .white
+        return container
     }
 }
