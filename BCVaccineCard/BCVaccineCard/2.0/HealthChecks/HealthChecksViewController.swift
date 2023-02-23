@@ -106,7 +106,7 @@ class ServiceFinderViewController: MapViewController {
         nameLabel.text = AuthManager().displayName ?? "Jean Smith"
         nameLabel.textColor = .white
         nameLabel.font = UIFont.bcSansBoldWithSize(size: 15)
-        locationLabel.textColor = .white
+        locationLabel.textColor = UIColor(red: 0.702, green: 0.702, blue: 0.702, alpha: 1)
         seeAllLabel.textColor = .white
         seeAllLabel.font = UIFont.bcSansRegularWithSize(size: 15)
         walkInClinicLabel.textColor = .white
@@ -122,13 +122,20 @@ class ServiceFinderViewController: MapViewController {
         let bgView = UIView(frame: view.frame)
         view.insertSubview(bgView, at: 0)
         bgView.tag = bgViewTag
-//        bgView.addEqualSizeContraints(to: view, safe: false)
         bgView.translatesAutoresizingMaskIntoConstraints = false
         bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         bgView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
         bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         bgView.backgroundColor = AppColours.appBlue
+        
+        filterIcon.backgroundColor = .white
+        listIcon.backgroundColor = .white
+        filterIcon.layer.cornerRadius = 5
+        listIcon.layer.cornerRadius = 5
+        filterIcon.tintColor = AppColours.appBlue
+        listIcon.tintColor = AppColours.appBlue
+        locationIcon.tintColor = UIColor(red: 0.702, green: 0.702, blue: 0.702, alpha: 1)
     }
     
     
