@@ -614,6 +614,24 @@
 		3EBC991829110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991929110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991A29110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
+		3EBFADE029A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */; };
+		3EBFADE129A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */; };
+		3EBFADE229A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */; };
+		3EBFADE329A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */; };
+		3EBFADE429A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */; };
+		3EBFADE529A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */; };
+		3EBFADE929A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADE729A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift */; };
+		3EBFADEA29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADE729A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift */; };
+		3EBFADEB29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADE729A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift */; };
+		3EBFADEC29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADE829A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib */; };
+		3EBFADED29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADE829A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib */; };
+		3EBFADEE29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADE829A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib */; };
+		3EBFADF229A7F4E7007330FE /* ContactDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADF029A7F4E7007330FE /* ContactDashboardTableViewCell.swift */; };
+		3EBFADF329A7F4E7007330FE /* ContactDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADF029A7F4E7007330FE /* ContactDashboardTableViewCell.swift */; };
+		3EBFADF429A7F4E7007330FE /* ContactDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFADF029A7F4E7007330FE /* ContactDashboardTableViewCell.swift */; };
+		3EBFADF529A7F4E7007330FE /* ContactDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADF129A7F4E7007330FE /* ContactDashboardTableViewCell.xib */; };
+		3EBFADF629A7F4E7007330FE /* ContactDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADF129A7F4E7007330FE /* ContactDashboardTableViewCell.xib */; };
+		3EBFADF729A7F4E7007330FE /* ContactDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBFADF129A7F4E7007330FE /* ContactDashboardTableViewCell.xib */; };
 		3ECD398928B522970033B866 /* StorageService+Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECD398828B522970033B866 /* StorageService+Recommendations.swift */; };
 		3ECD398A28B522970033B866 /* StorageService+Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECD398828B522970033B866 /* StorageService+Recommendations.swift */; };
 		3ECD398B28B522970033B866 /* StorageService+Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECD398828B522970033B866 /* StorageService+Recommendations.swift */; };
@@ -1614,6 +1632,12 @@
 		3EA4B38A29A5608800D821A7 /* StaticImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticImageViewController.swift; sourceTree = "<group>"; };
 		3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAndTypes.swift; sourceTree = "<group>"; };
 		3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDependentViewController.swift; sourceTree = "<group>"; };
+		3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFinderDashboardTableViewCell.swift; sourceTree = "<group>"; };
+		3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceFinderDashboardTableViewCell.xib; sourceTree = "<group>"; };
+		3EBFADE729A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectHealthGatewayDashboardTableViewCell.swift; sourceTree = "<group>"; };
+		3EBFADE829A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectHealthGatewayDashboardTableViewCell.xib; sourceTree = "<group>"; };
+		3EBFADF029A7F4E7007330FE /* ContactDashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDashboardTableViewCell.swift; sourceTree = "<group>"; };
+		3EBFADF129A7F4E7007330FE /* ContactDashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDashboardTableViewCell.xib; sourceTree = "<group>"; };
 		3ECD398828B522970033B866 /* StorageService+Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Recommendations.swift"; sourceTree = "<group>"; };
 		3EDC0C7A29673E2F00603FED /* HospitalVisitsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalVisitsService.swift; sourceTree = "<group>"; };
 		3EDC0C7E2967406000603FED /* AuthenticatedHospitalVisitsResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedHospitalVisitsResponseObject.swift; sourceTree = "<group>"; };
@@ -2581,10 +2605,13 @@
 			children = (
 				3E62D03329A03BAD000FBB40 /* BaseDashboardTableViewCell.swift */,
 				3E62D00C29A0389B000FBB40 /* Find Physitian */,
+				3EBFADEF29A7F4C7007330FE /* Contact */,
 				3E62D00D29A038AA000FBB40 /* Symptom checker */,
 				3E62D00E29A038BC000FBB40 /* Call 811 */,
-				3E62D01329A038DF000FBB40 /* Find Services */,
+				3EBFADDD29A7F382007330FE /* ServiceFinder */,
 				3E62D01429A038F7000FBB40 /* Mental Health */,
+				3E62D01329A038DF000FBB40 /* Find Services */,
+				3EBFADE629A7F41F007330FE /* ConnectHealthGateway */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2742,6 +2769,33 @@
 				3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		3EBFADDD29A7F382007330FE /* ServiceFinder */ = {
+			isa = PBXGroup;
+			children = (
+				3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */,
+				3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */,
+			);
+			path = ServiceFinder;
+			sourceTree = "<group>";
+		};
+		3EBFADE629A7F41F007330FE /* ConnectHealthGateway */ = {
+			isa = PBXGroup;
+			children = (
+				3EBFADE729A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift */,
+				3EBFADE829A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib */,
+			);
+			path = ConnectHealthGateway;
+			sourceTree = "<group>";
+		};
+		3EBFADEF29A7F4C7007330FE /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				3EBFADF029A7F4E7007330FE /* ContactDashboardTableViewCell.swift */,
+				3EBFADF129A7F4E7007330FE /* ContactDashboardTableViewCell.xib */,
+			);
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		3EDC0D072968926000603FED /* KVC */ = {
@@ -3999,6 +4053,8 @@
 				79283451272A880900EE2710 /* TableViewButtonView.xib in Resources */,
 				792834662731016600EE2710 /* CheckboxTableViewCell.xib in Resources */,
 				3E62D02429A03984000FBB40 /* SymptomCheckerTableViewCell.xib in Resources */,
+				3EBFADE429A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib in Resources */,
+				3EBFADED29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */,
 				29A4DF4E27DA678900D5E901 /* ChipsView.xib in Resources */,
 				7944F71A26F3B59C006B9444 /* TextTableViewCell.xib in Resources */,
 				29B446AE27357F1700E0F967 /* AppPDFView.xib in Resources */,
@@ -4072,6 +4128,7 @@
 				29B07E0A2732109E007ABB46 /* exportOptions.plist in Resources */,
 				3E5E6EBF28D278BD00724EDD /* CommunicationBannerTableViewCell.xib in Resources */,
 				7967E73F26F536BE00EEF510 /* FormTextFieldView.xib in Resources */,
+				3EBFADF629A7F4E7007330FE /* ContactDashboardTableViewCell.xib in Resources */,
 				79218ACF27556AA50063004E /* StatusBannerView.xib in Resources */,
 				2DF2102928DD2B2700F5E01C /* ViewPDFTableViewCell.xib in Resources */,
 				799050C7273C8567006CD726 /* UserRecordListView.xib in Resources */,
@@ -4127,11 +4184,13 @@
 				3E32322828B5FEB80067040C /* Recommendations.storyboard in Resources */,
 				79590D9B2811EA25006EB59F /* CommentsTableViewCell.xib in Resources */,
 				297F6DB5280F16540023E89C /* AuthenticationView.xib in Resources */,
+				3EBFADEE29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */,
 				3E048CC8291183E900774278 /* InaccessibleDependentTableViewCell.xib in Resources */,
 				3E5A68E1298C57C500E94A01 /* DBLoadFatalError.xib in Resources */,
 				297F6DB6280F16A70023E89C /* AuthenticationInfoView.xib in Resources */,
 				2DF2102A28DD2B2700F5E01C /* ViewPDFTableViewCell.xib in Resources */,
 				2922C0D6286E17DC000FF4F7 /* LabOrderBannerTableViewCell.xib in Resources */,
+				3EBFADE529A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib in Resources */,
 				794BD65E2702EEC00084ADA8 /* TextTableViewCell.xib in Resources */,
 				3E78AEC628F8724900C66E28 /* Dependents.storyboard in Resources */,
 				79590D982811E68A006EB59F /* CommentViewTableViewCell.xib in Resources */,
@@ -4180,6 +4239,7 @@
 				79BDA084270CEE5A00FF30AB /* HealthPass.storyboard in Resources */,
 				79B9D01827E2950000987D9F /* Home.storyboard in Resources */,
 				79FDE427273335DC00DAD988 /* FederalPassView.xib in Resources */,
+				3EBFADF729A7F4E7007330FE /* ContactDashboardTableViewCell.xib in Resources */,
 				799050C8273C8567006CD726 /* UserRecordListView.xib in Resources */,
 				79A15B0127FC07D500F8330D /* OnboardingCollectionViewCell.xib in Resources */,
 				3E6831592940DC3C00100402 /* CommentTextFieldView.xib in Resources */,
@@ -4240,6 +4300,8 @@
 				798006062852C66E006E390F /* TableViewButtonView.xib in Resources */,
 				798006072852C66E006E390F /* CheckboxTableViewCell.xib in Resources */,
 				3E62D00B29A03894000FBB40 /* SymptomCheckerTableViewCell.xib in Resources */,
+				3EBFADE329A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib in Resources */,
+				3EBFADEC29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */,
 				798006082852C66E006E390F /* ChipsView.xib in Resources */,
 				798006092852C66E006E390F /* TextTableViewCell.xib in Resources */,
 				7980060A2852C66E006E390F /* AppPDFView.xib in Resources */,
@@ -4313,6 +4375,7 @@
 				3E5E6EBE28D278BD00724EDD /* CommunicationBannerTableViewCell.xib in Resources */,
 				7980063C2852C66E006E390F /* FormTextFieldView.xib in Resources */,
 				7980063D2852C66E006E390F /* StatusBannerView.xib in Resources */,
+				3EBFADF529A7F4E7007330FE /* ContactDashboardTableViewCell.xib in Resources */,
 				3E62D01C29A03919000FBB40 /* FindServicesTableViewCell.xib in Resources */,
 				2DF2102828DD2B2700F5E01C /* ViewPDFTableViewCell.xib in Resources */,
 				7980063E2852C66E006E390F /* UserRecordListView.xib in Resources */,
@@ -4632,6 +4695,7 @@
 				795AA7382710920600E59FF1 /* ResultError.swift in Sources */,
 				796653DD279876C9004D103E /* AuthenticationRequestObjects.swift in Sources */,
 				79218ADE27557F7D0063004E /* StaticPositiveTestTableViewCell.swift in Sources */,
+				3EBFADEA29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift in Sources */,
 				3E6831152940D41200100402 /* SpecialAuthorityDrug+CoreDataProperties.swift in Sources */,
 				2D5218D32988556100E07382 /* Patient+CoreDataClass.swift in Sources */,
 				2922C0C9286DFDC0000FF4F7 /* CovidImmunizationBannerTableViewCell.swift in Sources */,
@@ -4652,6 +4716,7 @@
 				29128F17272AF41F00358014 /* Array+EXT.swift in Sources */,
 				291D43DF2762E1C5005F5B94 /* HealthRecordsView.swift in Sources */,
 				2932DCE7275ECC7C00532BC4 /* CoreDataEncryptionKeyManager.swift in Sources */,
+				3EBFADF329A7F4E7007330FE /* ContactDashboardTableViewCell.swift in Sources */,
 				293B32AB27D25AEF0064BAAA /* Storage+Comments.swift in Sources */,
 				3E31EA822913951D00E344E6 /* AppStoreDataModel.swift in Sources */,
 				2912313E26F93FEB00CF5F3B /* QRScannerView.swift in Sources */,
@@ -4738,6 +4803,7 @@
 				3E5E6E9C28D239BE00724EDD /* CommunicationService.swift in Sources */,
 				2971956828871B1A00CA824A /* SectionDescriptionTableViewCell.swift in Sources */,
 				3EDC0CE12967D63E00603FED /* StorageService+ClinicalDocuments.swift in Sources */,
+				3EBFADE129A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift in Sources */,
 				297885192795F13D00FF912D /* SettingsProfileTableViewCell.swift in Sources */,
 				3E5E6EB328D2747800724EDD /* CommunicationResponse.swift in Sources */,
 				7944F70426F31451006B9444 /* NoCardsTableViewCell.swift in Sources */,
@@ -4997,6 +5063,7 @@
 				79B9D00E27E2788100987D9F /* HomeScreenViewController.swift in Sources */,
 				79932CAE2790FA38007E8D92 /* AuthenticationInfoView.swift in Sources */,
 				794BD63E2702EEC00084ADA8 /* UIFont+Ext.swift in Sources */,
+				3EBFADEB29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift in Sources */,
 				3E6831162940D41200100402 /* SpecialAuthorityDrug+CoreDataProperties.swift in Sources */,
 				2D5218D42988556100E07382 /* Patient+CoreDataClass.swift in Sources */,
 				798CA1C227ECDCFC0096188C /* TermsOfServiceResponse.swift in Sources */,
@@ -5017,6 +5084,7 @@
 				799050C5273C8558006CD726 /* UserRecordListView.swift in Sources */,
 				796653E527A16915004D103E /* AuthenticatedPatientDetailsResponseObject.swift in Sources */,
 				293B32AC27D25AEF0064BAAA /* Storage+Comments.swift in Sources */,
+				3EBFADF429A7F4E7007330FE /* ContactDashboardTableViewCell.swift in Sources */,
 				3E31EA832913951D00E344E6 /* AppStoreDataModel.swift in Sources */,
 				798CA1CE27EED9ED0096188C /* LoginThrottleAPIWorker.swift in Sources */,
 				794FF0D227DAB08B00C98831 /* URL+EXT.swift in Sources */,
@@ -5103,6 +5171,7 @@
 				7918A8C827482E0C00D19D1C /* TextListView.swift in Sources */,
 				3E5E6EB428D2747800724EDD /* CommunicationResponse.swift in Sources */,
 				3EDC0CE22967D63E00603FED /* StorageService+ClinicalDocuments.swift in Sources */,
+				3EBFADE229A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift in Sources */,
 				795AA75D27155EDF00E59FF1 /* NewsFeedViewController.swift in Sources */,
 				29A12AF9271F6B2100A106B5 /* AnalyticsService.swift in Sources */,
 				794BD64C2702EEC00084ADA8 /* ZoomedInPopUpVC.swift in Sources */,
@@ -5339,6 +5408,7 @@
 				798005732852C66E006E390F /* AuthenticationRequestObjects.swift in Sources */,
 				798005742852C66E006E390F /* StaticPositiveTestTableViewCell.swift in Sources */,
 				3E6831142940D41200100402 /* SpecialAuthorityDrug+CoreDataProperties.swift in Sources */,
+				3EBFADE929A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.swift in Sources */,
 				2D5218D22988556100E07382 /* Patient+CoreDataClass.swift in Sources */,
 				2922C0C8286DFDC0000FF4F7 /* CovidImmunizationBannerTableViewCell.swift in Sources */,
 				798005752852C66E006E390F /* FolderRecordsViewController.swift in Sources */,
@@ -5359,6 +5429,7 @@
 				798005802852C66E006E390F /* Array+EXT.swift in Sources */,
 				798005812852C66E006E390F /* HealthRecordsView.swift in Sources */,
 				798005822852C66E006E390F /* CoreDataEncryptionKeyManager.swift in Sources */,
+				3EBFADF229A7F4E7007330FE /* ContactDashboardTableViewCell.swift in Sources */,
 				798005832852C66E006E390F /* Storage+Comments.swift in Sources */,
 				3E31EA812913951D00E344E6 /* AppStoreDataModel.swift in Sources */,
 				798005852852C66E006E390F /* QRScannerView.swift in Sources */,
@@ -5445,6 +5516,7 @@
 				3E5E6E9B28D239BE00724EDD /* CommunicationService.swift in Sources */,
 				2971956728871B1A00CA824A /* SectionDescriptionTableViewCell.swift in Sources */,
 				3EDC0CE02967D63E00603FED /* StorageService+ClinicalDocuments.swift in Sources */,
+				3EBFADE029A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift in Sources */,
 				798005B82852C66E006E390F /* SettingsProfileTableViewCell.swift in Sources */,
 				3E5E6EB228D2747800724EDD /* CommunicationResponse.swift in Sources */,
 				798005B92852C66E006E390F /* NoCardsTableViewCell.swift in Sources */,
@@ -5736,7 +5808,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = TCH45SXZ69;
 				INFOPLIST_FILE = BCVaccineCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -5766,7 +5838,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = TCH45SXZ69;
 				INFOPLIST_FILE = BCVaccineCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -5882,7 +5954,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = L796QSLV3E;
 				INFOPLIST_FILE = "BCVaccineCard/PROD Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -5890,7 +5962,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.1;
+				MARKETING_VERSION = 1.6.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bc.gov.myhealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "MyHealth BC - 2023";
@@ -5910,7 +5982,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = L796QSLV3E;
 				INFOPLIST_FILE = "BCVaccineCard/PROD Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -5918,7 +5990,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.1;
+				MARKETING_VERSION = 1.6.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bc.gov.myhealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "MyHealth BC - 2023";

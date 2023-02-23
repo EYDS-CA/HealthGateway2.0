@@ -39,13 +39,47 @@ enum DashboardButton: String, CaseIterable {
     }
 }
 
-enum DashboardCells: Int, CaseIterable {
-    case findPhysitian
-    case symptomChecker
-    case call811
-    case findServices
-    case mentalHealth
+enum DashboardSections: Int, CaseIterable {
+    case ConnectWithHealthCareProviders
+    case LearnAboutYourHealth
+    case FindHealthServices
+    case AccessHelthRecords
+    
+    func numberOfCells() -> Int {
+        switch self {
+        case .ConnectWithHealthCareProviders:
+            return ConnectWithHealthCareProvidersSection.allCases.count
+        case .LearnAboutYourHealth:
+            return LearnAboutYourHealthSection.allCases.count
+        case .FindHealthServices:
+            return FindHealthServicesSection.allCases.count
+        case .AccessHelthRecords:
+            return AccessHelthRecordsSection.allCases.count
+        }
+    }
+    
+    enum ConnectWithHealthCareProvidersSection: Int, CaseIterable {
+        case AccessHealthCareProfessionals
+        case Contact
+    }
+
+    enum LearnAboutYourHealthSection: Int, CaseIterable {
+        case IllnessesAndSymptomChecker
+    }
+
+    enum FindHealthServicesSection: Int, CaseIterable {
+        case MentalHealthSupport
+        case ImmunizeBCAndIslandHealth
+        case serviceFinder
+    }
+    
+    enum AccessHelthRecordsSection: Int, CaseIterable {
+        case ConnectHealthGateway
+    }
+
 }
+
+
 
 class DashboardViewController: UIViewController {
     
@@ -111,10 +145,12 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib.init(nibName: Call811TableViewCell.getName, bundle: .main), forCellReuseIdentifier: Call811TableViewCell.getName)
         tableView.register(UINib.init(nibName: FindServicesTableViewCell.getName, bundle: .main), forCellReuseIdentifier: FindServicesTableViewCell.getName)
         tableView.register(UINib.init(nibName: MentalHealthTableViewCell.getName, bundle: .main), forCellReuseIdentifier: MentalHealthTableViewCell.getName)
+        tableView.register(UINib.init(nibName: ServiceFinderDashboardTableViewCell.getName, bundle: .main), forCellReuseIdentifier: ServiceFinderDashboardTableViewCell.getName)
+        tableView.register(UINib.init(nibName: ConnectHealthGatewayDashboardTableViewCell.getName, bundle: .main), forCellReuseIdentifier: ConnectHealthGatewayDashboardTableViewCell.getName)
+        tableView.register(UINib.init(nibName: ContactDashboardTableViewCell.getName, bundle: .main), forCellReuseIdentifier: ContactDashboardTableViewCell.getName)
     }
     
-    
-    func getFindPhysitianCell(indexPath: IndexPath) -> FindPhysitianTableViewCell {
+    func accessHealthCareProfessionalsCell(indexPath: IndexPath) -> FindPhysitianTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FindPhysitianTableViewCell.getName, for: indexPath) as? FindPhysitianTableViewCell else {
             return FindPhysitianTableViewCell()
         }
@@ -122,23 +158,22 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func getSymptomCheckerCell(indexPath: IndexPath) -> SymptomCheckerTableViewCell {
+    func illnessesAndSymptomCheckerCell(indexPath: IndexPath) -> SymptomCheckerTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SymptomCheckerTableViewCell.getName, for: indexPath) as? SymptomCheckerTableViewCell else {
             return SymptomCheckerTableViewCell()
         }
         cell.delegate = self
         return cell
     }
-    
-    func getCall811Cell(indexPath: IndexPath) -> Call811TableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Call811TableViewCell.getName, for: indexPath) as? Call811TableViewCell else {
-            return Call811TableViewCell()
+    func ContactCell(indexPath: IndexPath) -> ContactDashboardTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactDashboardTableViewCell.getName, for: indexPath) as? ContactDashboardTableViewCell else {
+            return ContactDashboardTableViewCell()
         }
         cell.delegate = self
         return cell
     }
     
-    func getFindServicesCell(indexPath: IndexPath) -> FindServicesTableViewCell {
+    func immunizeBCAndIslandHealthCell(indexPath: IndexPath) -> FindServicesTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FindServicesTableViewCell.getName, for: indexPath) as? FindServicesTableViewCell else {
             return FindServicesTableViewCell()
         }
@@ -146,7 +181,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func getMentalHealthCell(indexPath: IndexPath) -> MentalHealthTableViewCell {
+    func mentalHealthSupportCell(indexPath: IndexPath) -> MentalHealthTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MentalHealthTableViewCell.getName, for: indexPath) as? MentalHealthTableViewCell else {
             return MentalHealthTableViewCell()
         }
@@ -154,36 +189,114 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DashboardCells.allCases.count
+    func serviceFinderCell(indexPath: IndexPath) -> ServiceFinderDashboardTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ServiceFinderDashboardTableViewCell.getName, for: indexPath) as? ServiceFinderDashboardTableViewCell else {
+            return ServiceFinderDashboardTableViewCell()
+        }
+        cell.delegate = self
+        return cell
     }
     
+    func connectHealthGatewayCell(indexPath: IndexPath) -> ConnectHealthGatewayDashboardTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ConnectHealthGatewayDashboardTableViewCell.getName, for: indexPath) as? ConnectHealthGatewayDashboardTableViewCell else {
+            return ConnectHealthGatewayDashboardTableViewCell()
+        }
+        cell.delegate = self
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return DashboardSections.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let section = DashboardSections(rawValue: section) else {return 0}
+        return section.numberOfCells()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let section = DashboardSections(rawValue: section) else {return ""}
+        switch section {
+        case .ConnectWithHealthCareProviders:
+            return "Connect With Health Care Providers"
+        case .LearnAboutYourHealth:
+            return "Learn about your health & wellness"
+        case .FindHealthServices:
+            return "Find health services"
+        case .AccessHelthRecords:
+            return "Access your health records"
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let row = DashboardCells(rawValue: indexPath.row) else {
+        guard let section = DashboardSections(rawValue: indexPath.section) else {return UITableViewCell()}
+        
+        switch section {
+        case .ConnectWithHealthCareProviders:
+            return getConnectWithHealthCareProviders(cellForRowAt: indexPath)
+        case .LearnAboutYourHealth:
+            return getLearnAboutYourHealth(cellForRowAt: indexPath)
+        case .FindHealthServices:
+            return getFindHealthServices(cellForRowAt: indexPath)
+        case .AccessHelthRecords:
+            return getAccessHelthRecords(cellForRowAt: indexPath)
+        }
+    }
+
+    func getConnectWithHealthCareProviders(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let row = DashboardSections.ConnectWithHealthCareProvidersSection(rawValue: indexPath.row) else {
             return UITableViewCell()
         }
         
         switch row {
-            
-        case .findPhysitian:
-            let cell = getFindPhysitianCell(indexPath: indexPath)
-            // TODO..
+        case .AccessHealthCareProfessionals:
+            let cell = accessHealthCareProfessionalsCell(indexPath: indexPath)
             return cell
-        case .symptomChecker:
-            let cell = getSymptomCheckerCell(indexPath: indexPath)
+        case .Contact:
+            let cell = ContactCell(indexPath: indexPath)
+            return cell
+        }
+    }
+    
+    func getLearnAboutYourHealth(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let row = DashboardSections.LearnAboutYourHealthSection(rawValue: indexPath.row) else {
+            return UITableViewCell()
+        }
+        switch row {
+        case .IllnessesAndSymptomChecker:
+            let cell = illnessesAndSymptomCheckerCell(indexPath: indexPath)
             cell.setup()
             return cell
-        case .call811:
-            let cell = getCall811Cell(indexPath: indexPath)
-            // TODO..
-            return cell
-        case .findServices:
-            let cell = getFindServicesCell(indexPath: indexPath)
+        }
+    }
+    
+    func getFindHealthServices(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let row = DashboardSections.FindHealthServicesSection(rawValue: indexPath.row) else {
+            return UITableViewCell()
+        }
+        switch row {
+        case .MentalHealthSupport:
+            let cell = mentalHealthSupportCell(indexPath: indexPath)
             cell.setup()
             return cell
-        case .mentalHealth:
-            let cell = getMentalHealthCell(indexPath: indexPath)
+        case .ImmunizeBCAndIslandHealth:
+            let cell = immunizeBCAndIslandHealthCell(indexPath: indexPath)
+            cell.setup()
+            return cell
+        case .serviceFinder:
+            let cell = serviceFinderCell(indexPath: indexPath)
+            cell.setup()
+            return cell
+        }
+    }
+    
+    func getAccessHelthRecords(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let row = DashboardSections.AccessHelthRecordsSection(rawValue: indexPath.row) else {
+            return UITableViewCell()
+        }
+        switch row {
+        case .ConnectHealthGateway:
+            let cell = connectHealthGatewayCell(indexPath: indexPath)
             cell.setup()
             return cell
         }
