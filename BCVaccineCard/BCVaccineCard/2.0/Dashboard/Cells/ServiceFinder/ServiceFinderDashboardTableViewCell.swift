@@ -23,6 +23,7 @@ class ServiceFinderDashboardTableViewCell: BaseDashboardTableViewCell {
     public var userZoomRadius: CLLocationDistance = 500
     public var currentLocation: CLLocation?
     fileprivate var zoomedIntoUserLocation: Bool = false
+    private var setInitialLocation: Bool = false
     
     func setup() {
         style()
@@ -31,7 +32,10 @@ class ServiceFinderDashboardTableViewCell: BaseDashboardTableViewCell {
         transparentContainer.isUserInteractionEnabled = true
         transparentContainer.addGestureRecognizer(tap1)
         
-        moveMapTo(latitude: 54.623482, longitude: -125.788233, radiusMeters: 1000000)
+        if !setInitialLocation{
+            moveMapTo(latitude: 54.623482, longitude: -125.788233, radiusMeters: 1000000)
+            setInitialLocation = true
+        }
     }
     
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil) {
