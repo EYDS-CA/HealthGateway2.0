@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="299" id="KGk-i7-Jjw" customClass="FindServicesTableViewCell" customModule="HealthGateway" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="542" height="299"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="542" height="299"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lo1-48-z9r">
+                        <rect key="frame" x="0.0" y="20" width="542" height="263"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctB-3r-ApW">
+                                <rect key="frame" x="0.0" y="0.0" width="263" height="263"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOY-WY-On7">
+                                        <rect key="frame" x="16.000000000000004" y="15.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3j-Y9-LWx">
+                                        <rect key="frame" x="16" y="52.333333333333329" width="231" height="2"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="n9Q-96-o1Z"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="O0Q-KR-luK">
+                                        <rect key="frame" x="16" y="66.333333333333329" width="184" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eig-Ir-FnA">
+                                        <rect key="frame" x="16" y="215" width="231" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="ofN-gA-PQ6"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-12" maxY="0.0"/>
+                                        <state key="normal" title="Get reminders" image="iphone.gen2.radiowaves.left.and.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="getRemindersAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j5J-rC-ijX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="P3j-Y9-LWx" firstAttribute="leading" secondItem="ctB-3r-ApW" secondAttribute="leading" constant="16" id="4hl-jG-3pJ"/>
+                                    <constraint firstItem="O0Q-KR-luK" firstAttribute="width" secondItem="ctB-3r-ApW" secondAttribute="width" multiplier="0.7" id="9qc-En-7s1"/>
+                                    <constraint firstItem="P3j-Y9-LWx" firstAttribute="centerX" secondItem="ctB-3r-ApW" secondAttribute="centerX" id="JrT-2h-J0j"/>
+                                    <constraint firstItem="eig-Ir-FnA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O0Q-KR-luK" secondAttribute="bottom" constant="4" id="Ofd-rb-RWT"/>
+                                    <constraint firstAttribute="trailing" secondItem="eig-Ir-FnA" secondAttribute="trailing" constant="16" id="QVO-Pi-Wzw"/>
+                                    <constraint firstItem="P3j-Y9-LWx" firstAttribute="top" secondItem="cOY-WY-On7" secondAttribute="bottom" constant="16" id="SE7-q5-q7M"/>
+                                    <constraint firstItem="cOY-WY-On7" firstAttribute="top" secondItem="ctB-3r-ApW" secondAttribute="top" constant="16" id="Wld-ov-0A2"/>
+                                    <constraint firstAttribute="bottom" secondItem="eig-Ir-FnA" secondAttribute="bottom" constant="16" id="X8y-fi-hom"/>
+                                    <constraint firstAttribute="width" secondItem="ctB-3r-ApW" secondAttribute="height" multiplier="1:1" id="aNb-05-7r2"/>
+                                    <constraint firstItem="eig-Ir-FnA" firstAttribute="leading" secondItem="ctB-3r-ApW" secondAttribute="leading" constant="16" id="gtS-AE-PHl"/>
+                                    <constraint firstItem="cOY-WY-On7" firstAttribute="leading" secondItem="ctB-3r-ApW" secondAttribute="leading" constant="16" id="nCr-B5-KEy"/>
+                                    <constraint firstItem="O0Q-KR-luK" firstAttribute="top" secondItem="P3j-Y9-LWx" secondAttribute="bottom" constant="12" id="pQu-US-cEX"/>
+                                    <constraint firstItem="O0Q-KR-luK" firstAttribute="leading" secondItem="ctB-3r-ApW" secondAttribute="leading" constant="16" id="xqC-tg-JRp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-0b-cO4">
+                                <rect key="frame" x="279" y="0.0" width="263" height="263"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="islandHealthLogo" translatesAutoresizingMaskIntoConstraints="NO" id="iNW-aj-Fqe">
+                                        <rect key="frame" x="16" y="16" width="131.66666666666666" height="87.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="iNW-aj-Fqe" secondAttribute="height" multiplier="1.5:1" id="bPW-Xk-91Y"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7U-Ba-YfX">
+                                        <rect key="frame" x="16" y="226.66666666666666" width="157.66666666666666" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6B0-0b-cO4" secondAttribute="height" multiplier="1:1" id="5Q8-hQ-5X9"/>
+                                    <constraint firstItem="A7U-Ba-YfX" firstAttribute="leading" secondItem="6B0-0b-cO4" secondAttribute="leading" constant="16" id="LGd-0A-99R"/>
+                                    <constraint firstItem="A7U-Ba-YfX" firstAttribute="width" secondItem="6B0-0b-cO4" secondAttribute="width" multiplier="0.6" id="Okc-BQ-3c0"/>
+                                    <constraint firstItem="iNW-aj-Fqe" firstAttribute="top" secondItem="6B0-0b-cO4" secondAttribute="top" constant="16" id="RXg-e6-3Ot"/>
+                                    <constraint firstItem="iNW-aj-Fqe" firstAttribute="leading" secondItem="6B0-0b-cO4" secondAttribute="leading" constant="16" id="akE-8g-OBE"/>
+                                    <constraint firstAttribute="bottom" secondItem="A7U-Ba-YfX" secondAttribute="bottom" constant="16" id="mUm-2C-cXt"/>
+                                    <constraint firstItem="iNW-aj-Fqe" firstAttribute="width" secondItem="6B0-0b-cO4" secondAttribute="width" multiplier="0.5" id="pm0-VL-RYE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="lo1-48-z9r" secondAttribute="trailing" id="7PH-CY-TqZ"/>
+                    <constraint firstItem="lo1-48-z9r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PI9-zg-rrz"/>
+                    <constraint firstAttribute="bottom" secondItem="lo1-48-z9r" secondAttribute="bottom" constant="20" id="Vys-zu-jX8"/>
+                    <constraint firstItem="lo1-48-z9r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="h5e-lr-9sR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ImmunizeBCDescLabel" destination="O0Q-KR-luK" id="2RM-ze-fBV"/>
+                <outlet property="immunizeBCDivider" destination="P3j-Y9-LWx" id="T8p-FX-kL9"/>
+                <outlet property="immunizeBCTitleLabel" destination="cOY-WY-On7" id="48K-79-oNq"/>
+                <outlet property="immunizeBCView" destination="ctB-3r-ApW" id="3tu-AF-6JV"/>
+                <outlet property="islandHealthDescLabel" destination="A7U-Ba-YfX" id="29d-5e-spw"/>
+                <outlet property="islandHealthLogo" destination="iNW-aj-Fqe" id="s70-BV-rbE"/>
+                <outlet property="islandHealthVIew" destination="6B0-0b-cO4" id="10i-Yg-z4z"/>
+                <outlet property="remindersButton" destination="eig-Ir-FnA" id="5fb-NR-lBY"/>
+            </connections>
+            <point key="canvasLocation" x="169.46564885496181" y="110.21126760563381"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iphone.gen2.radiowaves.left.and.right" catalog="system" width="128" height="85"/>
+        <image name="islandHealthLogo" width="4800" height="2834"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

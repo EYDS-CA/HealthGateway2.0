@@ -105,7 +105,7 @@ class DependentsHomeViewController: BaseDependentViewController {
     
     @IBAction func LoginWithBCSC(_ sender: Any) {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
-        authenticate(initialView: .Landing, fromTab: .dependant)
+//        authenticate(initialView: .Landing, fromTab: .dependant)
     }
     
     // MARK: Data
@@ -358,7 +358,7 @@ extension DependentsHomeViewController: UITableViewDelegate, UITableViewDataSour
             return UITableViewCell()
         }
         cell.configure(forRecordType: .loginToAccessDependents) { [weak self] _ in
-            self?.authenticate(initialView: .Auth, fromTab: .dependant)
+//            self?.authenticate(initialView: .Auth, fromTab: .dependant)
         }
         
         return cell
@@ -474,8 +474,8 @@ extension DependentsHomeViewController {
         self.showLogin(initialView: initialView, sourceVC: .DependentsScreen, presentingViewControllerReference: self) { authenticationStatus in
             guard authenticationStatus != .Cancelled else { return }
             let recordFlowDetails = RecordsFlowDetails(currentStack: self.getCurrentStacks.recordsStack)
-            let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
-            let scenario = AppUserActionScenarios.LoginSpecialRouting(values: ActionScenarioValues(currentTab: .dependant, recordFlowDetails: recordFlowDetails, passesFlowDetails: passesFlowDetails, loginSourceVC: .DependentsScreen, authenticationStatus: authenticationStatus))
+//            let passesFlowDetails = PassesFlowDetails(currentStack: self.getCurrentStacks.passesStack)
+            let scenario = AppUserActionScenarios.LoginSpecialRouting(values: ActionScenarioValues(currentTab: .records, recordFlowDetails: recordFlowDetails, passesFlowDetails: nil, loginSourceVC: .DependentsScreen, authenticationStatus: authenticationStatus))
             self.routerWorker?.routingAction(scenario: scenario, goToTab: nil, delayInSeconds: 0.5)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
                 self.view.layoutIfNeeded()

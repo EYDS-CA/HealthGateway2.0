@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,28 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="RyC-yp-6y3">
-                                <rect key="frame" x="137" y="793" width="140" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="P4Z-sC-Hw6"/>
-                                    <constraint firstAttribute="width" constant="140" id="bcu-Sc-IDc"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash-logo-with-title" translatesAutoresizingMaskIntoConstraints="NO" id="IAU-GL-6vc">
-                                <rect key="frame" x="126.5" y="380" width="161" height="136"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="CJe-9T-yze"/>
-                                    <constraint firstAttribute="width" constant="161" id="dq2-bw-3U6"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashPOC" translatesAutoresizingMaskIntoConstraints="NO" id="3yU-Z9-1B8">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.10080841929999999" green="0.1957546771" blue="0.37256795170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.00054706161609999996" green="0.22501289839999999" blue="0.45682281260000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RyC-yp-6y3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Bo-75-1ur"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RyC-yp-6y3" secondAttribute="bottom" constant="34" id="EcV-Da-YXJ"/>
-                            <constraint firstItem="IAU-GL-6vc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JuZ-6h-CRP"/>
-                            <constraint firstItem="IAU-GL-6vc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SBK-he-waY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3yU-Z9-1B8" secondAttribute="trailing" id="9NE-Rk-dEc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3yU-Z9-1B8" secondAttribute="bottom" id="dut-Qe-1SY"/>
+                            <constraint firstItem="3yU-Z9-1B8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oTT-XB-JPH"/>
+                            <constraint firstItem="3yU-Z9-1B8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zOR-iY-ink"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,7 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bc-logo" width="100" height="25.5"/>
-        <image name="splash-logo-with-title" width="192" height="136"/>
+        <image name="splashPOC" width="860" height="1864"/>
     </resources>
 </document>

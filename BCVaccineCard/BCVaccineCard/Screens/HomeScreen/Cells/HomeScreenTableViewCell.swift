@@ -3,7 +3,7 @@
 //  BCVaccineCard
 //
 //  Created by Connor Ogilvie on 2022-03-16.
-//
+//    
 // Constraints: 30 from sides, 8 on top and bottom
 
 import UIKit
@@ -55,8 +55,8 @@ enum HomeScreenCellType {
     var getTabIndex: Int {
         switch self {
         case .Records: return TabBarVCs.records.rawValue
-        case .Proofs: return TabBarVCs.healthPass.rawValue
-        case .Resources: return TabBarVCs.resource.rawValue
+        case .Proofs: return TabBarVCs.records.rawValue
+        case .Resources: return TabBarVCs.records.rawValue
         case .Recommendations: return TabBarVCs.records.rawValue
         }
     }
