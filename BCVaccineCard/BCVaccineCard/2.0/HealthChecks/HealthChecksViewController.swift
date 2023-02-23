@@ -37,6 +37,7 @@ class ServiceFinderViewController: MapViewController {
         setupMap(in: mapContainer, enableLocation: true)
         dropDummyPins()
         style()
+        moveMapTo(latitude: 54.623482, longitude: -125.788233, radiusMeters: 500000)
     }
     
     override func viewDidAppear(_ animated: Bool) {
