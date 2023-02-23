@@ -30,6 +30,7 @@ class FindPhysitianTableViewCell: BaseDashboardTableViewCell {
     }
     
     private func setup() {
+        roundedAccessViewButtonImageView.tintColor = .white
         self.contentView.layer.cornerRadius = 10.0
         self.contentView.clipsToBounds = true
         self.contentView.backgroundColor = UIColor(hexString: "#E5F0FF")

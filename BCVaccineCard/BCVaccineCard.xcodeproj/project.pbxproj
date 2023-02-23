@@ -2608,9 +2608,9 @@
 				3EBFADEF29A7F4C7007330FE /* Contact */,
 				3E62D00D29A038AA000FBB40 /* Symptom checker */,
 				3E62D00E29A038BC000FBB40 /* Call 811 */,
-				3EBFADDD29A7F382007330FE /* ServiceFinder */,
 				3E62D01429A038F7000FBB40 /* Mental Health */,
 				3E62D01329A038DF000FBB40 /* Find Services */,
+				3EBFADDD29A7F382007330FE /* ServiceFinder */,
 				3EBFADE629A7F41F007330FE /* ConnectHealthGateway */,
 			);
 			path = Cells;

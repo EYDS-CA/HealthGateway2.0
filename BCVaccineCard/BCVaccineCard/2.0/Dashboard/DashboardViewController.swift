@@ -13,21 +13,23 @@ protocol DashboardTileDelegate {
 
 enum DashboardButton: String, CaseIterable {
     case findPhysitian = "https://hcr.healthlinkbc.ca/"
-    case call911 = "911"
+    case call911 = "call911" // phoneNumber
     case virtualWalkIn = "virtualWalkIn" // Static image
     case chat = "chat" // Static image
     case illnessesAndCOnditions = "https://www.healthlinkbc.ca/illnesses-conditions"
     case symptomChecker = "https://www.buoyhealth.com/symptom-checker/"
-    case healthNavigator = "811"
-    case registeredNurse = "0811"
-    case pharmasistAdvice = "mailto:pharmasist@bc.ca"
-    case exerciseProfessional = "mailto:exercise@bc.ca"
+    case healthNavigator = "healthNavigator" //phoneNumber
+    case registeredNurse = "registeredNurse" //phoneNumber
+    case pharmasistAdvice = "mailto:pharmasist@bc.ca" // EMAIL
+    case exerciseProfessional = "mailto:exercise@bc.ca" // EMAIL
     case discoverMore = "discoverMore" // TOOO:
     case immunizeBC = "https://immunizebc.ca/"
     case appointmentReminders = "https://immunizebc.ca/reminders"
     case servicesNearYou = "https://www.islandhealth.ca/"
     case suppotFoundy = "https://foundrybc.ca/"
     case supportAllAges = "https://www2.gov.bc.ca/gov/content/mental-health-support-in-bc"
+    case serviceFinder = "serviceFinder" // In app Action
+    case connectHealthRecords = "connectHealthRecords" // In app action
     
     var phoneNumber: String {
         switch self {
@@ -137,6 +139,12 @@ extension DashboardViewController: DashboardTileDelegate {
             callNumber(phoneNumber: button.phoneNumber)
         case .registeredNurse:
             callNumber(phoneNumber: button.phoneNumber)
+        case .connectHealthRecords:
+            // TODO
+            alert(title: "TODO", message: "TODO")
+        case .serviceFinder:
+            // TODO
+            alert(title: "TODO", message: "TODO")
         default:
             showWeb(url: button.rawValue, withNavigation: true)
         }
