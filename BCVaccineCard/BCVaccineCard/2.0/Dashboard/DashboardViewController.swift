@@ -129,6 +129,8 @@ class DashboardViewController: UIViewController {
         imageView.centerYAnchor.constraint(equalTo: labelView.centerYAnchor, constant: 0).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+        
+        // TODO: Add "welcome to your" label on top?
     }
     
 }
