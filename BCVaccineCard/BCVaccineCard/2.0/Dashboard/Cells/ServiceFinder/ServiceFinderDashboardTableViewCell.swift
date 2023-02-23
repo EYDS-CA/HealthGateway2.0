@@ -56,6 +56,8 @@ class ServiceFinderDashboardTableViewCell: BaseDashboardTableViewCell {
         makeTransparentBlur(view: transparentContainer)
         makeTransparentBlur(view: permissionContainer)
         permissionContainer.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        mapView.clipsToBounds = true
+        mapView.layer.cornerRadius = 10
     }
     
     func makeTransparentBlur(view: UIView) {
