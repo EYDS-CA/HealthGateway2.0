@@ -96,12 +96,15 @@ enum DashboardSections: Int, CaseIterable {
 
 class DashboardViewController: UIViewController {
     
-    class func construct() -> DashboardViewController {
+    class func construct(delegate: TabDelegate) -> DashboardViewController {
         if let vc = UIStoryboard(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: String(describing: DashboardViewController.self)) as? DashboardViewController {
+            vc.tabDelegate = delegate
             return vc
         }
         return DashboardViewController()
     }
+    
+    private var tabDelegate: TabDelegate?
     
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
@@ -159,11 +162,9 @@ extension DashboardViewController: DashboardTileDelegate {
         case .registeredNurse:
             callNumber(phoneNumber: button.phoneNumber)
         case .connectHealthRecords:
-            // TODO
-            alert(title: "TODO", message: "TODO")
+            tabDelegate?.switchTo(tab: .UnAuthenticatedRecords)
         case .serviceFinder:
-            // TODO
-            alert(title: "TODO", message: "TODO")
+            tabDelegate?.switchTo(tab: .ServiceFinder)
         default:
             showWeb(url: button.rawValue, withNavigation: true)
         }

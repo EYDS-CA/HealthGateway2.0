@@ -7,6 +7,11 @@
 
 import UIKit
 
+
+protocol TabDelegate {
+    func switchTo(tab: POCTabs)
+}
+
 enum POCTabs: Int, CaseIterable {
     case Dashboard = 0, ServiceFinder, UnAuthenticatedRecords, AuthenticatedRecords
     
@@ -21,14 +26,14 @@ enum POCTabs: Int, CaseIterable {
         let baseViewController: UIViewController
     }
     
-    var properties: Properties? {
+    func properties(delegate: TabDelegate) -> Properties? {
         if #available(iOS 13.0, *) {
             switch self {
             case .Dashboard:
                 return Properties(title: "Dashboard",
                                   selectedTabBarImage: UIImage(systemName: "house.fill")!,
                                   unselectedTabBarImage: UIImage(systemName: "house")!,
-                                  baseViewController: DashboardViewController.construct())
+                                  baseViewController: DashboardViewController.construct(delegate: delegate))
                 
             case .ServiceFinder:
                 return Properties(title: "Service Finder",

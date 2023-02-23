@@ -75,7 +75,7 @@ class POCTabBarController: UITabBarController {
     }
     
     private func setViewController(tab vc: POCTabs) -> UIViewController? {
-        guard let properties = vc.properties  else { return nil}
+        guard let properties = vc.properties(delegate: self)  else { return nil}
         let tabBarItem = UITabBarItem(title: properties.title, image: properties.unselectedTabBarImage, selectedImage: properties.selectedTabBarImage)
         tabBarItem.setTitleTextAttributes([.font: UIFont.bcSansBoldWithSize(size: 10)], for: .normal)
         let viewController = properties.baseViewController
@@ -83,5 +83,17 @@ class POCTabBarController: UITabBarController {
         viewController.title = properties.title
         let navController = CustomNavigationController.init(rootViewController: viewController)
         return navController
+    }
+}
+
+extension POCTabBarController: TabDelegate {
+    func switchTo(tab: POCTabs) {
+        let availableTabs: [POCTabs]
+        if AuthManager().isAuthenticated {
+            availableTabs = authenticatedTabs()
+        } else {
+            availableTabs = unAuthenticatedTabs()
+        }
+        self.selectedIndex = availableTabs.firstIndex(where: {$0 == tab}) ?? 0
     }
 }
