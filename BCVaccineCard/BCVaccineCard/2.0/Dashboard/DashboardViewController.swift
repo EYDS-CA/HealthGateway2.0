@@ -105,6 +105,10 @@ class DashboardViewController: UIViewController {
     }
     
     private var tabDelegate: TabDelegate?
+    var navObserver: NSKeyValueObservation?
+    
+    var welcomeLabel: UILabel?
+    var plusIcon: UIImageView?
     
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
@@ -113,15 +117,66 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         self.title = "Health Gateway"
-        setupTitleIcon()
+        setuTitleAccessories()
     }
     
-    func setupTitleIcon() {
-        let navControllerViewsWithLabels = navigationController?.navigationBar.subviews.compactMap({ $0.subviews.contains(where: { sub in
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        setuTitleAccessories()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeTitleAccessories()
+    }
+    
+    private func setuTitleAccessories() {
+        setupTitleIcon()
+        setupWelcomeLabel()
+        navObserver?.invalidate()
+        navObserver = navigationController?.navigationBar.observe(\.bounds, options: [.new], changeHandler: navChange)
+    }
+    
+    private func removeTitleAccessories() {
+        welcomeLabel?.removeFromSuperview()
+        plusIcon?.removeFromSuperview()
+        welcomeLabel = nil
+        plusIcon = nil
+    }
+    
+    private func setupWelcomeLabel() {
+        welcomeLabel?.removeFromSuperview()
+        welcomeLabel = nil
+        guard let navBar = navigationController?.navigationBar else {return}
+        let navControllerViewsWithLabels = navBar.subviews.compactMap({ $0.subviews.contains(where: { sub in
+            return sub is UILabel
+        }) ? $0 : nil })
+        guard let labelView = navControllerViewsWithLabels.first?.subviews.filter({$0 is UILabel}).first else {
+            return
+        }
+      
+        let label = UILabel(frame: .zero)
+        navBar.addSubview(label)
+        label.text = "Welcome to your"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 0).isActive = true
+        label.trailingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: 0).isActive = true
+        label.bottomAnchor.constraint(equalTo: labelView.topAnchor, constant: 0).isActive = true
+        label.font = UIFont.bcSansBoldWithSize(size: 13)
+        label.textColor = AppColours.appBlue
+        welcomeLabel = label
+    }
+    
+    private func setupTitleIcon() {
+        plusIcon?.removeFromSuperview()
+        plusIcon = nil
+        guard let navBar = navigationController?.navigationBar else {return}
+        let navControllerViewsWithLabels = navBar.subviews.compactMap({ $0.subviews.contains(where: { sub in
             return sub is UILabel
         }) ? $0 : nil })
         let iconSize: CGFloat = 17
-        guard let labelView = navControllerViewsWithLabels?.first?.subviews.filter({$0 is UILabel}).first else {
+        guard let labelView = navControllerViewsWithLabels.first?.subviews.filter({$0 is UILabel}).first else {
             return
         }
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: iconSize, height: iconSize))
@@ -132,8 +187,17 @@ class DashboardViewController: UIViewController {
         imageView.centerYAnchor.constraint(equalTo: labelView.centerYAnchor, constant: 0).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-        
-        // TODO: Add "welcome to your" label on top?
+        plusIcon = imageView
+    }
+    
+    func navChange(_ navigationBar: UINavigationBar,_ changes: NSKeyValueObservedChange<CGRect>) {
+        if let height = changes.newValue?.height {
+            if height >= 60.0 {
+                setuTitleAccessories()
+            } else {
+                removeTitleAccessories()
+            }
+        }
     }
     
 }
