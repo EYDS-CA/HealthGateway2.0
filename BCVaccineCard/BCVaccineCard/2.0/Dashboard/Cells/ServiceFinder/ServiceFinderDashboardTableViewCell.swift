@@ -45,20 +45,25 @@ class ServiceFinderDashboardTableViewCell: BaseDashboardTableViewCell {
         ServiceFinderLabel.font = UIFont.bcSansBoldWithSize(size: 13)
         ServiceFinderLabel.textColor = AppColours.appBlue
         arrowImageView.tintColor = AppColours.appBlue
+        permissionContainer.clipsToBounds = true
         permissionContainer.layer.cornerRadius = 10
         style(button: enableButton, style: .Fill, title: "Enable", image: nil)
         enableLabel.font = UIFont.bcSansBoldWithSize(size: 13)
         makeTransparentBlur(view: transparentContainer)
         makeTransparentBlur(view: permissionContainer)
+        permissionContainer.backgroundColor = UIColor.white.withAlphaComponent(0.8)
     }
     
     func makeTransparentBlur(view: UIView) {
         view.backgroundColor = .clear
+        let tag = 09124
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.alpha = 0.8
+        view.viewWithTag(tag)?.removeFromSuperview()
+        blurEffectView.tag = tag
         view.insertSubview(blurEffectView, at: 0)
     }
     
