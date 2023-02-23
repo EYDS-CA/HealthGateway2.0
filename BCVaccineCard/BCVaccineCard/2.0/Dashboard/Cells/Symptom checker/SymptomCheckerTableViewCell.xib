@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AO2-Sl-sWl">
-                        <rect key="frame" x="0.0" y="20" width="649" height="301.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="649" height="301.33333333333331"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bD8-hO-wZ0">
                                 <rect key="frame" x="0.0" y="0.0" width="301.33333333333331" height="301.33333333333331"/>
@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogz-f5-KtN">
-                                        <rect key="frame" x="16" y="44.333333333333329" width="269.33333333333331" height="2"/>
+                                        <rect key="frame" x="16" y="44.333333333333336" width="269.33333333333331" height="2"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="kMO-5o-FjQ"/>
@@ -84,7 +84,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2r-9f-Z34">
-                                        <rect key="frame" x="16" y="44.333333333333329" width="299.66666666666669" height="2"/>
+                                        <rect key="frame" x="16" y="44.333333333333336" width="299.66666666666669" height="2"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="hDY-xc-iN5"/>
@@ -115,7 +115,7 @@
                 <constraints>
                     <constraint firstItem="AO2-Sl-sWl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NxC-Lp-v0T"/>
                     <constraint firstAttribute="bottom" secondItem="AO2-Sl-sWl" secondAttribute="bottom" constant="20" id="Xfo-BN-GZa"/>
-                    <constraint firstItem="AO2-Sl-sWl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ePk-Hn-BbZ"/>
+                    <constraint firstItem="AO2-Sl-sWl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ePk-Hn-BbZ"/>
                     <constraint firstAttribute="trailing" secondItem="AO2-Sl-sWl" secondAttribute="trailing" id="nFC-X8-nhN"/>
                 </constraints>
             </tableViewCellContentView>
