@@ -60,14 +60,14 @@ class Call811TableViewCell: BaseDashboardTableViewCell {
     }
     
     @IBAction private func discoverMoreButtonAction(_ sender: UIButton) {
-        self.delegate?.tapped(button: .discoverMore)
+        self.delegate?.tapped(button: .discoverMore, connectType: .ignore)
     }
     
 }
 
 extension Call811TableViewCell: ButtonViewAction {
-    func buttonTapped(type: DashboardButton) {
-        self.delegate?.tapped(button: type)
+    func buttonTapped(type: DashboardButton, connectType: DashboardButton.ConnectType) {
+        self.delegate?.tapped(button: type, connectType: connectType)
     }
 
 }

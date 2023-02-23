@@ -38,7 +38,7 @@ class ServiceFinderDashboardTableViewCell: BaseDashboardTableViewCell {
         guard let delegate = delegate else {
             return
         }
-        delegate.tapped(button: .serviceFinder)
+        delegate.tapped(button: .serviceFinder, connectType: .ignore)
     }
     
     func style() {

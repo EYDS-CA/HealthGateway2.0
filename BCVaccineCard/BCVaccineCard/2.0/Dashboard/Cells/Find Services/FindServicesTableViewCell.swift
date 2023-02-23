@@ -40,21 +40,21 @@ class FindServicesTableViewCell: BaseDashboardTableViewCell {
         guard let delegate = delegate else {
             return
         }
-        delegate.tapped(button: .servicesNearYou)
+        delegate.tapped(button: .servicesNearYou, connectType: .ignore)
     }
     
     @objc func immunizeBCTap(_ sender: UITapGestureRecognizer? = nil) {
         guard let delegate = delegate else {
             return
         }
-        delegate.tapped(button: .immunizeBC)
+        delegate.tapped(button: .immunizeBC, connectType: .ignore)
     }
     
     @IBAction func getRemindersAction(_ sender: Any) {
         guard let delegate = delegate else {
             return
         }
-        delegate.tapped(button: .appointmentReminders)
+        delegate.tapped(button: .appointmentReminders, connectType: .ignore)
     }
     
     func style() {

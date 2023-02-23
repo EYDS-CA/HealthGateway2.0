@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DashboardTileDelegate {
-    func tapped(button: DashboardButton)
+    func tapped(button: DashboardButton, connectType: DashboardButton.ConnectType)
 }
 
 enum DashboardButton: String, CaseIterable {
@@ -38,6 +38,34 @@ enum DashboardButton: String, CaseIterable {
         case .registeredNurse: return "811"
         default: return ""
         }
+    }
+    
+    var getOrderedIcons: [UIImage?]? {
+        if #available(iOS 13.0, *) {
+            switch self {
+            case .call911:
+                return [UIImage(systemName: "phone.fill")]
+            case .healthNavigator:
+                return [UIImage(systemName: "phone.fill")]
+            case .registeredNurse:
+                return [UIImage(systemName: "phone.fill"), UIImage(systemName: "message.fill"), UIImage(systemName: "video.fill")]
+            case .pharmasistAdvice:
+                return [UIImage(systemName: "envelope.fill")]
+            case .exerciseProfessional:
+                return [UIImage(systemName: "envelope.fill")]
+            default: return nil
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    enum ConnectType {
+        case phone
+        case email
+        case chat
+        case videoCall
+        case ignore
     }
 }
 
@@ -202,7 +230,7 @@ class DashboardViewController: UIViewController {
     
 }
 extension DashboardViewController: DashboardTileDelegate {
-    func tapped(button: DashboardButton) {
+    func tapped(button: DashboardButton, connectType: DashboardButton.ConnectType) {
         print(button)
         switch button {
         case .virtualWalkIn:
@@ -224,7 +252,18 @@ extension DashboardViewController: DashboardTileDelegate {
         case .healthNavigator:
             callNumber(phoneNumber: button.phoneNumber)
         case .registeredNurse:
-            callNumber(phoneNumber: button.phoneNumber)
+            switch connectType {
+            case .phone:
+                callNumber(phoneNumber: button.phoneNumber)
+            case .email:
+                return
+            case .chat:
+                self.alert(title: "Chat Feature", message: "This would open up the chat feature")
+            case .videoCall:
+                self.alert(title: "Video Call Feature", message: "This would open up a video call feature")
+            case .ignore:
+                return
+            }
         case .connectHealthRecords:
             tabDelegate?.switchTo(tab: .UnAuthenticatedRecords)
         case .serviceFinder:
