@@ -107,28 +107,6 @@ class DashboardViewModel {
         }
     }
     
-    func adjust(section: DashboardSections, hidden: Bool, position: Int) {
-        config.sections[section] = DashboardConfig.Config(index: position, hidden: hidden)
-    }
-    
-    func adjust(cell: ConnectWithProvidersSection, hidden: Bool, position: Int) {
-        config.connectWithProvidersSectionCells[cell] = DashboardConfig.Config(index: position, hidden: hidden)
-    }
-    
-    func adjust(cell: GetHealthAdviceSection, hidden: Bool, position: Int) {
-        config.getHealthAdviceCells[cell] = DashboardConfig.Config(index: position, hidden: hidden)
-    }
-    
-    func adjust(cell: FindHealthServicesSection, hidden: Bool, position: Int) {
-        config.findHealthServicesSectionCells[cell] = DashboardConfig.Config(index: position, hidden: hidden)
-    }
-    
-    func adjust(cell: AccessHelthRecords, hidden: Bool, position: Int) {
-        config.accessHelthRecordsCells[cell] = DashboardConfig.Config(index: position, hidden: hidden)
-    }
-    
-   
-    
     static func fetchStoredConfig() -> DashboardConfig? {
         guard let savedData = UserDefaults.standard.object(forKey: DashboardViewModel.storeKey) as? Data else {
             return nil
