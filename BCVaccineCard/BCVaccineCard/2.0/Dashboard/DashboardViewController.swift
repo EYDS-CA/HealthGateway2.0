@@ -11,117 +11,6 @@ protocol DashboardTileDelegate {
     func tapped(button: DashboardButton, connectType: DashboardButton.ConnectType)
 }
 
-enum DashboardButton: String, CaseIterable {
-    case findPhysitian = "https://hcr.healthlinkbc.ca/"
-    case call911 = "call911" // phoneNumber
-    case virtualWalkIn = "virtualWalkIn" // Static image
-    case chat = "chat" // Static image
-    case illnessesAndCOnditions = "https://www.healthlinkbc.ca/illnesses-conditions"
-    case symptomChecker = "https://www.buoyhealth.com/symptom-checker/"
-    case healthNavigator = "healthNavigator" //phoneNumber
-    case registeredNurse = "registeredNurse" //phoneNumber
-    case pharmasistAdvice = "mailto:pharmasist@bc.ca" // EMAIL
-    case exerciseProfessional = "mailto:exercise@bc.ca" // EMAIL
-    case discoverMore = "discoverMore" // TOOO:
-    case immunizeBC = "https://immunizebc.ca/"
-    case appointmentReminders = "https://immunizebc.ca/reminders"
-    case servicesNearYou = "https://www.islandhealth.ca/"
-    case suppotFoundy = "https://foundrybc.ca/"
-    case supportAllAges = "https://www2.gov.bc.ca/gov/content/mental-health-support-in-bc"
-    case serviceFinder = "serviceFinder" // In app Action
-    case connectHealthRecords = "connectHealthRecords" // In app action
-    
-    var phoneNumber: String {
-        switch self {
-        case .call911: return "911"
-        case .healthNavigator: return "811"
-        case .registeredNurse: return "811"
-        default: return ""
-        }
-    }
-    
-    var getOrderedIcons: [UIImage?]? {
-        if #available(iOS 13.0, *) {
-            switch self {
-            case .call911:
-                return [UIImage(systemName: "phone.fill")]
-            case .healthNavigator:
-                return [UIImage(systemName: "phone.fill")]
-            case .registeredNurse:
-                return [UIImage(systemName: "phone.fill"), UIImage(systemName: "message.fill"), UIImage(systemName: "video.fill")]
-            case .pharmasistAdvice:
-                return [UIImage(systemName: "envelope.fill")]
-            case .exerciseProfessional:
-                return [UIImage(systemName: "envelope.fill")]
-            default: return nil
-            }
-        } else {
-            return nil
-        }
-    }
-    
-    enum ConnectType {
-        case phone
-        case email
-        case chat
-        case videoCall
-        case ignore
-    }
-}
-
-enum DashboardSections: Int, CaseIterable {
-    case ConnectWithHealthCareProviders
-    case LearnAboutYourHealth
-    case FindHealthServices
-    case AccessHelthRecords
-    
-    func numberOfCells() -> Int {
-        switch self {
-        case .ConnectWithHealthCareProviders:
-            return ConnectWithHealthCareProvidersSection.allCases.count
-        case .LearnAboutYourHealth:
-            return LearnAboutYourHealthSection.allCases.count
-        case .FindHealthServices:
-            return FindHealthServicesSection.allCases.count
-        case .AccessHelthRecords:
-            return AccessHelthRecordsSection.allCases.count
-        }
-    }
-    
-    func title() -> String {
-        switch self {
-        case .ConnectWithHealthCareProviders:
-            return "Connect With Health Care Providers"
-        case .LearnAboutYourHealth:
-            return "Learn about your health & wellness"
-        case .FindHealthServices:
-            return "Find health services"
-        case .AccessHelthRecords:
-            return "Access your health records"
-        }
-    }
-    
-    enum ConnectWithHealthCareProvidersSection: Int, CaseIterable {
-        case AccessHealthCareProfessionals
-        case Contact
-    }
-
-    enum LearnAboutYourHealthSection: Int, CaseIterable {
-        case IllnessesAndSymptomChecker
-    }
-
-    enum FindHealthServicesSection: Int, CaseIterable {
-        case MentalHealthSupport
-        case ImmunizeBCAndIslandHealth
-        case serviceFinder
-    }
-    
-    enum AccessHelthRecordsSection: Int, CaseIterable {
-        case ConnectHealthGateway
-    }
-
-}
-
 class DashboardViewController: UIViewController {
     
     class func construct(delegate: TabDelegate) -> DashboardViewController {
@@ -134,6 +23,8 @@ class DashboardViewController: UIViewController {
     
     private var tabDelegate: TabDelegate?
     var navObserver: NSKeyValueObservation?
+    
+    var viewModel: DashboardViewModel = DashboardViewModel()
     
     var welcomeLabel: UILabel?
     var plusIcon: UIImageView?
@@ -356,12 +247,21 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return DashboardSections.allCases.count
+        return viewModel.sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = DashboardSections(rawValue: section) else {return 0}
-        return section.numberOfCells()
+        switch section {
+        case .ConnectWithHealthCareProviders:
+            return viewModel.connectWithProvidersSectionCells.count
+        case .LearnAboutYourHealth:
+            return viewModel.learnAboutYourHealthSectionCells.count
+        case .FindHealthServices:
+            return viewModel.findHealthServicesSectionCells.count
+        case .AccessHelthRecords:
+            return viewModel.accessHelthRecordsCells.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -380,9 +280,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func getConnectWithHealthCareProviders(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let row = DashboardSections.ConnectWithHealthCareProvidersSection(rawValue: indexPath.row) else {
-            return UITableViewCell()
-        }
+        let row = viewModel.connectWithProvidersSectionCells[indexPath.row]
         
         switch row {
         case .AccessHealthCareProfessionals:
@@ -395,9 +293,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func getLearnAboutYourHealth(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let row = DashboardSections.LearnAboutYourHealthSection(rawValue: indexPath.row) else {
-            return UITableViewCell()
-        }
+        let row = viewModel.learnAboutYourHealthSectionCells[indexPath.row]
+       
         switch row {
         case .IllnessesAndSymptomChecker:
             let cell = illnessesAndSymptomCheckerCell(indexPath: indexPath)
@@ -407,9 +304,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func getFindHealthServices(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let row = DashboardSections.FindHealthServicesSection(rawValue: indexPath.row) else {
-            return UITableViewCell()
-        }
+        let row = viewModel.findHealthServicesSectionCells[indexPath.row]
+     
         switch row {
         case .MentalHealthSupport:
             let cell = mentalHealthSupportCell(indexPath: indexPath)
@@ -427,9 +323,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func getAccessHelthRecords(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let row = DashboardSections.AccessHelthRecordsSection(rawValue: indexPath.row) else {
-            return UITableViewCell()
-        }
+        let row = viewModel.accessHelthRecordsCells[indexPath.row]
+        
         switch row {
         case .ConnectHealthGateway:
             let cell = connectHealthGatewayCell(indexPath: indexPath)

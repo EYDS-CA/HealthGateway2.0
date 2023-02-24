@@ -611,6 +611,12 @@
 		3EAF8185296DF0CE00738553 /* ConstantsAndTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */; };
 		3EAF8186296DF0CE00738553 /* ConstantsAndTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */; };
 		3EAF8187296DF0CE00738553 /* ConstantsAndTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */; };
+		3EB5CA2A29A936C3007CCC01 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2929A936C3007CCC01 /* DashboardViewModel.swift */; };
+		3EB5CA2B29A936C3007CCC01 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2929A936C3007CCC01 /* DashboardViewModel.swift */; };
+		3EB5CA2C29A936C3007CCC01 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2929A936C3007CCC01 /* DashboardViewModel.swift */; };
+		3EB5CA2E29A936EE007CCC01 /* DashboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */; };
+		3EB5CA2F29A936EE007CCC01 /* DashboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */; };
+		3EB5CA3029A936EE007CCC01 /* DashboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */; };
 		3EBC991829110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991929110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991A29110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
@@ -1631,6 +1637,8 @@
 		3EA4B38529A554AC00D821A7 /* PinDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PinDetail.storyboard; sourceTree = "<group>"; };
 		3EA4B38A29A5608800D821A7 /* StaticImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticImageViewController.swift; sourceTree = "<group>"; };
 		3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAndTypes.swift; sourceTree = "<group>"; };
+		3EB5CA2929A936C3007CCC01 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEnums.swift; sourceTree = "<group>"; };
 		3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDependentViewController.swift; sourceTree = "<group>"; };
 		3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFinderDashboardTableViewCell.swift; sourceTree = "<group>"; };
 		3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceFinderDashboardTableViewCell.xib; sourceTree = "<group>"; };
@@ -2581,6 +2589,8 @@
 			children = (
 				3E62CFDC299FF739000FBB40 /* Dashboard.storyboard */,
 				3E62CFE0299FF74F000FBB40 /* DashboardViewController.swift */,
+				3EB5CA2929A936C3007CCC01 /* DashboardViewModel.swift */,
+				3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */,
 				2DBC6AAF29A04F180062F401 /* ReusableViews */,
 				3E62CFF4299FF8D5000FBB40 /* Cells */,
 			);
@@ -4656,6 +4666,7 @@
 				2941D7042847D76000EE98DE /* NetworkConnection.swift in Sources */,
 				79218AD2275576640063004E /* TextListModel.swift in Sources */,
 				2912314326F9433600CF5F3B /* UIConstants.swift in Sources */,
+				3EB5CA2F29A936EE007CCC01 /* DashboardEnums.swift in Sources */,
 				79218AAF275196040063004E /* HealthRecordsUserView.swift in Sources */,
 				795AA7732715650900E59FF1 /* NewsFeedTableViewCell.swift in Sources */,
 				2D5218D62988556100E07382 /* Patient+CoreDataProperties.swift in Sources */,
@@ -4708,6 +4719,7 @@
 				2922C10028774111000FF4F7 /* ImmunizationRecordDetailView.swift in Sources */,
 				794BD6762703A3DB0084ADA8 /* ImageTableViewCell.swift in Sources */,
 				7944F6BB26F12BC3006B9444 /* UIButton+EXT.swift in Sources */,
+				3EB5CA2B29A936C3007CCC01 /* DashboardViewModel.swift in Sources */,
 				7967E73A26F517F600EEF510 /* FormDataSource.swift in Sources */,
 				3E048CC4291183E900774278 /* InaccessibleDependentTableViewCell.swift in Sources */,
 				796653E427A16915004D103E /* AuthenticatedPatientDetailsResponseObject.swift in Sources */,
@@ -5024,6 +5036,7 @@
 				29788531279624E600FF912D /* SettingsAuthenticateTableViewCell.swift in Sources */,
 				79218AB0275196040063004E /* HealthRecordsUserView.swift in Sources */,
 				795AA74D2714018600E59FF1 /* APIClient.swift in Sources */,
+				3EB5CA3029A936EE007CCC01 /* DashboardEnums.swift in Sources */,
 				2941D7052847D76000EE98DE /* NetworkConnection.swift in Sources */,
 				79A15B0A2808B27600F8330D /* CommentViewTableViewCell.swift in Sources */,
 				2D5218D72988556100E07382 /* Patient+CoreDataProperties.swift in Sources */,
@@ -5076,6 +5089,7 @@
 				2922C10128774111000FF4F7 /* ImmunizationRecordDetailView.swift in Sources */,
 				29736A4A2788EBD700CCB1D2 /* TestResult+CoreDataProperties.swift in Sources */,
 				794BD6402702EEC00084ADA8 /* UIButton+EXT.swift in Sources */,
+				3EB5CA2C29A936C3007CCC01 /* DashboardViewModel.swift in Sources */,
 				3E048CC5291183E900774278 /* InaccessibleDependentTableViewCell.swift in Sources */,
 				29128F18272AF41F00358014 /* Array+EXT.swift in Sources */,
 				2932DCE8275ECC8F00532BC4 /* CoreDataEncryptionKeyManager.swift in Sources */,
@@ -5369,6 +5383,7 @@
 				798005592852C66E006E390F /* TextListModel.swift in Sources */,
 				7980055A2852C66E006E390F /* UIConstants.swift in Sources */,
 				7980055B2852C66E006E390F /* HealthRecordsUserView.swift in Sources */,
+				3EB5CA2E29A936EE007CCC01 /* DashboardEnums.swift in Sources */,
 				7980055C2852C66E006E390F /* NewsFeedTableViewCell.swift in Sources */,
 				2D5218D52988556100E07382 /* Patient+CoreDataProperties.swift in Sources */,
 				3EDC0D1E296C93D200603FED /* HospitalVisitDetailView.swift in Sources */,
@@ -5421,6 +5436,7 @@
 				798005792852C66E006E390F /* UIViewController+EXT.swift in Sources */,
 				7980057A2852C66E006E390F /* ImageTableViewCell.swift in Sources */,
 				7980057B2852C66E006E390F /* UIButton+EXT.swift in Sources */,
+				3EB5CA2A29A936C3007CCC01 /* DashboardViewModel.swift in Sources */,
 				3E048CC3291183E900774278 /* InaccessibleDependentTableViewCell.swift in Sources */,
 				7980057C2852C66E006E390F /* FormDataSource.swift in Sources */,
 				7980057D2852C66E006E390F /* AuthenticatedPatientDetailsResponseObject.swift in Sources */,
@@ -5954,7 +5970,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = L796QSLV3E;
 				INFOPLIST_FILE = "BCVaccineCard/PROD Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -5982,7 +5998,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = L796QSLV3E;
 				INFOPLIST_FILE = "BCVaccineCard/PROD Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
