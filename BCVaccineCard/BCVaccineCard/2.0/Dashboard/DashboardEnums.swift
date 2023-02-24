@@ -26,6 +26,9 @@ enum DashboardButton: String, CaseIterable {
     case supportAllAges = "https://www2.gov.bc.ca/gov/content/mental-health-support-in-bc"
     case serviceFinder = "serviceFinder" // In app Action
     case connectHealthRecords = "connectHealthRecords" // In app action
+    case customizeDashboard = "customizeDashboard" // In app action
+    case getVaccinated = "https://www.getvaccinated.gov.bc.ca/s/"
+    case MSPEnrollment = "https://my.gov.bc.ca/msp/"
     
     var phoneNumber: String {
         switch self {
@@ -67,53 +70,64 @@ enum DashboardButton: String, CaseIterable {
 
 enum DashboardSections: Int, CaseIterable, Codable {
     case ConnectWithHealthCareProviders
-    case LearnAboutYourHealth
+    case GetHealthAdvice
     case FindHealthServices
     case AccessHelthRecords
+    case UsefulLinks
     
     func numberOfCells() -> Int {
         switch self {
         case .ConnectWithHealthCareProviders:
             return ConnectWithHealthCareProvidersSection.allCases.count
-        case .LearnAboutYourHealth:
-            return LearnAboutYourHealthSection.allCases.count
+        case .GetHealthAdvice:
+            return GetHealthAdviceSection.allCases.count
         case .FindHealthServices:
             return FindHealthServicesSection.allCases.count
         case .AccessHelthRecords:
             return AccessHelthRecordsSection.allCases.count
+        case .UsefulLinks:
+            return UsefulLinksSection.allCases.count
         }
     }
     
     func title() -> String {
         switch self {
         case .ConnectWithHealthCareProviders:
-            return "Connect With Health Care Providers"
-        case .LearnAboutYourHealth:
-            return "Learn about your health & wellness"
+            return ""
+        case .GetHealthAdvice:
+            return "Get 24/7 health advice you can trust"
         case .FindHealthServices:
             return "Find health services"
         case .AccessHelthRecords:
             return "Access your health records"
+        case .UsefulLinks:
+            return "Other helpful links for you"
         }
     }
     
     enum ConnectWithHealthCareProvidersSection: Int, CaseIterable, Codable {
         case AccessHealthCareProfessionals
-        case Contact
+        case EmergencyCall
     }
 
-    enum LearnAboutYourHealthSection: Int, CaseIterable, Codable {
+    enum GetHealthAdviceSection: Int, CaseIterable, Codable {
+        case Contact
         case IllnessesAndSymptomChecker
     }
 
     enum FindHealthServicesSection: Int, CaseIterable, Codable {
-        case MentalHealthSupport
         case ImmunizeBCAndIslandHealth
+        case MentalHealthSupport
         case serviceFinder
     }
     
     enum AccessHelthRecordsSection: Int, CaseIterable, Codable {
         case ConnectHealthGateway
+    }
+    
+    enum UsefulLinksSection: Int, CaseIterable, Codable {
+        case GetVaccinated
+        case MSPEnrollment
     }
 
 }

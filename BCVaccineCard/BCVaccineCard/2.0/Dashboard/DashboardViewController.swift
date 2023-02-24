@@ -165,6 +165,8 @@ extension DashboardViewController: DashboardTileDelegate {
             tabDelegate?.switchTo(tab: .UnAuthenticatedRecords)
         case .serviceFinder:
             tabDelegate?.switchTo(tab: .ServiceFinder)
+        case .customizeDashboard:
+            showCustomizeDashboard(config: viewModel.config, delegate: self)
         default:
             showWeb(url: button.rawValue, withNavigation: true)
         }
@@ -182,6 +184,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func registerCells() {
         tableView.register(UINib.init(nibName: FindPhysitianTableViewCell.getName, bundle: .main), forCellReuseIdentifier: FindPhysitianTableViewCell.getName)
+        tableView.register(UINib.init(nibName: EmergencyCallTableViewCell.getName, bundle: .main), forCellReuseIdentifier: EmergencyCallTableViewCell.getName)
         tableView.register(UINib.init(nibName: SymptomCheckerTableViewCell.getName, bundle: .main), forCellReuseIdentifier: SymptomCheckerTableViewCell.getName)
         tableView.register(UINib.init(nibName: Call811TableViewCell.getName, bundle: .main), forCellReuseIdentifier: Call811TableViewCell.getName)
         tableView.register(UINib.init(nibName: FindServicesTableViewCell.getName, bundle: .main), forCellReuseIdentifier: FindServicesTableViewCell.getName)
@@ -189,11 +192,21 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib.init(nibName: ServiceFinderDashboardTableViewCell.getName, bundle: .main), forCellReuseIdentifier: ServiceFinderDashboardTableViewCell.getName)
         tableView.register(UINib.init(nibName: ConnectHealthGatewayDashboardTableViewCell.getName, bundle: .main), forCellReuseIdentifier: ConnectHealthGatewayDashboardTableViewCell.getName)
         tableView.register(UINib.init(nibName: ContactDashboardTableViewCell.getName, bundle: .main), forCellReuseIdentifier: ContactDashboardTableViewCell.getName)
+        tableView.register(UINib.init(nibName: CustomizeDashboardTableViewCell.getName, bundle: .main), forCellReuseIdentifier: CustomizeDashboardTableViewCell.getName)
+        tableView.register(UINib.init(nibName: UsefulLinkTableViewCell.getName, bundle: .main), forCellReuseIdentifier: UsefulLinkTableViewCell.getName)
     }
     
     func accessHealthCareProfessionalsCell(indexPath: IndexPath) -> FindPhysitianTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FindPhysitianTableViewCell.getName, for: indexPath) as? FindPhysitianTableViewCell else {
             return FindPhysitianTableViewCell()
+        }
+        cell.delegate = self
+        return cell
+    }
+    
+    func emergencyCallTableViewCellCell(indexPath: IndexPath) -> EmergencyCallTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: EmergencyCallTableViewCell.getName, for: indexPath) as? EmergencyCallTableViewCell else {
+            return EmergencyCallTableViewCell()
         }
         cell.delegate = self
         return cell
@@ -246,36 +259,72 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func customizeDashboardCell(indexPath: IndexPath) -> CustomizeDashboardTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomizeDashboardTableViewCell.getName, for: indexPath) as? CustomizeDashboardTableViewCell else {
+            return CustomizeDashboardTableViewCell()
+        }
+        cell.delegate = self
+        return cell
+    }
+    
+    func usefulLinkCell(indexPath: IndexPath) -> UsefulLinkTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UsefulLinkTableViewCell.getName, for: indexPath) as? UsefulLinkTableViewCell else {
+            return UsefulLinkTableViewCell()
+        }
+        cell.delegate = self
+        return cell
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.sections.count
+        return viewModel.sections.count + 1 // Extra section is customize section
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section = DashboardSections(rawValue: section) else {return 0}
+        guard viewModel.sections.indices.contains(section) else {
+            // if its the last index (customize)
+            if section == viewModel.sections.count {
+                return 1
+            }
+            return 0
+        }
+       
+        let section = viewModel.sections[section]
         switch section {
         case .ConnectWithHealthCareProviders:
             return viewModel.connectWithProvidersSectionCells.count
-        case .LearnAboutYourHealth:
-            return viewModel.learnAboutYourHealthSectionCells.count
+        case .GetHealthAdvice:
+            return viewModel.GetHealthAdviceCells.count
         case .FindHealthServices:
             return viewModel.findHealthServicesSectionCells.count
         case .AccessHelthRecords:
             return viewModel.accessHelthRecordsCells.count
+        case .UsefulLinks:
+            return viewModel.usefulLinksCells.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let section = DashboardSections(rawValue: indexPath.section) else {return UITableViewCell()}
+        guard viewModel.sections.indices.contains(indexPath.section) else {
+            // if its the last index (customize)
+            if indexPath.section == viewModel.sections.count {
+                return getCustomize(cellForRowAt: indexPath)
+            }
+            return UITableViewCell()
+        }
+       
+        let section = viewModel.sections[indexPath.section]
         
         switch section {
         case .ConnectWithHealthCareProviders:
             return getConnectWithHealthCareProviders(cellForRowAt: indexPath)
-        case .LearnAboutYourHealth:
+        case .GetHealthAdvice:
             return getLearnAboutYourHealth(cellForRowAt: indexPath)
         case .FindHealthServices:
             return getFindHealthServices(cellForRowAt: indexPath)
         case .AccessHelthRecords:
             return getAccessHelthRecords(cellForRowAt: indexPath)
+        case .UsefulLinks:
+            return getUsefulLink(cellForRowAt: indexPath)
         }
     }
 
@@ -286,16 +335,20 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         case .AccessHealthCareProfessionals:
             let cell = accessHealthCareProfessionalsCell(indexPath: indexPath)
             return cell
-        case .Contact:
-            let cell = ContactCell(indexPath: indexPath)
+        case .EmergencyCall:
+            let cell = emergencyCallTableViewCellCell(indexPath: indexPath)
+            cell.setup()
             return cell
         }
     }
     
     func getLearnAboutYourHealth(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = viewModel.learnAboutYourHealthSectionCells[indexPath.row]
+        let row = viewModel.GetHealthAdviceCells[indexPath.row]
        
         switch row {
+        case .Contact:
+            let cell = ContactCell(indexPath: indexPath)
+            return cell
         case .IllnessesAndSymptomChecker:
             let cell = illnessesAndSymptomCheckerCell(indexPath: indexPath)
             cell.setup()
@@ -333,8 +386,33 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func getUsefulLink(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = viewModel.usefulLinksCells[indexPath.row]
+        
+        let cell = usefulLinkCell(indexPath: indexPath)
+        switch row {
+        case .GetVaccinated:
+            cell.setup(title: "Get vaccinated", button: .getVaccinated)
+        case .MSPEnrollment:
+            cell.setup(title: "Medical Services Plan (MSP) enrolment", button: .MSPEnrollment)
+        }
+        return cell
+    }
+    
+    func getCustomize(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = customizeDashboardCell(indexPath: indexPath)
+        cell.setup()
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let section = DashboardSections(rawValue: section) else {return nil}
+        guard viewModel.sections.indices.contains(section) else {
+            return nil
+        }
+       
+        let section = viewModel.sections[section]
+        guard !section.title().isEmpty else {return nil}
+        
         let container = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 42))
         let label = UILabel(frame: container.bounds)
         container.addSubview(label)
@@ -344,5 +422,12 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         label.heightAnchor.constraint(equalToConstant: 42).isActive = true
         container.backgroundColor = .white
         return container
+    }
+}
+
+extension DashboardViewController: CustomizeDashboardDelegate {
+    func saveConfig(model: DashboardConfig) {
+        viewModel.config = model
+        tableView.reloadData()
     }
 }

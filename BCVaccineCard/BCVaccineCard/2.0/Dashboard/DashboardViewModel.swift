@@ -8,18 +8,20 @@
 import Foundation
 
 typealias ConnectWithProvidersSection = DashboardSections.ConnectWithHealthCareProvidersSection
-typealias LearnAboutYourHealthSection = DashboardSections.LearnAboutYourHealthSection
+typealias GetHealthAdviceSection = DashboardSections.GetHealthAdviceSection
 typealias FindHealthServicesSection = DashboardSections.FindHealthServicesSection
 typealias AccessHelthRecords = DashboardSections.AccessHelthRecordsSection
+typealias UsefulLinks = DashboardSections.UsefulLinksSection
 
 class DashboardViewModel {
     static let storeKey = "DashboardConfiguration"
     public var sections: [DashboardSections] = DashboardSections.allCases
     
     public var connectWithProvidersSectionCells: [ConnectWithProvidersSection] = ConnectWithProvidersSection.allCases
-    public var learnAboutYourHealthSectionCells: [LearnAboutYourHealthSection] = LearnAboutYourHealthSection.allCases
+    public var GetHealthAdviceCells: [GetHealthAdviceSection] = GetHealthAdviceSection.allCases
     public var findHealthServicesSectionCells: [FindHealthServicesSection] = FindHealthServicesSection.allCases
     public var accessHelthRecordsCells: [AccessHelthRecords] = AccessHelthRecords.allCases
+    public var usefulLinksCells: [UsefulLinks] = UsefulLinks.allCases
     
     public var config: DashboardConfig {
         didSet {
@@ -57,7 +59,7 @@ class DashboardViewModel {
         // sort
         // TODO:
         
-        self.learnAboutYourHealthSectionCells = config.learnAboutYourHealthSectionCells.compactMap({ obj in
+        self.GetHealthAdviceCells = config.getHealthAdviceCells.compactMap({ obj in
             if obj.value.hidden {
                 return nil
             } else {
@@ -81,7 +83,15 @@ class DashboardViewModel {
             } else {
                 return obj.key
         }})
+        // sort
+        // TODO:
         
+        self.usefulLinksCells = config.usefulLinksCells.compactMap({ obj in
+            if obj.value.hidden {
+                return nil
+            } else {
+                return obj.key
+        }})
         // sort
         // TODO:
     }
@@ -105,8 +115,8 @@ class DashboardViewModel {
         config.connectWithProvidersSectionCells[cell] = DashboardConfig.Config(index: position, hidden: hidden)
     }
     
-    func adjust(cell: LearnAboutYourHealthSection, hidden: Bool, position: Int) {
-        config.learnAboutYourHealthSectionCells[cell] = DashboardConfig.Config(index: position, hidden: hidden)
+    func adjust(cell: GetHealthAdviceSection, hidden: Bool, position: Int) {
+        config.getHealthAdviceCells[cell] = DashboardConfig.Config(index: position, hidden: hidden)
     }
     
     func adjust(cell: FindHealthServicesSection, hidden: Bool, position: Int) {
@@ -143,9 +153,9 @@ class DashboardViewModel {
             connectWithProvidersSectionCells[cell] = DashboardConfig.Config(index: cell.rawValue, hidden: false)
         }
         
-        var learnAboutYourHealthSectionCells: [LearnAboutYourHealthSection: DashboardConfig.Config] = [LearnAboutYourHealthSection: DashboardConfig.Config]()
-        LearnAboutYourHealthSection.allCases.forEach { cell in
-            learnAboutYourHealthSectionCells[cell] = DashboardConfig.Config(index: cell.rawValue, hidden: false)
+        var getHealthAdviceCells: [GetHealthAdviceSection: DashboardConfig.Config] = [GetHealthAdviceSection: DashboardConfig.Config]()
+        GetHealthAdviceSection.allCases.forEach { cell in
+            getHealthAdviceCells[cell] = DashboardConfig.Config(index: cell.rawValue, hidden: false)
         }
         
         var findHealthServicesSectionCells: [FindHealthServicesSection: DashboardConfig.Config] = [FindHealthServicesSection: DashboardConfig.Config]()
@@ -158,11 +168,18 @@ class DashboardViewModel {
             accessHelthRecordsCells[cell] = DashboardConfig.Config(index: cell.rawValue, hidden: false)
         }
         
+        var usefulLinks: [UsefulLinks: DashboardConfig.Config] = [UsefulLinks: DashboardConfig.Config]()
+        UsefulLinks.allCases.forEach { cell in
+            usefulLinks[cell] = DashboardConfig.Config(index: cell.rawValue, hidden: false)
+        }
+        
         return DashboardConfig(sections: sections,
                         connectWithProvidersSectionCells: connectWithProvidersSectionCells,
-                        learnAboutYourHealthSectionCells: learnAboutYourHealthSectionCells,
+                        getHealthAdviceCells: getHealthAdviceCells,
                         findHealthServicesSectionCells: findHealthServicesSectionCells,
-                        accessHelthRecordsCells: accessHelthRecordsCells)
+                        accessHelthRecordsCells: accessHelthRecordsCells,
+                        usefulLinksCells: usefulLinks
+        )
         
     }
 }
@@ -171,9 +188,10 @@ class DashboardViewModel {
 struct DashboardConfig: Codable {
     var sections: [DashboardSections: Config]
     var connectWithProvidersSectionCells: [ConnectWithProvidersSection: Config]
-    var learnAboutYourHealthSectionCells: [LearnAboutYourHealthSection: Config]
+    var getHealthAdviceCells: [GetHealthAdviceSection: Config]
     var findHealthServicesSectionCells: [FindHealthServicesSection: Config]
     var accessHelthRecordsCells: [AccessHelthRecords: Config]
+    var usefulLinksCells: [UsefulLinks: Config]
     
     struct Config: Codable {
         var index: Int

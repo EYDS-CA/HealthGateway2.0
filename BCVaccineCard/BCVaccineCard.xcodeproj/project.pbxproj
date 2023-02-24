@@ -617,6 +617,30 @@
 		3EB5CA2E29A936EE007CCC01 /* DashboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */; };
 		3EB5CA2F29A936EE007CCC01 /* DashboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */; };
 		3EB5CA3029A936EE007CCC01 /* DashboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */; };
+		3EB5CA3429A95820007CCC01 /* CustomizeDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3229A95820007CCC01 /* CustomizeDashboardTableViewCell.swift */; };
+		3EB5CA3529A95820007CCC01 /* CustomizeDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3229A95820007CCC01 /* CustomizeDashboardTableViewCell.swift */; };
+		3EB5CA3629A95820007CCC01 /* CustomizeDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3229A95820007CCC01 /* CustomizeDashboardTableViewCell.swift */; };
+		3EB5CA3729A95820007CCC01 /* CustomizeDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3329A95820007CCC01 /* CustomizeDashboardTableViewCell.xib */; };
+		3EB5CA3829A95820007CCC01 /* CustomizeDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3329A95820007CCC01 /* CustomizeDashboardTableViewCell.xib */; };
+		3EB5CA3929A95820007CCC01 /* CustomizeDashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3329A95820007CCC01 /* CustomizeDashboardTableViewCell.xib */; };
+		3EB5CA3D29A9583A007CCC01 /* UsefulLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3B29A9583A007CCC01 /* UsefulLinkTableViewCell.swift */; };
+		3EB5CA3E29A9583A007CCC01 /* UsefulLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3B29A9583A007CCC01 /* UsefulLinkTableViewCell.swift */; };
+		3EB5CA3F29A9583A007CCC01 /* UsefulLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3B29A9583A007CCC01 /* UsefulLinkTableViewCell.swift */; };
+		3EB5CA4029A9583A007CCC01 /* UsefulLinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3C29A9583A007CCC01 /* UsefulLinkTableViewCell.xib */; };
+		3EB5CA4129A9583A007CCC01 /* UsefulLinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3C29A9583A007CCC01 /* UsefulLinkTableViewCell.xib */; };
+		3EB5CA4229A9583A007CCC01 /* UsefulLinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA3C29A9583A007CCC01 /* UsefulLinkTableViewCell.xib */; };
+		3EB5CA4529A95890007CCC01 /* CustomizeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4429A95890007CCC01 /* CustomizeDashboard.storyboard */; };
+		3EB5CA4629A95890007CCC01 /* CustomizeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4429A95890007CCC01 /* CustomizeDashboard.storyboard */; };
+		3EB5CA4729A95890007CCC01 /* CustomizeDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4429A95890007CCC01 /* CustomizeDashboard.storyboard */; };
+		3EB5CA4929A958A4007CCC01 /* CustomizeDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4829A958A4007CCC01 /* CustomizeDashboardViewController.swift */; };
+		3EB5CA4A29A958A4007CCC01 /* CustomizeDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4829A958A4007CCC01 /* CustomizeDashboardViewController.swift */; };
+		3EB5CA4B29A958A4007CCC01 /* CustomizeDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4829A958A4007CCC01 /* CustomizeDashboardViewController.swift */; };
+		3EB5CA4F29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4D29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift */; };
+		3EB5CA5029A96A5F007CCC01 /* EmergencyCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4D29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift */; };
+		3EB5CA5129A96A5F007CCC01 /* EmergencyCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4D29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift */; };
+		3EB5CA5229A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */; };
+		3EB5CA5329A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */; };
+		3EB5CA5429A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */; };
 		3EBC991829110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991929110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991A29110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
@@ -1639,6 +1663,14 @@
 		3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAndTypes.swift; sourceTree = "<group>"; };
 		3EB5CA2929A936C3007CCC01 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3EB5CA2D29A936EE007CCC01 /* DashboardEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEnums.swift; sourceTree = "<group>"; };
+		3EB5CA3229A95820007CCC01 /* CustomizeDashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeDashboardTableViewCell.swift; sourceTree = "<group>"; };
+		3EB5CA3329A95820007CCC01 /* CustomizeDashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizeDashboardTableViewCell.xib; sourceTree = "<group>"; };
+		3EB5CA3B29A9583A007CCC01 /* UsefulLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulLinkTableViewCell.swift; sourceTree = "<group>"; };
+		3EB5CA3C29A9583A007CCC01 /* UsefulLinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsefulLinkTableViewCell.xib; sourceTree = "<group>"; };
+		3EB5CA4429A95890007CCC01 /* CustomizeDashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomizeDashboard.storyboard; sourceTree = "<group>"; };
+		3EB5CA4829A958A4007CCC01 /* CustomizeDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeDashboardViewController.swift; sourceTree = "<group>"; };
+		3EB5CA4D29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCallTableViewCell.swift; sourceTree = "<group>"; };
+		3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyCallTableViewCell.xib; sourceTree = "<group>"; };
 		3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDependentViewController.swift; sourceTree = "<group>"; };
 		3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFinderDashboardTableViewCell.swift; sourceTree = "<group>"; };
 		3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceFinderDashboardTableViewCell.xib; sourceTree = "<group>"; };
@@ -2578,6 +2610,7 @@
 				3EA4B38929A5607500D821A7 /* StaticImage */,
 				3EA4B36729A535F600D821A7 /* WebView */,
 				3E62CFF5299FFECE000FBB40 /* TabBar */,
+				3EB5CA4329A95873007CCC01 /* CustomizeDashboard */,
 				3E62CFD9299FF6FC000FBB40 /* Dashboard */,
 				3E62CFDB299FF712000FBB40 /* HealthChecks */,
 			);
@@ -2614,6 +2647,9 @@
 			isa = PBXGroup;
 			children = (
 				3E62D03329A03BAD000FBB40 /* BaseDashboardTableViewCell.swift */,
+				3EB5CA4C29A96A43007CCC01 /* EmergencyCall */,
+				3EB5CA3A29A95828007CCC01 /* UsefulLink */,
+				3EB5CA3129A95802007CCC01 /* CustomizeDashboard */,
 				3E62D00C29A0389B000FBB40 /* Find Physitian */,
 				3EBFADEF29A7F4C7007330FE /* Contact */,
 				3E62D00D29A038AA000FBB40 /* Symptom checker */,
@@ -2779,6 +2815,42 @@
 				3EAF8184296DF0CE00738553 /* ConstantsAndTypes.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		3EB5CA3129A95802007CCC01 /* CustomizeDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3EB5CA3229A95820007CCC01 /* CustomizeDashboardTableViewCell.swift */,
+				3EB5CA3329A95820007CCC01 /* CustomizeDashboardTableViewCell.xib */,
+			);
+			path = CustomizeDashboard;
+			sourceTree = "<group>";
+		};
+		3EB5CA3A29A95828007CCC01 /* UsefulLink */ = {
+			isa = PBXGroup;
+			children = (
+				3EB5CA3B29A9583A007CCC01 /* UsefulLinkTableViewCell.swift */,
+				3EB5CA3C29A9583A007CCC01 /* UsefulLinkTableViewCell.xib */,
+			);
+			path = UsefulLink;
+			sourceTree = "<group>";
+		};
+		3EB5CA4329A95873007CCC01 /* CustomizeDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3EB5CA4429A95890007CCC01 /* CustomizeDashboard.storyboard */,
+				3EB5CA4829A958A4007CCC01 /* CustomizeDashboardViewController.swift */,
+			);
+			path = CustomizeDashboard;
+			sourceTree = "<group>";
+		};
+		3EB5CA4C29A96A43007CCC01 /* EmergencyCall */ = {
+			isa = PBXGroup;
+			children = (
+				3EB5CA4D29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift */,
+				3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */,
+			);
+			path = EmergencyCall;
 			sourceTree = "<group>";
 		};
 		3EBFADDD29A7F382007330FE /* ServiceFinder */ = {
@@ -4078,6 +4150,7 @@
 				293B32C627D27A880064BAAA /* CommentsTableViewCell.xib in Resources */,
 				3E62D01E29A0397F000FBB40 /* FindPhysitianTableViewCell.xib in Resources */,
 				294BD3D327B1C4DB00BD8D46 /* HiddenRecordsTableViewCell.xib in Resources */,
+				3EB5CA4629A95890007CCC01 /* CustomizeDashboard.storyboard in Resources */,
 				3E5A68E0298C57C400E94A01 /* DBLoadFatalError.xib in Resources */,
 				3E6831472940D92600100402 /* Comments.storyboard in Resources */,
 				297885262795F38500FF912D /* SettingsAuthenticateTableViewCell.xib in Resources */,
@@ -4095,7 +4168,9 @@
 				79218AC127555B350063004E /* ReusableHeaderAddView.xib in Resources */,
 				79B9D01427E2869D00987D9F /* HomeScreenTableViewCell.xib in Resources */,
 				79218AD927557ED50063004E /* TextListViewTableViewCell.xib in Resources */,
+				3EB5CA5329A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */,
 				794BD6772703A3DB0084ADA8 /* ImageTableViewCell.xib in Resources */,
+				3EB5CA4129A9583A007CCC01 /* UsefulLinkTableViewCell.xib in Resources */,
 				79BDA089270CEE8000FF30AB /* Localizable.strings in Resources */,
 				7944F68526F1261B006B9444 /* Assets.xcassets in Resources */,
 				79B9D01727E2950000987D9F /* Home.storyboard in Resources */,
@@ -4112,6 +4187,7 @@
 				3E62CFEE299FF777000FBB40 /* SrviceFinder.storyboard in Resources */,
 				29547E5B27A2EC7700562958 /* LocalAuthView.xib in Resources */,
 				79BDA070270CAC9E00FF30AB /* HealthPass.storyboard in Resources */,
+				3EB5CA3829A95820007CCC01 /* CustomizeDashboardTableViewCell.xib in Resources */,
 				7944F6D726F12C00006B9444 /* VaxQRZoomedInView.xib in Resources */,
 				79BDA072270CB71D00FF30AB /* Records.storyboard in Resources */,
 				795AA76427155F6300E59FF1 /* NewsFeed.storyboard in Resources */,
@@ -4192,6 +4268,7 @@
 				795AA76827155F7100E59FF1 /* Resource.storyboard in Resources */,
 				794BD65D2702EEC00084ADA8 /* BCSans-Regular.otf in Resources */,
 				3E32322828B5FEB80067040C /* Recommendations.storyboard in Resources */,
+				3EB5CA4229A9583A007CCC01 /* UsefulLinkTableViewCell.xib in Resources */,
 				79590D9B2811EA25006EB59F /* CommentsTableViewCell.xib in Resources */,
 				297F6DB5280F16540023E89C /* AuthenticationView.xib in Resources */,
 				3EBFADEE29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */,
@@ -4256,6 +4333,7 @@
 				79BDA08A270CEE8000FF30AB /* Localizable.strings in Resources */,
 				799E0B0027D13F43009C68FE /* Reusable.storyboard in Resources */,
 				79BDA085270CEE5E00FF30AB /* Records.storyboard in Resources */,
+				3EB5CA4729A95890007CCC01 /* CustomizeDashboard.storyboard in Resources */,
 				3E62CFDF299FF739000FBB40 /* Dashboard.storyboard in Resources */,
 				792834602730E63A00EE2710 /* InteractiveLabelTableViewCell.xib in Resources */,
 				29A4DF5B27DEFCCC00D5E901 /* ChipCollectionViewCell.xib in Resources */,
@@ -4264,6 +4342,7 @@
 				7928346E27311C9000EE2710 /* DropDownView.xib in Resources */,
 				2922C0E8286E33F8000FF4F7 /* MessageBannerTableViewCell.xib in Resources */,
 				29547E5C27A2EC7700562958 /* LocalAuthView.xib in Resources */,
+				3EB5CA5429A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */,
 				79A15B0927FE9F5600F8330D /* DataSecurityTipsTableViewCell.xib in Resources */,
 				3E5E6EC028D278BD00724EDD /* CommunicationBannerTableViewCell.xib in Resources */,
 				795AA758271518AB00E59FF1 /* InitialOnboardingView.xib in Resources */,
@@ -4278,6 +4357,7 @@
 				2D5218C62984A38000E07382 /* ProfileDetailsTableViewCell.xib in Resources */,
 				2DBC6AB729A04F5A0062F401 /* ButtonView.xib in Resources */,
 				2978852F279624E100FF912D /* SettingsProfileTableViewCell.xib in Resources */,
+				3EB5CA3929A95820007CCC01 /* CustomizeDashboardTableViewCell.xib in Resources */,
 				795AA76527155F6300E59FF1 /* NewsFeed.storyboard in Resources */,
 				794BD66A2702EEC00084ADA8 /* BCSans-BoldItalic.otf in Resources */,
 				293B32BA27D2628A0064BAAA /* CommentsListView.xib in Resources */,
@@ -4325,6 +4405,7 @@
 				798006122852C66E006E390F /* CommentsTableViewCell.xib in Resources */,
 				3E62D00729A0387D000FBB40 /* FindPhysitianTableViewCell.xib in Resources */,
 				798006132852C66E006E390F /* HiddenRecordsTableViewCell.xib in Resources */,
+				3EB5CA4529A95890007CCC01 /* CustomizeDashboard.storyboard in Resources */,
 				3E585505298C56E5006778AD /* DBLoadFatalError.xib in Resources */,
 				3E6831462940D92600100402 /* Comments.storyboard in Resources */,
 				798006142852C66E006E390F /* SettingsAuthenticateTableViewCell.xib in Resources */,
@@ -4342,7 +4423,9 @@
 				7980061F2852C66E006E390F /* HomeScreenTableViewCell.xib in Resources */,
 				798006202852C66E006E390F /* TextListViewTableViewCell.xib in Resources */,
 				798006212852C66E006E390F /* ImageTableViewCell.xib in Resources */,
+				3EB5CA5229A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */,
 				798006222852C66E006E390F /* Localizable.strings in Resources */,
+				3EB5CA4029A9583A007CCC01 /* UsefulLinkTableViewCell.xib in Resources */,
 				798006232852C66E006E390F /* Assets.xcassets in Resources */,
 				798006242852C66E006E390F /* Home.storyboard in Resources */,
 				798006252852C66E006E390F /* SettingsRowTableViewCell.xib in Resources */,
@@ -4359,6 +4442,7 @@
 				3E62CFED299FF777000FBB40 /* SrviceFinder.storyboard in Resources */,
 				7980062B2852C66E006E390F /* LocalAuthView.xib in Resources */,
 				7980062C2852C66E006E390F /* HealthPass.storyboard in Resources */,
+				3EB5CA3729A95820007CCC01 /* CustomizeDashboardTableViewCell.xib in Resources */,
 				7980062D2852C66E006E390F /* VaxQRZoomedInView.xib in Resources */,
 				7980062E2852C66E006E390F /* Records.storyboard in Resources */,
 				7980062F2852C66E006E390F /* NewsFeed.storyboard in Resources */,
@@ -4600,6 +4684,7 @@
 				3E62D02D29A03990000FBB40 /* FindServicesTableViewCell.swift in Sources */,
 				795AA7792715652C00E59FF1 /* ResourceTableViewCell.swift in Sources */,
 				7944F6BE26F12BD5006B9444 /* VaccinePassportModel.swift in Sources */,
+				3EB5CA3E29A9583A007CCC01 /* UsefulLinkTableViewCell.swift in Sources */,
 				2DBC6AB229A04F4D0062F401 /* ButtonView.swift in Sources */,
 				3E9D52672909E0F9007E7F44 /* ManageDependentsViewController.swift in Sources */,
 				2979679927C536E20019EE9B /* LaboratoryTest+CoreDataProperties.swift in Sources */,
@@ -4820,6 +4905,7 @@
 				3E5E6EB328D2747800724EDD /* CommunicationResponse.swift in Sources */,
 				7944F70426F31451006B9444 /* NoCardsTableViewCell.swift in Sources */,
 				795AA7412713FB1400E59FF1 /* QueueItLocal.swift in Sources */,
+				3EB5CA5029A96A5F007CCC01 /* EmergencyCallTableViewCell.swift in Sources */,
 				298190C72773B4350062F55E /* AuthenticationViewController.swift in Sources */,
 				7944F71426F3A26D006B9444 /* QRSelectionTableViewCell.swift in Sources */,
 				79218AEF275672120063004E /* StorageService+HealthRecords.swift in Sources */,
@@ -4829,6 +4915,7 @@
 				3EDC0D1A2968932100603FED /* KVCReflectionMirror.swift in Sources */,
 				29F41297274CDEDA004927FF /* VisitedOnBoardingScreen.swift in Sources */,
 				79218AE42755E14E0063004E /* FetchHealthRecordsViewController.swift in Sources */,
+				3EB5CA4A29A958A4007CCC01 /* CustomizeDashboardViewController.swift in Sources */,
 				7944F71926F3B59C006B9444 /* TextTableViewCell.swift in Sources */,
 				795AA7542715189C00E59FF1 /* InitialOnboardingView.swift in Sources */,
 				2D5218CD2988556100E07382 /* Address+CoreDataClass.swift in Sources */,
@@ -4856,6 +4943,7 @@
 				798CA1CA27EE4B0A0096188C /* LoginProcessStatus.swift in Sources */,
 				3E91C7AF28B51B0B005AA34F /* ImmunizationDetails+CoreDataClass.swift in Sources */,
 				3EDC0C84296785DB00603FED /* BaseGatewayResponse.swift in Sources */,
+				3EB5CA3529A95820007CCC01 /* CustomizeDashboardTableViewCell.swift in Sources */,
 				3E68313B2940D77600100402 /* CommentsViewController.swift in Sources */,
 				3E5E6EA628D23BB200724EDD /* AFNetwork.swift in Sources */,
 				3EA4B37629A5462000D821A7 /* MapViewController.swift in Sources */,
@@ -4970,6 +5058,7 @@
 				3E62D02B29A0398F000FBB40 /* FindServicesTableViewCell.swift in Sources */,
 				791C27BA27183149001A6E12 /* ButtonTableViewCell.swift in Sources */,
 				79932CAA2790F8DA007E8D92 /* QRMaker.swift in Sources */,
+				3EB5CA3F29A9583A007CCC01 /* UsefulLinkTableViewCell.swift in Sources */,
 				2DBC6AB329A04F4D0062F401 /* ButtonView.swift in Sources */,
 				3E9D52682909E0F9007E7F44 /* ManageDependentsViewController.swift in Sources */,
 				2979679A27C536E20019EE9B /* LaboratoryTest+CoreDataProperties.swift in Sources */,
@@ -5190,6 +5279,7 @@
 				29A12AF9271F6B2100A106B5 /* AnalyticsService.swift in Sources */,
 				794BD64C2702EEC00084ADA8 /* ZoomedInPopUpVC.swift in Sources */,
 				795AA73C271092D500E59FF1 /* MIMEType.swift in Sources */,
+				3EB5CA5129A96A5F007CCC01 /* EmergencyCallTableViewCell.swift in Sources */,
 				79932CAB2790F8E2007E8D92 /* Logger.swift in Sources */,
 				3E78AECF28F9909500C66E28 /* AddDependentViewController.swift in Sources */,
 				797BB96A2767E85D00CD1645 /* SettingsTextTableViewCell.swift in Sources */,
@@ -5199,6 +5289,7 @@
 				3EDC0D1B2968932100603FED /* KVCReflectionMirror.swift in Sources */,
 				79218AF0275672120063004E /* StorageService+HealthRecords.swift in Sources */,
 				79CF236F283D8DDF00510489 /* BaseURLWorker.swift in Sources */,
+				3EB5CA4B29A958A4007CCC01 /* CustomizeDashboardViewController.swift in Sources */,
 				3E5E6EBD28D278BD00724EDD /* CommunicationBannerTableViewCell.swift in Sources */,
 				29F41298274CDEE1004927FF /* VisitedOnBoardingScreen.swift in Sources */,
 				2D5218CE2988556100E07382 /* Address+CoreDataClass.swift in Sources */,
@@ -5226,6 +5317,7 @@
 				29A4DF5F27DEFCCC00D5E901 /* ChipCollectionViewCell.swift in Sources */,
 				3E91C7B028B51B0B005AA34F /* ImmunizationDetails+CoreDataClass.swift in Sources */,
 				3EDC0C85296785DB00603FED /* BaseGatewayResponse.swift in Sources */,
+				3EB5CA3629A95820007CCC01 /* CustomizeDashboardTableViewCell.swift in Sources */,
 				3E68313C2940D77600100402 /* CommentsViewController.swift in Sources */,
 				3E5E6EA728D23BB200724EDD /* AFNetwork.swift in Sources */,
 				3EA4B37729A5462000D821A7 /* MapViewController.swift in Sources */,
@@ -5317,6 +5409,7 @@
 				2922C12E287E0FBD000FF4F7 /* StorageService+SpecialAuthorityMedication.swift in Sources */,
 				29E19FD3286C024200C235EF /* CovidTestResultRecordDetailView.swift in Sources */,
 				3E9D52662909E0F9007E7F44 /* ManageDependentsViewController.swift in Sources */,
+				3EB5CA3D29A9583A007CCC01 /* UsefulLinkTableViewCell.swift in Sources */,
 				2DBC6AB129A04F4D0062F401 /* ButtonView.swift in Sources */,
 				798005312852C66E006E390F /* ResourceTableViewCell.swift in Sources */,
 				798005322852C66E006E390F /* VaccinePassportModel.swift in Sources */,
@@ -5537,6 +5630,7 @@
 				3E5E6EB228D2747800724EDD /* CommunicationResponse.swift in Sources */,
 				798005B92852C66E006E390F /* NoCardsTableViewCell.swift in Sources */,
 				29E19FD7286C025400C235EF /* MedicationRecordDetailView.swift in Sources */,
+				3EB5CA4F29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift in Sources */,
 				798005BA2852C66E006E390F /* QueueItLocal.swift in Sources */,
 				798005BB2852C66E006E390F /* AuthenticationViewController.swift in Sources */,
 				798005BC2852C66E006E390F /* QRSelectionTableViewCell.swift in Sources */,
@@ -5546,6 +5640,7 @@
 				3EDC0D192968932100603FED /* KVCReflectionMirror.swift in Sources */,
 				798005BD2852C66E006E390F /* StorageService+HealthRecords.swift in Sources */,
 				29E19FE2286C044F00C235EF /* BaseHealthRecordDetailView.swift in Sources */,
+				3EB5CA4929A958A4007CCC01 /* CustomizeDashboardViewController.swift in Sources */,
 				798005BE2852C66E006E390F /* VisitedOnBoardingScreen.swift in Sources */,
 				798005BF2852C66E006E390F /* FetchHealthRecordsViewController.swift in Sources */,
 				2D5218CC2988556100E07382 /* Address+CoreDataClass.swift in Sources */,
@@ -5573,6 +5668,7 @@
 				798005CE2852C66E006E390F /* ResourceViewController.swift in Sources */,
 				3E91C7AE28B51B0B005AA34F /* ImmunizationDetails+CoreDataClass.swift in Sources */,
 				3EDC0C83296785DB00603FED /* BaseGatewayResponse.swift in Sources */,
+				3EB5CA3429A95820007CCC01 /* CustomizeDashboardTableViewCell.swift in Sources */,
 				3E68313A2940D77600100402 /* CommentsViewController.swift in Sources */,
 				3E5E6EA528D23BB200724EDD /* AFNetwork.swift in Sources */,
 				3EA4B37529A5462000D821A7 /* MapViewController.swift in Sources */,
