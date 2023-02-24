@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0g-8a-Qwv">
-                        <rect key="frame" x="0.0" y="5" width="441" height="203"/>
+                        <rect key="frame" x="0.0" y="5" width="441" height="183"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tCB-wF-Mgi">
                                 <rect key="frame" x="16" y="16" width="409" height="20.333333333333329"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="atE-TI-50P">
-                                <rect key="frame" x="16" y="82" width="409" height="105"/>
+                                <rect key="frame" x="16" y="62" width="409" height="105"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Du8-Da-FSU">
                                         <rect key="frame" x="0.0" y="0.0" width="193.33333333333334" height="105"/>
@@ -159,7 +159,7 @@
                 <constraints>
                     <constraint firstItem="J0g-8a-Qwv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="70X-d8-xN9"/>
                     <constraint firstAttribute="trailing" secondItem="J0g-8a-Qwv" secondAttribute="trailing" id="GSt-2s-pVB"/>
-                    <constraint firstAttribute="bottom" secondItem="J0g-8a-Qwv" secondAttribute="bottom" constant="5" id="ICI-n2-C4e"/>
+                    <constraint firstAttribute="bottom" secondItem="J0g-8a-Qwv" secondAttribute="bottom" constant="25" id="ICI-n2-C4e"/>
                     <constraint firstItem="J0g-8a-Qwv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qB3-Jf-aMy"/>
                 </constraints>
             </tableViewCellContentView>
