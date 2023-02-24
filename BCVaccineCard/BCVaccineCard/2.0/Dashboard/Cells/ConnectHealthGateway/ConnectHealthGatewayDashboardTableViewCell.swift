@@ -20,7 +20,7 @@ class ConnectHealthGatewayDashboardTableViewCell: BaseDashboardTableViewCell {
     }
     
     @IBAction func connect(_ sender: Any) {
-        delegate?.tapped(button: .connectHealthRecords)
+        delegate?.tapped(button: .connectHealthRecords, connectType: .ignore)
     }
     
     func style() {

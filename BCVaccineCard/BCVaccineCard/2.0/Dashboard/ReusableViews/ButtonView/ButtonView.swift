@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ButtonViewAction: AnyObject {
-    func buttonTapped(type: DashboardButton)
+    func buttonTapped(type: DashboardButton, connectType: DashboardButton.ConnectType)
 }
 
 class ButtonView: UIView {
@@ -57,7 +57,7 @@ class ButtonView: UIView {
             print("ERROR NO DASH TYPE")
             return
         }
-        self.delegate?.buttonTapped(type: type)
+        self.delegate?.buttonTapped(type: type, connectType: .ignore)
     }
     
     func configure(type: DashboardButton, owner: UITableViewCell, rounding: CGFloat) {
@@ -129,13 +129,13 @@ extension DashboardButton {
 //        case .symptomChecker:
 //            <#code#>
         case .healthNavigator:
-            return "Health Navigator"
+            return "Call a health navigator"
         case .registeredNurse:
-            return "Registered Nurse"
+            return "Connect with a registered nurse"
         case .pharmasistAdvice:
-            return "Pharmacist Advice"
+            return "Email a pharmacist for advice"
         case .exerciseProfessional:
-            return "Exercise Professional"
+            return "Email an exercise professional for advice"
         case .discoverMore:
             return "Discover more"
 //        case .immunizeBC:

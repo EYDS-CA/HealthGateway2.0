@@ -44,14 +44,14 @@ class MentalHealthTableViewCell: BaseDashboardTableViewCell {
         guard let delegate = delegate else {
             return
         }
-        delegate.tapped(button: .supportAllAges)
+        delegate.tapped(button: .supportAllAges, connectType: .ignore)
     }
     @IBAction func allAgesBtnTap(_ sender: Any) {
         
         guard let delegate = delegate else {
             return
         }
-        delegate.tapped(button: .supportAllAges)
+        delegate.tapped(button: .supportAllAges, connectType: .ignore)
     }
     
     @IBAction func foundryBtnTap(_ sender: Any) {
@@ -59,13 +59,13 @@ class MentalHealthTableViewCell: BaseDashboardTableViewCell {
         guard let delegate = delegate  else {
             return
         }
-        delegate.tapped(button: .suppotFoundy)
+        delegate.tapped(button: .suppotFoundy, connectType: .ignore)
     }
     @objc func foundryTap(_ sender: UITapGestureRecognizer? = nil) {
         guard let delegate = delegate  else {
             return
         }
-        delegate.tapped(button: .suppotFoundy)
+        delegate.tapped(button: .suppotFoundy, connectType: .ignore)
     }
     
     func style() {

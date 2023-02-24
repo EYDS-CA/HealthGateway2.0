@@ -40,14 +40,14 @@ class SymptomCheckerTableViewCell: BaseDashboardTableViewCell {
         guard let delegate = delegate else {
             return
         }
-        delegate.tapped(button: .symptomChecker)
+        delegate.tapped(button: .symptomChecker, connectType: .ignore)
     }
     
     @objc func conditionsTap(_ sender: UITapGestureRecognizer? = nil) {
         guard let delegate = delegate  else {
             return
         }
-        delegate.tapped(button: .illnessesAndCOnditions)
+        delegate.tapped(button: .illnessesAndCOnditions, connectType: .ignore)
     }
     
     func style() {
