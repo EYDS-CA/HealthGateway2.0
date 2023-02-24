@@ -105,7 +105,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="lo1-48-z9r" secondAttribute="trailing" id="7PH-CY-TqZ"/>
                     <constraint firstItem="lo1-48-z9r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PI9-zg-rrz"/>
-                    <constraint firstAttribute="bottom" secondItem="lo1-48-z9r" secondAttribute="bottom" constant="20" id="Vys-zu-jX8"/>
+                    <constraint firstAttribute="bottom" secondItem="lo1-48-z9r" secondAttribute="bottom" constant="25" id="Vys-zu-jX8"/>
                     <constraint firstItem="lo1-48-z9r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="h5e-lr-9sR"/>
                 </constraints>
             </tableViewCellContentView>

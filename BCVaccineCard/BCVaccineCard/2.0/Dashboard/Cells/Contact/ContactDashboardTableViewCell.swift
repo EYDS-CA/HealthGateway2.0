@@ -9,6 +9,7 @@ import UIKit
 
 class ContactDashboardTableViewCell: BaseDashboardTableViewCell {
     
+    @IBOutlet weak var container: UIView!
     @IBOutlet private weak var call911Button: RowView!
     @IBOutlet private weak var callHealthNavigatorButton: RowView!
     @IBOutlet private weak var connectWithARegisteredNurseButton: RowView!
@@ -21,14 +22,14 @@ class ContactDashboardTableViewCell: BaseDashboardTableViewCell {
     }
 
     func setup() {
-        self.contentView.layer.cornerRadius = 10.0
-        self.contentView.clipsToBounds = true
-        self.contentView.backgroundColor = UIColor(hexString: "#E5F0FF")
-        self.call911Button.configure(type: .call911, owner: self)
-        self.callHealthNavigatorButton.configure(type: .healthNavigator, owner: self)
-        self.connectWithARegisteredNurseButton.configure(type: .registeredNurse, owner: self)
-        self.emailAPharmacistButton.configure(type: .pharmasistAdvice, owner: self)
-        self.emailAnExerciseProfessional.configure(type: .exerciseProfessional, owner: self)
+        container.layer.cornerRadius = 10.0
+        container.clipsToBounds = true
+        container.backgroundColor = UIColor(hexString: "#E5F0FF")
+        call911Button.configure(type: .call911, owner: self)
+        callHealthNavigatorButton.configure(type: .healthNavigator, owner: self)
+        connectWithARegisteredNurseButton.configure(type: .registeredNurse, owner: self)
+        emailAPharmacistButton.configure(type: .pharmasistAdvice, owner: self)
+        emailAnExerciseProfessional.configure(type: .exerciseProfessional, owner: self)
     }
     
     

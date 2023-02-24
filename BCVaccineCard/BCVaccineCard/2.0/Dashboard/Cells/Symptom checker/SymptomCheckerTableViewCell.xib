@@ -114,7 +114,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="AO2-Sl-sWl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NxC-Lp-v0T"/>
-                    <constraint firstAttribute="bottom" secondItem="AO2-Sl-sWl" secondAttribute="bottom" constant="20" id="Xfo-BN-GZa"/>
+                    <constraint firstAttribute="bottom" secondItem="AO2-Sl-sWl" secondAttribute="bottom" id="Xfo-BN-GZa"/>
                     <constraint firstItem="AO2-Sl-sWl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ePk-Hn-BbZ"/>
                     <constraint firstAttribute="trailing" secondItem="AO2-Sl-sWl" secondAttribute="trailing" id="nFC-X8-nhN"/>
                 </constraints>

@@ -258,9 +258,15 @@ extension DashboardViewController: DashboardTileDelegate {
             case .email:
                 return
             case .chat:
-                self.alert(title: "Chat Feature", message: "This would open up the chat feature")
+                guard let image = UIImage(named: "static-chat") else {
+                    return
+                }
+                showStatic(image: image)
             case .videoCall:
-                self.alert(title: "Video Call Feature", message: "This would open up a video call feature")
+                guard let image = UIImage(named: "static-call") else {
+                    return
+                }
+                showStatic(image: image)
             case .ignore:
                 return
             }
