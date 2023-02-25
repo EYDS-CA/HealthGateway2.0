@@ -108,26 +108,71 @@ enum DashboardSections: Int, CaseIterable, Codable {
     enum ConnectWithHealthCareProvidersSection: Int, CaseIterable, Codable {
         case AccessHealthCareProfessionals
         case EmergencyCall
+        
+        func title() -> String {
+            switch self {
+            case .AccessHealthCareProfessionals:
+                return "Register to access a family physician or nuerse practitioner"
+            case .EmergencyCall:
+                return "Call 911 for emergencies"
+            }
+        }
     }
 
     enum GetHealthAdviceSection: Int, CaseIterable, Codable {
         case Contact
         case IllnessesAndSymptomChecker
+        
+        func title() -> String {
+            switch self {
+            case .Contact:
+                return "Healthlink BC connect"
+            case .IllnessesAndSymptomChecker:
+                return "Illnesses, conditions and symptom checker"
+            }
+        }
     }
 
     enum FindHealthServicesSection: Int, CaseIterable, Codable {
         case ImmunizeBCAndIslandHealth
         case MentalHealthSupport
         case serviceFinder
+        
+        func title() -> String {
+            switch self {
+            case .ImmunizeBCAndIslandHealth:
+                return "Immunize BC"
+            case .MentalHealthSupport:
+                return "Heath services and Mental healh support near you"
+            case .serviceFinder:
+                return "Service Finder"
+            }
+        }
     }
     
     enum AccessHelthRecordsSection: Int, CaseIterable, Codable {
         case ConnectHealthGateway
+        
+        func title() -> String {
+            switch self {
+            case .ConnectHealthGateway:
+                return "Access Alll your health records"
+            }
+        }
     }
     
     enum UsefulLinksSection: Int, CaseIterable, Codable {
         case GetVaccinated
         case MSPEnrollment
+        
+        func title() -> String {
+            switch self {
+            case .GetVaccinated:
+                return "Get Vaccinated"
+            case .MSPEnrollment:
+                return "Medical Service Plan Entrollment"
+            }
+        }
     }
 
 }

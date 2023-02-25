@@ -641,6 +641,12 @@
 		3EB5CA5229A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */; };
 		3EB5CA5329A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */; };
 		3EB5CA5429A96A5F007CCC01 /* EmergencyCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */; };
+		3EB5CA5829A9738E007CCC01 /* CustomizeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA5629A9738E007CCC01 /* CustomizeCellTableViewCell.swift */; };
+		3EB5CA5929A9738E007CCC01 /* CustomizeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA5629A9738E007CCC01 /* CustomizeCellTableViewCell.swift */; };
+		3EB5CA5A29A9738E007CCC01 /* CustomizeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5CA5629A9738E007CCC01 /* CustomizeCellTableViewCell.swift */; };
+		3EB5CA5B29A9738E007CCC01 /* CustomizeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA5729A9738E007CCC01 /* CustomizeCellTableViewCell.xib */; };
+		3EB5CA5C29A9738E007CCC01 /* CustomizeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA5729A9738E007CCC01 /* CustomizeCellTableViewCell.xib */; };
+		3EB5CA5D29A9738E007CCC01 /* CustomizeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5CA5729A9738E007CCC01 /* CustomizeCellTableViewCell.xib */; };
 		3EBC991829110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991929110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
 		3EBC991A29110ACE00D67A90 /* BaseDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */; };
@@ -1671,6 +1677,8 @@
 		3EB5CA4829A958A4007CCC01 /* CustomizeDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeDashboardViewController.swift; sourceTree = "<group>"; };
 		3EB5CA4D29A96A5F007CCC01 /* EmergencyCallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCallTableViewCell.swift; sourceTree = "<group>"; };
 		3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyCallTableViewCell.xib; sourceTree = "<group>"; };
+		3EB5CA5629A9738E007CCC01 /* CustomizeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeCellTableViewCell.swift; sourceTree = "<group>"; };
+		3EB5CA5729A9738E007CCC01 /* CustomizeCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizeCellTableViewCell.xib; sourceTree = "<group>"; };
 		3EBC991729110ACE00D67A90 /* BaseDependentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDependentViewController.swift; sourceTree = "<group>"; };
 		3EBFADDE29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFinderDashboardTableViewCell.swift; sourceTree = "<group>"; };
 		3EBFADDF29A7F3AE007330FE /* ServiceFinderDashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceFinderDashboardTableViewCell.xib; sourceTree = "<group>"; };
@@ -2838,6 +2846,7 @@
 		3EB5CA4329A95873007CCC01 /* CustomizeDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				3EB5CA5529A9736A007CCC01 /* Cells */,
 				3EB5CA4429A95890007CCC01 /* CustomizeDashboard.storyboard */,
 				3EB5CA4829A958A4007CCC01 /* CustomizeDashboardViewController.swift */,
 			);
@@ -2851,6 +2860,15 @@
 				3EB5CA4E29A96A5F007CCC01 /* EmergencyCallTableViewCell.xib */,
 			);
 			path = EmergencyCall;
+			sourceTree = "<group>";
+		};
+		3EB5CA5529A9736A007CCC01 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3EB5CA5629A9738E007CCC01 /* CustomizeCellTableViewCell.swift */,
+				3EB5CA5729A9738E007CCC01 /* CustomizeCellTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3EBFADDD29A7F382007330FE /* ServiceFinder */ = {
@@ -4175,6 +4193,7 @@
 				7944F68526F1261B006B9444 /* Assets.xcassets in Resources */,
 				79B9D01727E2950000987D9F /* Home.storyboard in Resources */,
 				297885202795F16E00FF912D /* SettingsRowTableViewCell.xib in Resources */,
+				3EB5CA5C29A9738E007CCC01 /* CustomizeCellTableViewCell.xib in Resources */,
 				293B32CD27D814EB0064BAAA /* CommentViewTableViewCell.xib in Resources */,
 				3E5924C4297086C900936CF1 /* EmptyTableViewCell.xib in Resources */,
 				2D5218C52984A38000E07382 /* ProfileDetailsTableViewCell.xib in Resources */,
@@ -4271,6 +4290,7 @@
 				3EB5CA4229A9583A007CCC01 /* UsefulLinkTableViewCell.xib in Resources */,
 				79590D9B2811EA25006EB59F /* CommentsTableViewCell.xib in Resources */,
 				297F6DB5280F16540023E89C /* AuthenticationView.xib in Resources */,
+				3EB5CA5D29A9738E007CCC01 /* CustomizeCellTableViewCell.xib in Resources */,
 				3EBFADEE29A7F431007330FE /* ConnectHealthGatewayDashboardTableViewCell.xib in Resources */,
 				3E048CC8291183E900774278 /* InaccessibleDependentTableViewCell.xib in Resources */,
 				3E5A68E1298C57C500E94A01 /* DBLoadFatalError.xib in Resources */,
@@ -4430,6 +4450,7 @@
 				798006242852C66E006E390F /* Home.storyboard in Resources */,
 				798006252852C66E006E390F /* SettingsRowTableViewCell.xib in Resources */,
 				798006262852C66E006E390F /* CommentViewTableViewCell.xib in Resources */,
+				3EB5CA5B29A9738E007CCC01 /* CustomizeCellTableViewCell.xib in Resources */,
 				3E5924C3297086C900936CF1 /* EmptyTableViewCell.xib in Resources */,
 				2D5218C42984A38000E07382 /* ProfileDetailsTableViewCell.xib in Resources */,
 				798006272852C66E006E390F /* QRSelectionTableViewCell.xib in Resources */,
@@ -4866,6 +4887,7 @@
 				2979679F27C536E20019EE9B /* LaboratoryTest+CoreDataClass.swift in Sources */,
 				791C27CC2719DB3D001A6E12 /* QueueItCachedObject.swift in Sources */,
 				7967E74326F900E400EEF510 /* TabBarController.swift in Sources */,
+				3EB5CA5929A9738E007CCC01 /* CustomizeCellTableViewCell.swift in Sources */,
 				3EDC0CEF2967DCA100603FED /* HospitalVisit+CoreDataProperties.swift in Sources */,
 				79590D96280FFB83006EB59F /* RouterWorker.swift in Sources */,
 				7967E73326F3DC9A00EEF510 /* FormTableViewCell.swift in Sources */,
@@ -5240,6 +5262,7 @@
 				794BD6452702EEC00084ADA8 /* UIColor+EXT.swift in Sources */,
 				297967A027C536E20019EE9B /* LaboratoryTest+CoreDataClass.swift in Sources */,
 				291D43E02762E1C5005F5B94 /* HealthRecordsView.swift in Sources */,
+				3EB5CA5A29A9738E007CCC01 /* CustomizeCellTableViewCell.swift in Sources */,
 				3EDC0CF02967DCA100603FED /* HospitalVisit+CoreDataProperties.swift in Sources */,
 				794BD6462702EEC00084ADA8 /* VaxQRZoomedInView.swift in Sources */,
 				29736A592788EBD700CCB1D2 /* VaccineCard+CoreDataClass.swift in Sources */,
@@ -5591,6 +5614,7 @@
 				7980059D2852C66E006E390F /* LaboratoryTest+CoreDataClass.swift in Sources */,
 				7980059E2852C66E006E390F /* QueueItCachedObject.swift in Sources */,
 				3EDC0CEE2967DCA100603FED /* HospitalVisit+CoreDataProperties.swift in Sources */,
+				3EB5CA5829A9738E007CCC01 /* CustomizeCellTableViewCell.swift in Sources */,
 				7980059F2852C66E006E390F /* TabBarController.swift in Sources */,
 				798005A02852C66E006E390F /* RouterWorker.swift in Sources */,
 				798005A12852C66E006E390F /* FormTableViewCell.swift in Sources */,

@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBQ-W5-hOe">
-                        <rect key="frame" x="0.0" y="20" width="410" height="141"/>
+                        <rect key="frame" x="0.0" y="0.0" width="410" height="141"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a7c-SW-7pG">
                                 <rect key="frame" x="20" y="17.666666666666661" width="24" height="29.333333333333339"/>
@@ -32,7 +32,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBz-J3-T5u">
-                                <rect key="frame" x="48" y="21.666666666666664" width="130.66666666666666" height="21"/>
+                                <rect key="frame" x="48" y="21.666666666666671" width="130.66666666666666" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="wBQ-W5-hOe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3uR-Rq-c72"/>
-                    <constraint firstItem="wBQ-W5-hOe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ErR-Bn-EeH"/>
+                    <constraint firstItem="wBQ-W5-hOe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ErR-Bn-EeH"/>
                     <constraint firstAttribute="trailing" secondItem="wBQ-W5-hOe" secondAttribute="trailing" id="Vm6-7b-FcM"/>
                     <constraint firstAttribute="bottom" secondItem="wBQ-W5-hOe" secondAttribute="bottom" id="rDA-hA-sgm"/>
                 </constraints>

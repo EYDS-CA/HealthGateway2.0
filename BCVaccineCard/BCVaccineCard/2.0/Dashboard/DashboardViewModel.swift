@@ -36,6 +36,7 @@ class DashboardViewModel {
         } else {
             config = DashboardViewModel.defaultConfig()
         }
+        loadConfig()
     }
     
     func loadConfig() {
@@ -47,8 +48,10 @@ class DashboardViewModel {
             } else {
                 return obj.key
         }})
-        // sort
-        // TODO:
+        // TODO: Sort
+        self.sections = sections.sorted(by: { left, right in
+            return left.rawValue < right.rawValue
+        })
         
         self.connectWithProvidersSectionCells = config.connectWithProvidersSectionCells.compactMap({ obj in
             if obj.value.hidden {
@@ -56,8 +59,14 @@ class DashboardViewModel {
             } else {
                 return obj.key
         }})
-        // sort
-        // TODO:
+        // TODO: Sort
+        self.connectWithProvidersSectionCells = connectWithProvidersSectionCells.sorted(by: { left, right in
+            return left.rawValue < right.rawValue
+        })
+        
+        if self.connectWithProvidersSectionCells.isEmpty {
+            sections.removeAll(where: {$0 == .ConnectWithHealthCareProviders})
+        }
         
         self.GetHealthAdviceCells = config.getHealthAdviceCells.compactMap({ obj in
             if obj.value.hidden {
@@ -65,8 +74,14 @@ class DashboardViewModel {
             } else {
                 return obj.key
         }})
-        // sort
-        // TODO:
+        // TODO: Sort
+        self.GetHealthAdviceCells = GetHealthAdviceCells.sorted(by: { left, right in
+            return left.rawValue < right.rawValue
+        })
+        
+        if self.GetHealthAdviceCells.isEmpty {
+            sections.removeAll(where: {$0 == .GetHealthAdvice})
+        }
         
         self.findHealthServicesSectionCells = config.findHealthServicesSectionCells.compactMap({ obj in
             if obj.value.hidden {
@@ -74,8 +89,14 @@ class DashboardViewModel {
             } else {
                 return obj.key
         }})
-        // sort
-        // TODO:
+        // TODO: Sort
+        self.findHealthServicesSectionCells = findHealthServicesSectionCells.sorted(by: { left, right in
+            return left.rawValue < right.rawValue
+        })
+        
+        if self.findHealthServicesSectionCells.isEmpty {
+            sections.removeAll(where: {$0 == .FindHealthServices})
+        }
         
         self.accessHelthRecordsCells = config.accessHelthRecordsCells.compactMap({ obj in
             if obj.value.hidden {
@@ -83,8 +104,14 @@ class DashboardViewModel {
             } else {
                 return obj.key
         }})
-        // sort
-        // TODO:
+        // TODO: Sort
+        self.accessHelthRecordsCells = accessHelthRecordsCells.sorted(by: { left, right in
+            return left.rawValue < right.rawValue
+        })
+        
+        if self.accessHelthRecordsCells.isEmpty {
+            sections.removeAll(where: {$0 == .AccessHelthRecords})
+        }
         
         self.usefulLinksCells = config.usefulLinksCells.compactMap({ obj in
             if obj.value.hidden {
@@ -92,8 +119,14 @@ class DashboardViewModel {
             } else {
                 return obj.key
         }})
-        // sort
-        // TODO:
+        // TODO: Sort
+        self.usefulLinksCells = usefulLinksCells.sorted(by: { left, right in
+            return left.rawValue < right.rawValue
+        })
+        
+        if self.usefulLinksCells.isEmpty {
+            sections.removeAll(where: {$0 == .UsefulLinks})
+        }
     }
     
     func saveConfig() {

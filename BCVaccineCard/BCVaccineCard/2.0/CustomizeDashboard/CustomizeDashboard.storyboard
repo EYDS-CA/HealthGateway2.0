@@ -55,8 +55,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ylJ-Up-DRV">
-                                <rect key="frame" x="8" y="158" width="377" height="578"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ylJ-Up-DRV">
+                                <rect key="frame" x="8" y="134" width="377" height="602"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-Eb-xhR">
@@ -84,7 +84,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ylJ-Up-DRV" secondAttribute="trailing" constant="8" id="dsA-5g-CBs"/>
                             <constraint firstItem="7Pb-ar-7Rl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ekR-c6-JKC"/>
                             <constraint firstItem="ylJ-Up-DRV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="f5s-c5-b9M"/>
-                            <constraint firstItem="ylJ-Up-DRV" firstAttribute="top" secondItem="Pus-sS-NfF" secondAttribute="bottom" constant="32" id="nks-Bb-GPp"/>
+                            <constraint firstItem="ylJ-Up-DRV" firstAttribute="top" secondItem="Pus-sS-NfF" secondAttribute="bottom" constant="8" id="nks-Bb-GPp"/>
                             <constraint firstItem="Pus-sS-NfF" firstAttribute="top" secondItem="7Pb-ar-7Rl" secondAttribute="bottom" constant="4" id="w6A-uC-4Lk"/>
                             <constraint firstItem="7Pb-ar-7Rl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zvH-AJ-pzC"/>
                         </constraints>
