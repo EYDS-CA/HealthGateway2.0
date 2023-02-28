@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Rectangle 5199@1x.png",
+      "filename" : "bg healthlink BC@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Rectangle 5199@2x.png",
+      "filename" : "bg healthlink BC@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Rectangle 5199@3x.png",
+      "filename" : "bg healthlink BC@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
