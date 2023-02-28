@@ -42,15 +42,27 @@ class RowView: UIView {
     
     private func setup() {
         self.backgroundColor = .clear
-        button1.tintColor = UIColor(hexString: "#003366")
-        button2.tintColor = UIColor(hexString: "#003366")
-        button3.tintColor = UIColor(hexString: "#003366")
+//        button1.tintColor = UIColor(hexString: "#003366")
+//        button2.tintColor = UIColor(hexString: "#003366")
+//        button3.tintColor = UIColor(hexString: "#003366")
         titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
-        titleLabel.textColor = UIColor(hexString: "#003366")
+//        titleLabel.textColor = UIColor(hexString: "#003366")
         self.contentView.layer.cornerRadius = 10.0
         contentView.clipsToBounds = true
         button3.layer.cornerRadius = button3.frame.height / 2
         button3.clipsToBounds = true
+    }
+    
+    func configure911Row(type: DashboardButton, owner: UITableViewCell) {
+        button1.isHidden = true
+        button2.isHidden = true
+        button3.setImage(type.getOrderedIcons?[0], for: .normal)
+        button3.tintColor = .white
+        button3.backgroundColor = UIColor(hexString: "#E56578")
+        contentView.backgroundColor = UIColor(hexString: "#FCF0F1")
+        titleLabel.textColor = UIColor(hexString: "#E56578")
+        self.titleLabel.text = type.getTitle
+        self.delegate = owner as? ButtonViewAction
     }
     
     func configure(type: DashboardButton, owner: UITableViewCell) {

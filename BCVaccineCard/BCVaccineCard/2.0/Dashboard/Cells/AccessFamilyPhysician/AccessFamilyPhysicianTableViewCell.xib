@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccessFamilyPhysicianTableViewCell" id="KGk-i7-Jjw" customClass="AccessFamilyPhysicianTableViewCell" customModule="HealthGateway" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="265"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="265"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hMr-sp-sQn">
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="265"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9r9-YJ-AWF" customClass="ButtonView" customModule="HealthGateway" customModuleProvider="target">
+                        <rect key="frame" x="10" y="168" width="378" height="82"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="82" id="wkN-Ra-NBD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="hMr-sp-sQn" secondAttribute="bottom" id="4SO-li-ai4"/>
+                    <constraint firstAttribute="bottom" secondItem="9r9-YJ-AWF" secondAttribute="bottom" constant="15" id="Jxe-gz-Pix"/>
+                    <constraint firstAttribute="trailing" secondItem="9r9-YJ-AWF" secondAttribute="trailing" constant="10" id="MJu-UW-Mbe"/>
+                    <constraint firstAttribute="trailing" secondItem="hMr-sp-sQn" secondAttribute="trailing" id="UQu-3Q-rIP"/>
+                    <constraint firstItem="hMr-sp-sQn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dyU-iz-9tA"/>
+                    <constraint firstItem="hMr-sp-sQn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lDZ-z8-6F2"/>
+                    <constraint firstItem="9r9-YJ-AWF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sMl-Yg-6nX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="hMr-sp-sQn" id="OrW-S5-jJf"/>
+                <outlet property="registerButtonView" destination="9r9-YJ-AWF" id="W2Y-OA-hpd"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

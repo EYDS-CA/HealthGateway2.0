@@ -53,10 +53,10 @@ class Call811TableViewCell: BaseDashboardTableViewCell {
         descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         descriptionLabel.textColor = UIColor(hexString: "#313132")
         descriptionLabel.text = "Speak to a health services navigator who can help you to find health information and services."
-        self.healthNavButton.configure(type: .healthNavigator, owner: self, rounding: 4)
-        self.registeredNurseButton.configure(type: .registeredNurse, owner: self, rounding: 4)
-        self.pharmacistAdviceButton.configure(type: .pharmasistAdvice, owner: self, rounding: 4)
-        self.exerciseProfessionalButton.configure(type: .exerciseProfessional, owner: self, rounding: 4)
+//        self.healthNavButton.configure(type: .healthNavigator, owner: self, rounding: 4)
+//        self.registeredNurseButton.configure(type: .registeredNurse, owner: self, rounding: 4)
+//        self.pharmacistAdviceButton.configure(type: .pharmasistAdvice, owner: self, rounding: 4)
+//        self.exerciseProfessionalButton.configure(type: .exerciseProfessional, owner: self, rounding: 4)
     }
     
     @IBAction private func discoverMoreButtonAction(_ sender: UIButton) {

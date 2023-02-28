@@ -167,6 +167,10 @@ extension DashboardViewController: DashboardTileDelegate {
             tabDelegate?.switchTo(tab: .ServiceFinder)
         case .customizeDashboard:
             showCustomizeDashboard(config: viewModel.config, delegate: self)
+        case .viaPhone:
+            callNumber(phoneNumber: button.rawValue)
+        case .viaEmail:
+            sendMail(to: button.rawValue)
         default:
             showWeb(url: button.rawValue, withNavigation: true)
         }
@@ -183,6 +187,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func registerCells() {
+        tableView.register(UINib.init(nibName: AccessFamilyPhysicianTableViewCell.getName, bundle: .main), forCellReuseIdentifier: AccessFamilyPhysicianTableViewCell.getName)
+        tableView.register(UINib.init(nibName: HealthLinkBCTableViewCell.getName, bundle: .main), forCellReuseIdentifier: HealthLinkBCTableViewCell.getName)
         tableView.register(UINib.init(nibName: FindPhysitianTableViewCell.getName, bundle: .main), forCellReuseIdentifier: FindPhysitianTableViewCell.getName)
         tableView.register(UINib.init(nibName: EmergencyCallTableViewCell.getName, bundle: .main), forCellReuseIdentifier: EmergencyCallTableViewCell.getName)
         tableView.register(UINib.init(nibName: SymptomCheckerTableViewCell.getName, bundle: .main), forCellReuseIdentifier: SymptomCheckerTableViewCell.getName)
@@ -196,9 +202,9 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib.init(nibName: UsefulLinkTableViewCell.getName, bundle: .main), forCellReuseIdentifier: UsefulLinkTableViewCell.getName)
     }
     
-    func accessHealthCareProfessionalsCell(indexPath: IndexPath) -> FindPhysitianTableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FindPhysitianTableViewCell.getName, for: indexPath) as? FindPhysitianTableViewCell else {
-            return FindPhysitianTableViewCell()
+    func accessHealthCareProfessionalsCell(indexPath: IndexPath) -> AccessFamilyPhysicianTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccessFamilyPhysicianTableViewCell.getName, for: indexPath) as? AccessFamilyPhysicianTableViewCell else {
+            return AccessFamilyPhysicianTableViewCell()
         }
         cell.delegate = self
         return cell
@@ -207,6 +213,14 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func emergencyCallTableViewCellCell(indexPath: IndexPath) -> EmergencyCallTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EmergencyCallTableViewCell.getName, for: indexPath) as? EmergencyCallTableViewCell else {
             return EmergencyCallTableViewCell()
+        }
+        cell.delegate = self
+        return cell
+    }
+    
+    func healthlinkBCTableViewCellCell(indexPath: IndexPath) -> HealthLinkBCTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HealthLinkBCTableViewCell.getName, for: indexPath) as? HealthLinkBCTableViewCell else {
+            return HealthLinkBCTableViewCell()
         }
         cell.delegate = self
         return cell
@@ -346,8 +360,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         let row = viewModel.GetHealthAdviceCells[indexPath.row]
        
         switch row {
-        case .Contact:
-            let cell = ContactCell(indexPath: indexPath)
+        case .HealthlinkBC:
+            let cell = healthlinkBCTableViewCellCell(indexPath: indexPath)
             return cell
         case .IllnessesAndSymptomChecker:
             let cell = illnessesAndSymptomCheckerCell(indexPath: indexPath)

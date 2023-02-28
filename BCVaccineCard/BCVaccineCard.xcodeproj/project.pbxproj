@@ -301,6 +301,18 @@
 		2D5218D92988881B00E07382 /* UpdateAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5218D82988881B00E07382 /* UpdateAddressViewController.swift */; };
 		2D5218DA2988881B00E07382 /* UpdateAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5218D82988881B00E07382 /* UpdateAddressViewController.swift */; };
 		2D5218DB2988881B00E07382 /* UpdateAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5218D82988881B00E07382 /* UpdateAddressViewController.swift */; };
+		2D7FD12329ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD12129ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift */; };
+		2D7FD12429ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD12129ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift */; };
+		2D7FD12529ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD12129ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift */; };
+		2D7FD12629ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FD12229ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib */; };
+		2D7FD12729ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FD12229ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib */; };
+		2D7FD12829ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FD12229ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib */; };
+		2D7FD12C29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD12A29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift */; };
+		2D7FD12D29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD12A29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift */; };
+		2D7FD12E29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD12A29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift */; };
+		2D7FD12F29ADD92F00A4838A /* HealthLinkBCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FD12B29ADD92F00A4838A /* HealthLinkBCTableViewCell.xib */; };
+		2D7FD13029ADD92F00A4838A /* HealthLinkBCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FD12B29ADD92F00A4838A /* HealthLinkBCTableViewCell.xib */; };
+		2D7FD13129ADD92F00A4838A /* HealthLinkBCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FD12B29ADD92F00A4838A /* HealthLinkBCTableViewCell.xib */; };
 		2D9B399F2907171D00AE9FA1 /* HealthRecordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */; };
 		2D9B39A02907171D00AE9FA1 /* HealthRecordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */; };
 		2D9B39A12907171D00AE9FA1 /* HealthRecordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */; };
@@ -1560,6 +1572,10 @@
 		2D5218CB2988556100E07382 /* Patient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Patient+CoreDataProperties.swift"; path = "../../../../Patient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2D5218D82988881B00E07382 /* UpdateAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressViewController.swift; sourceTree = "<group>"; };
 		2D60219828CBEB2D0096614F /* BCVaccineCard 1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BCVaccineCard 1.2.xcdatamodel"; sourceTree = "<group>"; };
+		2D7FD12129ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessFamilyPhysicianTableViewCell.swift; sourceTree = "<group>"; };
+		2D7FD12229ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccessFamilyPhysicianTableViewCell.xib; sourceTree = "<group>"; };
+		2D7FD12A29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthLinkBCTableViewCell.swift; sourceTree = "<group>"; };
+		2D7FD12B29ADD92F00A4838A /* HealthLinkBCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthLinkBCTableViewCell.xib; sourceTree = "<group>"; };
 		2D9B399E2907171D00AE9FA1 /* HealthRecordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecordsService.swift; sourceTree = "<group>"; };
 		2DBC6AB029A04F4D0062F401 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		2DBC6AB429A04F5A0062F401 /* ButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
@@ -2466,6 +2482,24 @@
 			path = ProfileDetails;
 			sourceTree = "<group>";
 		};
+		2D7FD12029ADCFA300A4838A /* AccessFamilyPhysician */ = {
+			isa = PBXGroup;
+			children = (
+				2D7FD12129ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift */,
+				2D7FD12229ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib */,
+			);
+			path = AccessFamilyPhysician;
+			sourceTree = "<group>";
+		};
+		2D7FD12929ADD91500A4838A /* HealthlinkBCTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2D7FD12A29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift */,
+				2D7FD12B29ADD92F00A4838A /* HealthLinkBCTableViewCell.xib */,
+			);
+			path = HealthlinkBCTableViewCell;
+			sourceTree = "<group>";
+		};
 		2D9B399D2907170300AE9FA1 /* HealthRecords */ = {
 			isa = PBXGroup;
 			children = (
@@ -2655,8 +2689,10 @@
 			isa = PBXGroup;
 			children = (
 				3E62D03329A03BAD000FBB40 /* BaseDashboardTableViewCell.swift */,
+				2D7FD12029ADCFA300A4838A /* AccessFamilyPhysician */,
 				3E62D00C29A0389B000FBB40 /* Find Physitian */,
 				3EB5CA4C29A96A43007CCC01 /* EmergencyCall */,
+				2D7FD12929ADD91500A4838A /* HealthlinkBCTableViewCell */,
 				3EBFADEF29A7F4C7007330FE /* Contact */,
 				3E62D00D29A038AA000FBB40 /* Symptom checker */,
 				3E62D00E29A038BC000FBB40 /* Call 811 */,
@@ -4172,6 +4208,7 @@
 				3E5A68E0298C57C400E94A01 /* DBLoadFatalError.xib in Resources */,
 				3E6831472940D92600100402 /* Comments.storyboard in Resources */,
 				297885262795F38500FF912D /* SettingsAuthenticateTableViewCell.xib in Resources */,
+				2D7FD13029ADD92F00A4838A /* HealthLinkBCTableViewCell.xib in Resources */,
 				791C27BB27183149001A6E12 /* ButtonTableViewCell.xib in Resources */,
 				3EA4B37229A53CD700D821A7 /* Web.storyboard in Resources */,
 				7967E75326F9145700EEF510 /* BCSans-Italic.otf in Resources */,
@@ -4219,6 +4256,7 @@
 				799050C0273C8344006CD726 /* GetRecordsView.xib in Resources */,
 				2922C0DE286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.xib in Resources */,
 				29719562288719D400CA824A /* ImmunizationForecastTableViewCell.xib in Resources */,
+				2D7FD12729ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib in Resources */,
 				7928346D27311C9000EE2710 /* DropDownView.xib in Resources */,
 				7967E73426F3DC9A00EEF510 /* FormTableViewCell.xib in Resources */,
 				2922C0E7286E33F8000FF4F7 /* MessageBannerTableViewCell.xib in Resources */,
@@ -4316,6 +4354,7 @@
 				795AA7762715650900E59FF1 /* NewsFeedTableViewCell.xib in Resources */,
 				79590D992811E9F7006EB59F /* TableSectionHeader.xib in Resources */,
 				79218AC227555B350063004E /* ReusableHeaderAddView.xib in Resources */,
+				2D7FD12829ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib in Resources */,
 				7918A8CB27482E1900D19D1C /* TextListView.xib in Resources */,
 				3E6831482940D92600100402 /* Comments.storyboard in Resources */,
 				794BD6622702EEC00084ADA8 /* NoCardsTableViewCell.xib in Resources */,
@@ -4386,6 +4425,7 @@
 				794BD66B2702EEC00084ADA8 /* Main.storyboard in Resources */,
 				3E62D00129A001A5000FBB40 /* POCTabBar.storyboard in Resources */,
 				79218AB3275196150063004E /* HealthRecordsUserView.xib in Resources */,
+				2D7FD13129ADD92F00A4838A /* HealthLinkBCTableViewCell.xib in Resources */,
 				2922C0CD286DFDC0000FF4F7 /* CovidImmunizationBannerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4429,6 +4469,7 @@
 				3E585505298C56E5006778AD /* DBLoadFatalError.xib in Resources */,
 				3E6831462940D92600100402 /* Comments.storyboard in Resources */,
 				798006142852C66E006E390F /* SettingsAuthenticateTableViewCell.xib in Resources */,
+				2D7FD12F29ADD92F00A4838A /* HealthLinkBCTableViewCell.xib in Resources */,
 				798006152852C66E006E390F /* ButtonTableViewCell.xib in Resources */,
 				3EA4B36929A5360500D821A7 /* Web.storyboard in Resources */,
 				798006162852C66E006E390F /* BCSans-Italic.otf in Resources */,
@@ -4476,6 +4517,7 @@
 				798006332852C66E006E390F /* GetRecordsView.xib in Resources */,
 				2922C0DD286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.xib in Resources */,
 				29719561288719D400CA824A /* ImmunizationForecastTableViewCell.xib in Resources */,
+				2D7FD12629ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.xib in Resources */,
 				798006342852C66E006E390F /* DropDownView.xib in Resources */,
 				798006352852C66E006E390F /* FormTableViewCell.xib in Resources */,
 				2922C0E6286E33F8000FF4F7 /* MessageBannerTableViewCell.xib in Resources */,
@@ -4894,6 +4936,7 @@
 				791C27B927183149001A6E12 /* ButtonTableViewCell.swift in Sources */,
 				795AA74C2714018600E59FF1 /* APIClient.swift in Sources */,
 				795AA77F2715FC9B00E59FF1 /* ParseXMLData.swift in Sources */,
+				2D7FD12D29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift in Sources */,
 				3E473780291090BC00B5BBA0 /* CovidTestsService.swift in Sources */,
 				2922C0DB286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.swift in Sources */,
 				3E62CFE2299FF74F000FBB40 /* DashboardViewController.swift in Sources */,
@@ -4970,6 +5013,7 @@
 				3E5E6EA628D23BB200724EDD /* AFNetwork.swift in Sources */,
 				3EA4B37629A5462000D821A7 /* MapViewController.swift in Sources */,
 				79B1A0F62874CEBE009B3EFB /* CovidImmunizationRecord+CoreDataClass.swift in Sources */,
+				2D7FD12429ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift in Sources */,
 				3E31EA892913A58F00E344E6 /* UpdateServiceStorage.swift in Sources */,
 				3E62D03529A03BEC000FBB40 /* BaseDashboardTableViewCell.swift in Sources */,
 				29AC25332790320F001C22B4 /* QRMaker.swift in Sources */,
@@ -5269,6 +5313,7 @@
 				29A12AF8271F6B1C00A106B5 /* AnalyticsAction.swift in Sources */,
 				29A4DF5D27DEFCCC00D5E901 /* FilterRecordsView.swift in Sources */,
 				3E473781291090BC00B5BBA0 /* CovidTestsService.swift in Sources */,
+				2D7FD12E29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift in Sources */,
 				797BB95E2764084300CD1645 /* StorageService+Patient.swift in Sources */,
 				2922C0DC286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.swift in Sources */,
 				3E62CFE3299FF74F000FBB40 /* DashboardViewController.swift in Sources */,
@@ -5345,6 +5390,7 @@
 				3E5E6EA728D23BB200724EDD /* AFNetwork.swift in Sources */,
 				3EA4B37729A5462000D821A7 /* MapViewController.swift in Sources */,
 				293B32BF27D262F70064BAAA /* CommentsViewTableViewCell.swift in Sources */,
+				2D7FD12529ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift in Sources */,
 				3E31EA8A2913A58F00E344E6 /* UpdateServiceStorage.swift in Sources */,
 				3E62D03629A03BED000FBB40 /* BaseDashboardTableViewCell.swift in Sources */,
 				79B1A0F72874CEBE009B3EFB /* CovidImmunizationRecord+CoreDataClass.swift in Sources */,
@@ -5621,6 +5667,7 @@
 				798005A22852C66E006E390F /* ButtonTableViewCell.swift in Sources */,
 				798005A42852C66E006E390F /* APIClient.swift in Sources */,
 				3E47377F291090BC00B5BBA0 /* CovidTestsService.swift in Sources */,
+				2D7FD12C29ADD92F00A4838A /* HealthLinkBCTableViewCell.swift in Sources */,
 				2922C0DA286E30DC000FF4F7 /* CovidTestResultBannerTableViewCell.swift in Sources */,
 				3E62CFE1299FF74F000FBB40 /* DashboardViewController.swift in Sources */,
 				798005A52852C66E006E390F /* ParseXMLData.swift in Sources */,
@@ -5697,6 +5744,7 @@
 				3E5E6EA528D23BB200724EDD /* AFNetwork.swift in Sources */,
 				3EA4B37529A5462000D821A7 /* MapViewController.swift in Sources */,
 				798005CF2852C66E006E390F /* AppPDFView.swift in Sources */,
+				2D7FD12329ADCFC900A4838A /* AccessFamilyPhysicianTableViewCell.swift in Sources */,
 				3E31EA882913A58F00E344E6 /* UpdateServiceStorage.swift in Sources */,
 				3E62D03429A03BAD000FBB40 /* BaseDashboardTableViewCell.swift in Sources */,
 				798005D02852C66E006E390F /* LoginProcessStatus.swift in Sources */,

@@ -29,6 +29,8 @@ enum DashboardButton: String, CaseIterable {
     case customizeDashboard = "customizeDashboard" // In app action
     case getVaccinated = "https://www.getvaccinated.gov.bc.ca/s/"
     case MSPEnrollment = "https://my.gov.bc.ca/msp/"
+    case viaPhone = "811"
+    case viaEmail = "mailto:healthlink@bc.ca"
     
     var phoneNumber: String {
         switch self {
@@ -120,12 +122,12 @@ enum DashboardSections: Int, CaseIterable, Codable {
     }
 
     enum GetHealthAdviceSection: Int, CaseIterable, Codable {
-        case Contact
+        case HealthlinkBC
         case IllnessesAndSymptomChecker
         
         func title() -> String {
             switch self {
-            case .Contact:
+            case .HealthlinkBC:
                 return "Healthlink BC connect"
             case .IllnessesAndSymptomChecker:
                 return "Illnesses, conditions and symptom checker"

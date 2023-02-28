@@ -16,7 +16,9 @@ class ButtonView: UIView {
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var leadingPadding: NSLayoutConstraint!
+    @IBOutlet private weak var trailingPadding: NSLayoutConstraint!
+//    @IBOutlet private weak var descriptionLabel: UILabel!
     
     private var type: DashboardButton?
     private weak var delegate: ButtonViewAction?
@@ -38,17 +40,20 @@ class ButtonView: UIView {
     private func commonInit() {
         Bundle.main.loadNibNamed(ButtonView.getName, owner: self, options: nil)
         addSubview(contentView)
+        self.backgroundColor = .clear
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         setup()
     }
     
     private func setup() {
-        iconImageView.tintColor = UIColor(hexString: "#003366")
-        titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
-        titleLabel.textColor = UIColor(hexString: "#313132")
-        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
-        descriptionLabel.textColor = UIColor(hexString: "#313132")
+        contentView.backgroundColor = UIColor(hexString: "#003366")
+        iconImageView.tintColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        titleLabel.textColor = .white
+//        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+//        descriptionLabel.textColor = UIColor(hexString: "#313132")
+        self.contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true
     }
     
@@ -60,14 +65,25 @@ class ButtonView: UIView {
         self.delegate?.buttonTapped(type: type, connectType: .ignore)
     }
     
-    func configure(type: DashboardButton, owner: UITableViewCell, rounding: CGFloat) {
-        self.contentView.layer.cornerRadius = rounding
-        self.backgroundColor = .clear
+    func configure(type: DashboardButton, owner: UITableViewCell, padding: CGFloat, weight: UIFont.Weight) {
+//        = .findPhysitian
         self.type = type
         self.iconImageView.image = type.getIcon
         self.titleLabel.text = type.getTitle
-        self.descriptionLabel.text = type.getDescription
+        self.titleLabel.font = UIFont.systemFont(ofSize: 16, weight: weight)
+//        self.descriptionLabel.text = type.getDescription
         self.delegate = owner as? ButtonViewAction
+        self.leadingPadding.constant = padding
+        self.trailingPadding.constant = padding
+        if type == .findPhysitian {
+            let attributedString = NSMutableAttributedString(string: type.getTitle!)
+            let parStyle = NSMutableParagraphStyle()
+            parStyle.lineSpacing = 1.5
+            parStyle.lineHeightMultiple = 1.25
+            attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: parStyle], range: NSMakeRange(0, attributedString.length))
+            self.titleLabel.attributedText = attributedString
+            self.layoutIfNeeded()
+        }
     }
 
     
@@ -107,6 +123,10 @@ extension DashboardButton {
 //                <#code#>
 //            case .supportAllAges:
 //                <#code#>
+            case .viaPhone:
+                return UIImage(systemName: "phone.fill")
+            case .viaEmail:
+                return UIImage(systemName: "envelope.fill")
             default: return nil
             }
         } else {
@@ -117,7 +137,7 @@ extension DashboardButton {
     var getTitle: String? {
         switch self {
         case .findPhysitian:
-            return "Access A Family Physician, Nurse, Practitioner, And Other Health-Care Professionals"
+            return "Register to access a family physician or nurse practitioner"
         case .call911:
             return "Call 911 for emergencies"
         case .virtualWalkIn:
@@ -146,6 +166,10 @@ extension DashboardButton {
 //            <#code#>
 //        case .supportAllAges:
 //            <#code#>
+        case .viaPhone:
+            return "Via phone"
+        case .viaEmail:
+            return "Via email"
         default: return nil
         }
     }
