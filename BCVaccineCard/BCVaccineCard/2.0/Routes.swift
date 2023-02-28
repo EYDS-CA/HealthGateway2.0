@@ -10,6 +10,7 @@ import UIKit
 fileprivate enum Storyboards {
     static var web: UIStoryboard { return UIStoryboard(name: "Web", bundle: nil) }
     static var pinDetail: UIStoryboard { return UIStoryboard(name: "PinDetail", bundle: nil) }
+    static var customizeDashboard: UIStoryboard { return UIStoryboard(name: "CustomizeDashboard", bundle: nil) }
 }
 
 extension UIViewController {
@@ -17,6 +18,7 @@ extension UIViewController {
         case Web
         case PinDetail
         case staticImage
+        case CustomizeDashboard
     }
 }
 
@@ -33,6 +35,9 @@ extension UIViewController {
             controller = storyboard.instantiateViewController(withIdentifier: String(describing: PinDetailViewController.self)) as? PinDetailViewController
         case .staticImage:
             return StaticImageViewController()
+        case .CustomizeDashboard:
+            let storyboard = Storyboards.customizeDashboard
+            controller = storyboard.instantiateViewController(withIdentifier: String(describing: CustomizeDashboardViewController.self)) as? CustomizeDashboardViewController
         }
         return controller
     }
@@ -62,6 +67,7 @@ extension UIViewController {
         controller.image = image
         show(controller: controller, withNavigation: true)
     }
+    
     func showPinDetail(pin: MapViewController.MapPin) {
         if #available(iOS 15.0, *) {
             guard let detailViewController = createController(route: .PinDetail) as? PinDetailViewController else {
@@ -76,6 +82,24 @@ extension UIViewController {
             present(detailViewController, animated: true, completion: nil)
         }
     }
+    
+    func showCustomizeDashboard(config: DashboardConfig, delegate: CustomizeDashboardDelegate) {
+        guard #available(iOS 15.0, *) else {return}
+        
+        guard let vc = createController(route: .CustomizeDashboard) as? CustomizeDashboardViewController else {
+            return
+        }
+        vc.delegate = delegate
+        vc.config = config
+        
+        vc.modalPresentationStyle = .pageSheet
+        
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+        }
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension UIViewController {
